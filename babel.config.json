@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@amnis/hooks": "./packages/amnis-hooks/src",
+          "@amnis/icons": "./packages/amnis-icons/src",
+          "@amnis/style": "./packages/amnis-style/src",
+          "@amnis/core": "./packages/amnis-core/src"
+        }
+      }
+    ]
+  ]
+}

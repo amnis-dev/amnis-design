@@ -1,0 +1,18 @@
+{
+  "name": "@amnis/style",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^10.0.27 || ^11.8.1",
+    "react": "^17.0.2 || ^18.0.0"
+  },
+  "dependencies": {
+    "color": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/color": "^3.0.3"
+  }
+}

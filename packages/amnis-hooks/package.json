@@ -1,0 +1,13 @@
+{
+  "name": "@amnis/hooks",
+  "version": "1.0.0",
+  "description": "Hooks for the Amnis design system.",
+  "main": "index.js",
+  "repository": "git@github.com:amnis-dev/amnis-design.git/packages/amnis-hooks",
+  "author": "Eric Crowell <eric.crowell@ecrow.dev>",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0"
+  }
+}
