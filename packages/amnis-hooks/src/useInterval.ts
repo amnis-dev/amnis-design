@@ -14,7 +14,7 @@ export function useInterval(callback: () => void, delay: number | null) {
     // Don't schedule if no delay is specified.
     // Note: 0 is a valid value for delay.
     if (!delay && delay !== 0) {
-      return;
+      return undefined;
     }
 
     const id = setInterval(() => savedCallback.current(), delay);

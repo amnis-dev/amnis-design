@@ -7,7 +7,7 @@
 
 ## Motivation
 
-There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind. This design library hopes to package in the most recent accessibility and user experience practices for desktop and mobile environments; making the web a better place for all kinds of internet users.
+There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind. This design library hopes to package in the most recent accessibility and user experience practices for desktop and mobile environments; to ease developer efforts and making the web a better place for all kinds of internet users.
 
 This library is inspired by qualities from both the [U.S. Web Design System](https://github.com/uswds/uswds) and [MUI Core](https://github.com/mui/material-ui).
 

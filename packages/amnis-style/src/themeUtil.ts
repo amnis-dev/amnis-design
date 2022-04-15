@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { ThemePaint } from './theme.types';
-import { Theme, ThemePaintOptions } from './theme.types';
+import { Theme, ThemePaint, ThemePaintOptions } from './theme.types';
 
 /**
  * Swaps two theme paints and returns the new theme.
  */
-export const swapPaint = (theme: Theme, paint1: ThemePaintOptions, paint2: ThemePaintOptions): Theme => {
+export const swapPaint = (
+  theme: Theme,
+  paint1: ThemePaintOptions,
+  paint2: ThemePaintOptions,
+): Theme => {
   if (!theme) { return theme; }
 
   const returnTheme: Theme = { ...theme, paints: { ...theme.paints } };

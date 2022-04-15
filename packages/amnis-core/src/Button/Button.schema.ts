@@ -1,7 +1,6 @@
 /**
  * DO NOT EDIT
- * This file was generated with the package script `gen:schema`.
- * Run the command `npm run gen:schema` or `yarn gen:schema` in the root project folder to update the code.
+ * Run the command `yarn gen:schema` in the root project folder to generate the code.
  */
 import { JSONSchema7 } from 'json-schema';
 
@@ -125,3 +124,5 @@ export const ButtonSchema: JSONSchema7 = {
   $schema: 'http://json-schema.org/draft-07/schema#',
   title: 'Button',
 };
+
+export default ButtonSchema;

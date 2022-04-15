@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
@@ -11,6 +12,16 @@ declare global {
 }
 
 type SetValue<T> = Dispatch<SetStateAction<T>>
+
+// A wrapper for "JSON.parse()"" to support "undefined" value
+function parseJSON<T>(value: string | null): T | undefined {
+  try {
+    return value === 'undefined' ? undefined : JSON.parse(value ?? '');
+  } catch (error) {
+    console.log('parsing error on', { value });
+    return undefined;
+  }
+}
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
   // Get from local storage then
@@ -80,13 +91,3 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T
 }
 
 export default useLocalStorage;
-
-// A wrapper for "JSON.parse()"" to support "undefined" value
-function parseJSON<T>(value: string | null): T | undefined {
-  try {
-    return value === 'undefined' ? undefined : JSON.parse(value ?? '');
-  } catch (error) {
-    console.log('parsing error on', { value });
-    return undefined;
-  }
-}

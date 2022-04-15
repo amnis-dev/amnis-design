@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-underscore-dangle */
 import React, { useMemo } from 'react';
 import { useTheme, ThemeProvider } from '@emotion/react';
@@ -25,7 +26,6 @@ export const ThemeSwapProvider: React.FC<ThemeSwapProviderProps> = ({
   let theme: Theme = useTheme();
   if (!theme || Object.keys(theme).length === 0) {
     theme = defaultTheme;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     /** @ts-ignore */
     theme._root = { ...defaultTheme };
   }

@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import React from 'react';
 import { Global, css, useTheme } from '@emotion/react';
 import './theme.emotion';
 
-export const GlobalStyles: FC<{ root: boolean }> = ({ root }) => {
+export const GlobalStyles: React.FC<{ root: boolean }> = ({ root }) => {
   const theme = useTheme();
 
   return (
@@ -262,3 +262,5 @@ export const GlobalStyles: FC<{ root: boolean }> = ({ root }) => {
     />
   );
 };
+
+export default GlobalStyles;

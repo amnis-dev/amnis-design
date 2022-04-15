@@ -9,7 +9,7 @@ let counter = 0;
  * A hook for using incremental IDs for components.
  */
 export function useIncrementalId(prefix = ''): string {
-  const [id] = useState(counter++);
+  const [id] = useState(counter += 1);
 
   return `${prefix}${id}`;
 }
