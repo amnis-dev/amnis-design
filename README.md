@@ -1,6 +1,9 @@
-# Amnis Design
+<h1 align="center">Amnis Design</h1>
 
-A react-based design system with an emphasis on accessibility and responsive design.
+<p align="center">
+  A react-based design system with an emphasis on accessibility and user experience.
+</p>
+
 
 ## Motivation
 
