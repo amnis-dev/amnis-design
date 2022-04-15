@@ -12,7 +12,9 @@ export type CSSObject = EmotionCSSObject;
 export type StylerMethod<P> = (props: { theme: LibTheme } & P) => EmotionCSSObject;
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function styledWrapper<T extends HTMLElement>(component: keyof React.ReactHTML | React.FC, as?: keyof React.ReactHTML) {
+export default function styledWrapper<
+  T extends HTMLElement
+>(component: keyof React.ReactHTML | React.FC, as?: keyof React.ReactHTML) {
   // @ts-nocheck
   /* @ts-ignore */
   function generator<P = Record<string, unknown>>(styler: StylerMethod<P>) {
@@ -24,7 +26,7 @@ export default function styledWrapper<T extends HTMLElement>(component: keyof Re
     Omit<React.HTMLProps<T>, 'css' | keyof P>
     & P
     & { sx?:(arg0: LibTheme) => CSSObject, theme?: LibTheme }
-      >(({
+    >(({
         sx,
         theme,
         ...props
@@ -35,7 +37,13 @@ export default function styledWrapper<T extends HTMLElement>(component: keyof Re
           <ClassNames>
             {({ css }) => (
             /* @ts-ignore */
-              <StyledComponent ref={ref} theme={finalTheme} className={css(sx(finalTheme))} as={as} {...props} />
+              <StyledComponent
+                ref={ref}
+                theme={finalTheme}
+                className={css(sx(finalTheme))}
+                as={as}
+                {...props}
+              />
             )}
           </ClassNames>
         ) : (

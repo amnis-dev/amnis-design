@@ -35,7 +35,7 @@ ButtonType
       ref={ref}
       {...props}
     >
-      {variant === 'icon' ? <Icon name={icon} /> : (label || children)}
+      (children || label)
     </ButtonStyled>
   </ThemeSwapProvider>
 ));

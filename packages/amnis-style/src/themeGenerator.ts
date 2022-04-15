@@ -80,6 +80,7 @@ export function createThemePaint(backgroundColor: string, focusColor: string, th
       baseColor = Color(baseColor).saturate(1).lighten(0.32).hex();
       break;
     case 'darken':
+    default:
       baseColor = Color(baseColor).saturate(1).darken(0.32).hex();
       break;
   }
@@ -87,7 +88,9 @@ export function createThemePaint(backgroundColor: string, focusColor: string, th
   const isLight = Color(baseColor).isLight();
   const color = isLight ? darkTextColor : lightTextColor;
 
-  const baseLinkColor = linkColor || (isLight ? Color(baseColor).darken(1.5).hex() : Color(baseColor).lighten(1.5).hex());
+  const baseLinkColor = linkColor || (
+    isLight ? Color(baseColor).darken(1.5).hex() : Color(baseColor).lighten(1.5).hex()
+  );
 
   const hoverColor = modifyColorBrightness(baseColor, 0.2, themeIsLightType);
   const activeColor = modifyColorBrightness(baseColor, 0.4, themeIsLightType);
@@ -176,7 +179,13 @@ const generator = (base: BaseTheme): Theme => {
     },
 
     paints: {
-      main: createThemePaint(merge.backgroundColor, focusColor, modeType, undefined, merge.primaryColor),
+      main: createThemePaint(
+        merge.backgroundColor,
+        focusColor,
+        modeType,
+        undefined,
+        merge.primaryColor,
+      ),
 
       information: createThemePaint(merge.infoColor, focusColor, modeType),
       warning: createThemePaint(merge.warnColor, focusColor, modeType),
@@ -257,8 +266,6 @@ const generator = (base: BaseTheme): Theme => {
     },
 
   };
-
-  // 1a4480
 
   return theme;
 };
