@@ -6,7 +6,7 @@ See the full list of icons from this [React Icons page](https://react-icons.gith
 
 ## Usage Example
 
-```typescript
+```tsx
 import React from 'react';
 import Icon from '@amnis/icons';
 

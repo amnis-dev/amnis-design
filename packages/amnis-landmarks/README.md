@@ -12,7 +12,7 @@ As components, these landmarks also include responsiveness.
 
 Landmarks are best used as direct children of a `Page` component that organizes and handles the responsiveness of the landmarks.
 
-```typescript
+```tsx
 import React from 'react';
 import Page from '@amnis/page';
 import { Header, Main, Nav, Footer } from '@amnis/landmarks';

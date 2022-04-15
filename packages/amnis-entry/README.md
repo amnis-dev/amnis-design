@@ -6,7 +6,7 @@ This package presents a collection of components for building or using preconfig
 
 Using an entry component is similar to any other component, except that labeling text is required.
 
-```typescript
+```tsx
 import React from 'react';
 import TextInput from '@amnis/entry/TextInput';
 
@@ -52,7 +52,7 @@ Here's a quick guide to building a simple text input entry.
 
 Begin by importing the root `Entry` component.
 
-```typescript
+```tsx
 import React from 'react';
 // Start by importing the root Entry component and type.
 import { Entry, EntryProps } from '@amnis/entry/Entry';
@@ -74,7 +74,7 @@ export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 
 Add an area for textual input and contain it within a visible box.
 
-```typescript
+```tsx
 import React from 'react';
 import { Entry, EntryProps } from '@amnis/entry/Entry';
 // Import the input element and a box to contain it within.
@@ -101,7 +101,7 @@ Insert where the entry details should be displayed.
 
 The details show labels, descriptions, hints, and errors to the user (if needed).
 
-```typescript
+```tsx
 import React from 'react';
 import { Entry, EntryProps } from '@amnis/entry/Entry';
 import { EntryInput } from '@amnis/entry/EntryInput';
@@ -129,7 +129,7 @@ export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 
 For textual entries, it is sometimes nice to provide input suggestions while the user is typing.
 
-```typescript
+```tsx
 import React from 'react';
 import { Entry, EntryProps } from '@amnis/entry/Entry';
 import { EntryInput } from '@amnis/entry/EntryInput';
