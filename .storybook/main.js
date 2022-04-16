@@ -2,8 +2,15 @@ const path = require('path');
 
 module.exports = {
   'stories': [
-    '../packages/amnis-core/src/**/*.stories.mdx',
-    '../packages/amnis-core/src/**/*.stories.@(js|jsx|ts|tsx)'],
+    // '../packages/amnis-display/src/**/*.stories.mdx',
+    // '../packages/amnis-display/src/**/*.stories.@(js|jsx|ts|tsx)',
+    // '../packages/amnis-entry/src/**/*.stories.mdx',
+    // '../packages/amnis-entry/src/**/*.stories.@(js|jsx|ts|tsx)',
+    // '../packages/amnis-landmarks/src/**/*.stories.mdx',
+    // '../packages/amnis-landmarks/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/amnis-layout/src/**/*.stories.mdx',
+    '../packages/amnis-layout/src/**/*.stories.@(js|jsx|ts|tsx)'
+  ],
   'addons': [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -16,11 +23,14 @@ module.exports = {
       '@amnis/hooks': path.resolve(__dirname, "../packages/amnis-hooks/src"),
       '@amnis/style': path.resolve(__dirname, "../packages/amnis-style/src"),
       '@amnis/icons': path.resolve(__dirname, "../packages/amnis-icons/src"),
-      '@amnis/core': path.resolve(__dirname, "../packages/amnis-core/src")
+      // '@amnis/display': path.resolve(__dirname, "../packages/amnis-display/src"),
+      // '@amnis/entry': path.resolve(__dirname, "../packages/amnis-entry/src"),
+      // '@amnis/landmarks': path.resolve(__dirname, "../packages/amnis-landmarks/src"),
+      '@amnis/layout': path.resolve(__dirname, "../packages/amnis-layout/src")
     };
     return config;
   },
-  // core: {
-  //   builder: 'webpack5'
-  // }
+  core: {
+    builder: 'webpack5'
+  }
 };

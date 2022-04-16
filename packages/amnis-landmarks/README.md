@@ -1,4 +1,4 @@
-# Amnis Landmarks
+# Amnis Landmark
 
 A library of components that serve as landmarks on a web pages. Landmarks are ways to define the purpose sectional regions.
 

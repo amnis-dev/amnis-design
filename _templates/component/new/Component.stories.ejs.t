@@ -11,7 +11,9 @@ export default {
   component: <%= Name %>,
 } as ComponentMeta<typeof <%= Name %>>;
 
-const Template: ComponentStory<typeof <%= Name %>> = (args) => <<%= Name %> {...args} />;
+const Template: ComponentStory<typeof <%= Name %>> = (args) => (
+  <<%= Name %> {...args} />
+);
 
 export const Basic = Template.bind({});
 Basic.args = {

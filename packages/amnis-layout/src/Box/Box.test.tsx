@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 
-import { Basic } from './Button.stories';
+import { Basic } from './Box.stories';
 
-test('renders the button in the default state', async () => {
+it('renders the Box in the default state', () => {
   const { container } = render(<Basic {...Basic.args} />);
   const element = container.querySelector('div');
 

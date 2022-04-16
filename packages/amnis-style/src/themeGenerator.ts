@@ -72,7 +72,13 @@ function modifyColorBrightness(color: string, amount: number, isLight: boolean) 
 /**
  * Generates a theme paint.
  */
-export function createThemePaint(backgroundColor: string, focusColor: string, themeIsLightType: boolean, modify?: 'lighten' | 'darken', linkColor?: string): ThemePaint {
+export function createThemePaint(
+  backgroundColor: string,
+  focusColor: string,
+  themeIsLightType: boolean,
+  modify?: 'lighten' | 'darken',
+  linkColor?: string,
+): ThemePaint {
   let baseColor = backgroundColor;
 
   switch (modify) {
@@ -80,9 +86,9 @@ export function createThemePaint(backgroundColor: string, focusColor: string, th
       baseColor = Color(baseColor).saturate(1).lighten(0.32).hex();
       break;
     case 'darken':
-    default:
       baseColor = Color(baseColor).saturate(1).darken(0.32).hex();
       break;
+    default:
   }
 
   const isLight = Color(baseColor).isLight();

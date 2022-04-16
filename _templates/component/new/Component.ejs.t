@@ -13,8 +13,8 @@ import { <%= Name %>Props } from './<%= Name %>.types';
  */
 <% if(styled) { -%>
 export const <%= Name %>: React.FC<
-  React.ComponentProps<typeof <%= Name %>Styled>
-  & <%= Name %>Props
+React.ComponentProps<typeof <%= Name %>Styled>
+& <%= Name %>Props
 > = ({
   ...props
 }) => (
