@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/<%= Name %>.stories.tsx
+to: <%= `packages/amnis-${type}/src/${Name}/${Name}.stories.tsx` %>
 ---
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';

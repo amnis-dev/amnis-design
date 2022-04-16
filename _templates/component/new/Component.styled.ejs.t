@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/<%= Name %>.styled.tsx
+to: "<%= styled ? `packages/amnis-${type}/src/${Name}/${Name}.styled.tsx` : null %>"
 ---
 import styled, { CSSObject } from '@amnis/style/styled';
 import { <%= Name %>Props } from './<%= Name %>.types';

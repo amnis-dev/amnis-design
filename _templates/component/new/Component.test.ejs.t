@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/<%= Name %>.test.tsx
+to: "<%= styled ? `packages/amnis-${type}/src/${Name}/${Name}.test.tsx` : null %>"
 ---
 import React from 'react';
 import { render } from '@testing-library/react';

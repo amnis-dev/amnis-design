@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/<%= Name %>.types.tsx
+to: <%= `packages/amnis-${type}/src/${Name}/${Name}.types.tsx` %>
 ---
 export interface <%= Name %>Props {
   /**

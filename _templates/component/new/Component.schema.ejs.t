@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/<%= Name %>.schema.tsx
+to: <%= `packages/amnis-${type}/src/${Name}/${Name}.schema.tsx` %>
 ---
 /**
  * DO NOT EDIT

@@ -1,5 +1,5 @@
 ---
-to: packages/amnis-core/src/<%= Name %>/index.ts
+to: <%= `packages/amnis-${type}/src/${Name}/index.ts` %>
 ---
 export * from './<%= Name %>';
 export * from './<%= Name %>.types';
