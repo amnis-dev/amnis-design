@@ -7,6 +7,8 @@ import styled, { CSSObject as EmotionCSSObject } from '@emotion/styled';
 import defaultTheme from './themeLight';
 import { Theme as LibTheme } from './theme.types';
 
+export const styledDefaultTheme = defaultTheme;
+
 export type CSSObject = EmotionCSSObject;
 
 export type StylerMethod<P> = (props: { theme: LibTheme } & P) => EmotionCSSObject;
