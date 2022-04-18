@@ -1,6 +1,7 @@
 import '@emotion/react';
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+
 export interface ThemeFont {
   readonly fontFamily: string;
   readonly fontSize: string | number;
@@ -75,6 +76,22 @@ export interface ThemeSpacingLevels {
   readonly 7: string | number;
 }
 
+export interface ThemeColumnWidths {
+  readonly 0: string;
+  readonly 1: string;
+  readonly 2: string;
+  readonly 3: string;
+  readonly 4: string;
+  readonly 5: string;
+  readonly 6: string;
+  readonly 7: string;
+  readonly 8: string;
+  readonly 9: string;
+  readonly 10: string;
+  readonly 11: string;
+  readonly 12: string;
+}
+
 export interface ThemePseudoQueries {
   readonly hover: string;
   readonly active: string;
@@ -126,6 +143,7 @@ export interface ThemePaperOptions {
 
 export type ThemeShadowLevelOptions = Extract<keyof ThemeShadowLevels, number>;
 export type ThemeSpacingLevelOptions = Extract<keyof ThemeSpacingLevels, number>;
+export type ThemeColumnWidthOptions = Extract<keyof ThemeColumnWidths, number>;
 export type ThemePaintOptions = Extract<keyof ThemePaints, string>;
 export type ThemeMediaQueryOptions = Extract<keyof ThemeMediaQueries, string>;
 export type ThemeTransitionOptions = Extract<keyof ThemeTransitions, string>;

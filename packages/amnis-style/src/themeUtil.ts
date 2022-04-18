@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Theme, ThemePaint, ThemePaintOptions } from './theme.types';
+import type {
+  Theme, ThemeColumnWidths, ThemePaint, ThemePaintOptions,
+} from './theme.types';
 
 /**
  * Swaps two theme paints and returns the new theme.
@@ -27,3 +29,19 @@ export const swapPaint = (
 export function getPaint(theme: Theme, paintOption: ThemePaintOptions): ThemePaint {
   return theme.paints[paintOption];
 }
+
+export const columnWidths: ThemeColumnWidths = {
+  0: 'auto',
+  1: `${(1 / 12) * 100}%`,
+  2: `${(2 / 12) * 100}%`,
+  3: `${(3 / 12) * 100}%`,
+  4: `${(4 / 12) * 100}%`,
+  5: `${(5 / 12) * 100}%`,
+  6: `${(6 / 12) * 100}%`,
+  7: `${(7 / 12) * 100}%`,
+  8: `${(8 / 12) * 100}%`,
+  9: `${(9 / 12) * 100}%`,
+  10: `${(10 / 12) * 100}%`,
+  11: `${(11 / 12) * 100}%`,
+  12: `${(12 / 12) * 100}%`,
+};

@@ -1,13 +1,16 @@
 <h1 align="center">Amnis Design</h1>
 
 <p align="center">
-  A react-based design system with an emphasis on accessibility and user experience.
+  A react-based design system with an emphasis on clarity, accessibility, and user experience.
 </p>
 
+<div align="center">
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/amnis-dev/amnis-design/blob/HEAD/LICENSE)
+</div>
 
 ## Motivation
 
-There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind. This design library hopes to abstract and provide compile-time guidance on the best accessibility and user experience practices for desktop and mobile environments; to both ease developer efforts and make the web a better place for internet users.
+There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind. This design library hopes to abstract and provide guidance on the best accessibility and user experience practices for desktop and mobile environments; to both ease developer efforts and make the web a better place for internet users.
 
 This library is inspired by qualities from both the [U.S. Web Design System](https://github.com/uswds/uswds) and [MUI Core](https://github.com/mui/material-ui).
 
@@ -15,7 +18,7 @@ For federal sites, this library should also help ensure compliance with [Section
 
 ## Installation
 
-No installation at this time. However, the project should be ready for publishing very soon.
+No package installation at this time. However, the project should be ready for publishing very soon.
 
 ## Contributing
 

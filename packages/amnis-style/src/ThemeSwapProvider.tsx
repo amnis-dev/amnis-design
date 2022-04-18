@@ -12,6 +12,11 @@ export interface ThemeSwapProviderProps {
    * This will automatically alter the colors of nexted components.
    */
   paint?: ThemePaintOptions;
+
+  /**
+   * Explicitly declare allowable children.
+   */
+  children?: React.ReactNode
 }
 
 /**

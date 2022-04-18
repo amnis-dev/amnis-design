@@ -1,28 +1,6 @@
 {
+  "extends": "@amnis/tsconfig-react",
   "compilerOptions": {
-    "outDir": "./.dist",
-    "declarationDir": "./.dist",
-    "sourceMap": true,
-    "declaration": true,
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
       "@amnis/hooks/*": ["./packages/amnis-hooks/src/*"],
@@ -30,9 +8,7 @@
       "@amnis/icons/*": ["./packages/amnis-icons/src/*"],
       "@amnis/core/*": ["./packages/amnis-core/src/*"],
       "@amnis/entry/*": ["./packages/amnis-entry/src/*"],
-    },
-    // Otherwise we get react-native typings which conflict with dom.lib.
-    "types": ["node", "react", "jest"]
+    }
   },
   "include": [
     "./packages/**/*.ts",

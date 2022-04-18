@@ -1,10 +1,15 @@
-import React from 'react';
-import { ThemePaintOptions, ThemeSpacingLevelOptions } from '@amnis/style/theme.types';
+import type React from 'react';
+import type { ThemePaintOptions, ThemeSpacingLevelOptions, ThemeColumnWidthOptions } from '@amnis/style/theme.types';
 
 /**
  * A simple container for other components.
  */
 export interface BoxProps {
+
+  /**
+   * Reference to the inner element.
+   */
+  refInner?: React.RefObject<HTMLDivElement>;
 
   /**
    * Color the box as one of the theme paint colors.
@@ -16,6 +21,11 @@ export interface BoxProps {
    * CSS Positioning.
    */
   position?: React.CSSProperties['position'];
+
+  /**
+   * CSS Display.
+   */
+  display?: React.CSSProperties['display'];
 
   /**
    * Add the theme's amount of padding to the box.
@@ -87,12 +97,6 @@ export interface BoxProps {
   border?: React.CSSProperties['border'];
 
   /**
-   * Alias for `border`.
-   * @ignore
-   */
-  b?: React.CSSProperties['border'];
-
-  /**
    * Stretch to the witch of the container. Same as for width being equal to 100%.
    * @default false
    */
@@ -119,7 +123,56 @@ export interface BoxProps {
   justifySelf?: React.CSSProperties['justifySelf'];
 
   /**
-   * Child elements
+   * Item stacking direction
+   * @default "column"
    */
-  children?: React.ReactNode;
+  direction?: 'row' | 'column'
+
+  /**
+   * Shorthand for `direction="row"`
+   */
+  row?: boolean;
+
+  /**
+   * Shorthand for `direction="column"`
+   */
+  column?: boolean;
+
+  /**
+   * Allow flex items to flow onto a new line.
+   */
+  flexWrap?: boolean;
+
+  /**
+   * Gap spacing level between items.
+   */
+  gap?: ThemeSpacingLevelOptions;
+
+  /**
+   * Alignment of the items.
+   * @default "flex-start"
+   */
+  alignItems?: React.CSSProperties['alignItems'];
+
+  /**
+   * Justification of the content.
+   * @default "flex-start"
+   */
+  justifyContent?: React.CSSProperties['justifyContent'];
+
+  /**
+   * A basis level on when to wrap.
+   */
+  basis?: ThemeColumnWidthOptions;
+
+  /**
+   * Alias for `basis`.
+   * @ignore
+   */
+  b?: ThemeColumnWidthOptions;
+
+  /**
+   * Explicitly declare children.
+   */
+  children?: React.ReactNode
 }

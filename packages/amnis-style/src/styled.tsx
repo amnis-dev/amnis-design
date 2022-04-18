@@ -2,12 +2,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import React from 'react';
-import { withTheme, ClassNames } from '@emotion/react';
+import { withTheme, ClassNames, ThemeContext as EmotionThemeContext } from '@emotion/react';
 import styled, { CSSObject as EmotionCSSObject } from '@emotion/styled';
 import defaultTheme from './themeLight';
 import { Theme as LibTheme } from './theme.types';
 
 export const styledDefaultTheme = defaultTheme;
+
+export const ThemeContext = EmotionThemeContext;
 
 export type CSSObject = EmotionCSSObject;
 

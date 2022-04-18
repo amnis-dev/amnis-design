@@ -16,12 +16,13 @@ export const <%= Name %>: React.FC<
 React.ComponentProps<typeof <%= Name %>Styled>
 & <%= Name %>Props
 > = ({
+  refInner,
   ...props
 }) => (
 <% } else { -%>
 export const <%= Name %>: React.FC<<%= Name %>Props> = () => (
 <% } -%>
-  <%- styled ? `<${Name}Styled {...props}>` : `<div>` %>
+  <%- styled ? `<${Name}Styled ref={refInner} {...props}>` : `<div ref={refInner}>` %>
     <%= h.capitalize(type) %> Component
   <%- styled ? `</${Name}Styled>` : `</div>` %>
 );
