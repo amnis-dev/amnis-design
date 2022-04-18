@@ -5,7 +5,9 @@
 </p>
 
 <div align="center">
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/amnis-dev/amnis-design/blob/HEAD/LICENSE)
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/amnis-dev/amnis-design/blob/main/LICENSE)
+
 </div>
 
 ## Motivation
