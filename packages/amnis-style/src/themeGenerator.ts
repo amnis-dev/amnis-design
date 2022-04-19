@@ -55,11 +55,15 @@ const baseThemeDefault: BaseThemeDefault = {
     7: '2.5em',
   },
 
-  borderWidth: '2px',
-  borderRadius: '.25rem',
-  inputBorderRadius: '0',
-  buttonBorderRadius: '.25rem',
-  paperBorderRadius: '.25rem',
+  surfaceButton: {
+    border: '1px solid #88888888',
+    boxShadow: '1px 1px 0 1px #88888888',
+    borderRadius: '.75em',
+  },
+  surfaceInput: {},
+  surfacePaper: {
+    borderRadius: '.5em',
+  },
 };
 
 /**
@@ -157,13 +161,25 @@ const generator = (base: BaseTheme): Theme => {
       ...baseThemeDefault.spacing,
       ...base.spacing,
     },
+    surfaceButton: {
+      ...baseThemeDefault.surfaceButton,
+      ...base.surfaceButton,
+    },
+    surfaceInput: {
+      ...baseThemeDefault.surfaceInput,
+      ...base.surfaceInput,
+    },
+    surfacePaper: {
+      ...baseThemeDefault.surfacePaper,
+      ...base.surfacePaper,
+    },
   } as BaseThemeDefault;
 
   const modeType = Color(merge.backgroundColor).isLight();
   const focusColor = Color(merge.primaryColor).saturate(2).hex();
   const theme: Theme = {
     name: merge.name,
-    type: modeType ? 'light' : 'dark',
+    mode: modeType ? 'light' : 'dark',
 
     maxContentWidth: merge.maxContentWidth,
 
@@ -226,21 +242,9 @@ const generator = (base: BaseTheme): Theme => {
       pointerEvents: 'none',
     },
 
-    button: {
-      opacity: 1,
-      borderRadius: merge.buttonBorderRadius,
-    },
-
-    input: {
-      backgroundColor: merge.backgroundColor,
-      opacity: 1,
-      borderRadius: merge.inputBorderRadius,
-    },
-
-    paper: {
-      opacity: 1,
-      borderRadius: merge.paperBorderRadius,
-    },
+    surfaceButton: merge.surfaceButton,
+    surfaceInput: merge.surfaceInput,
+    surfacePaper: merge.surfacePaper,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

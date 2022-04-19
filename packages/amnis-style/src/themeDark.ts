@@ -2,7 +2,7 @@ import { BaseTheme } from './theme.types';
 import themeGenerator from './themeGenerator';
 
 const baseTheme: BaseTheme = {
-  name: 'Amnis Light Theme',
+  name: 'Amnis Dark Theme',
 
   fontFamily: 'Public Sans,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif',
   fontSize: '1.06rem',
@@ -22,8 +22,6 @@ const baseTheme: BaseTheme = {
   coolColor: '#9aebfc',
   warmColor: '#ffdc2e',
   baseColor: '#c8c8c8',
-
-  buttonBorderRadius: '.5rem',
 
 };
 

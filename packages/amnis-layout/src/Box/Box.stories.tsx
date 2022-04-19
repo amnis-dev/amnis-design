@@ -41,3 +41,15 @@ Painted.args = {
   padding: 3,
   paint: 'primary',
 };
+
+export const PaperSurface = Template.bind({});
+PaperSurface.args = {
+  padding: 3,
+  surface: 'paper',
+};
+
+export const ButtonSurface = Template.bind({});
+ButtonSurface.args = {
+  padding: 3,
+  surface: 'button',
+};

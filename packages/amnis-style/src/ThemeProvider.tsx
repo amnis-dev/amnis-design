@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { ThemeProvider as StyledProvider } from '@emotion/react';
+import { ThemeContext } from './styled';
 import { Theme } from './theme.types';
 import { GlobalStyles } from './ThemeGlobal';
 
@@ -10,6 +10,10 @@ export interface ThemeProviderProps {
   theme: Theme;
   root?: boolean;
   skipGlobal?: boolean;
+  /**
+   * Explicitly declare allowable children.
+   */
+  children?: React.ReactNode
 }
 
 /**
@@ -27,10 +31,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   }
 
   return (
-    <StyledProvider theme={theme}>
+    <ThemeContext.Provider value={theme}>
       {root && !skipGlobal && <GlobalStyles root={root} />}
       {children}
-    </StyledProvider>
+    </ThemeContext.Provider>
   );
 };
 

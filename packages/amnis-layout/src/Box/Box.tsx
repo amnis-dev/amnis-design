@@ -17,15 +17,21 @@ export const Box: React.FC<
 React.ComponentProps<typeof BoxStyled>
 & BoxProps
 > = ({
+  refInner,
+  children,
   paint,
   position,
   width,
   w,
   maxWidth,
+  maxW,
   minWidth,
+  minW,
   height,
   maxHeight,
+  maxH,
   minHeight,
+  minH,
   h,
   padding,
   p,
@@ -39,8 +45,6 @@ React.ComponentProps<typeof BoxStyled>
   textAlign,
   basis = 0,
   b = 0,
-  children,
-  refInner,
   style = {},
   ...props
 }) => {
@@ -53,11 +57,11 @@ React.ComponentProps<typeof BoxStyled>
         style={{
           position,
           width: width || w || stretch ? '100%' : undefined,
-          maxWidth,
-          minWidth,
+          maxWidth: maxWidth || maxW,
+          minWidth: minWidth || minW,
           height: height || h,
-          maxHeight,
-          minHeight,
+          maxHeight: maxHeight || maxH,
+          minHeight: minHeight || minH,
           border,
           justifySelf,
           alignSelf,

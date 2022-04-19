@@ -1,4 +1,4 @@
-import '@emotion/react';
+import type { CSSProperties } from 'react';
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
@@ -125,20 +125,12 @@ export interface ThemeDisabledOptions {
   readonly pointerEvents: 'none'
 }
 
-export interface ThemeInputOptions {
-  readonly backgroundColor: string;
-  readonly opacity: number;
-  readonly borderRadius: string;
-}
-
-export interface ThemeButtonOptions {
-  readonly opacity: number;
-  readonly borderRadius: string;
-}
-
-export interface ThemePaperOptions {
-  readonly opacity: number;
-  readonly borderRadius: string;
+export interface ThemeSurfaceOptions {
+  readonly backgroundColor?: CSSProperties['backgroundColor'];
+  readonly opacity?: CSSProperties['opacity'];
+  readonly borderRadius?: CSSProperties['borderRadius'];
+  readonly border?: CSSProperties['border'];
+  readonly boxShadow?: CSSProperties['boxShadow'];
 }
 
 export type ThemeShadowLevelOptions = Extract<keyof ThemeShadowLevels, number>;
@@ -212,11 +204,9 @@ export interface BaseThemeDefault {
 
   spacing: ThemeSpacingLevels;
 
-  borderWidth: string;
-  borderRadius: string;
-  inputBorderRadius: string;
-  buttonBorderRadius: string;
-  paperBorderRadius: string;
+  surfaceButton: ThemeSurfaceOptions;
+  surfaceInput: ThemeSurfaceOptions;
+  surfacePaper: ThemeSurfaceOptions;
 }
 
 export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {
@@ -225,7 +215,7 @@ export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {
 
 export interface Theme {
   readonly name: string;
-  readonly type: 'light' | 'dark';
+  readonly mode: 'light' | 'dark';
 
   readonly maxContentWidth: string;
 
@@ -235,9 +225,10 @@ export interface Theme {
   readonly paints: ThemePaints;
 
   readonly disabled: ThemeDisabledOptions;
-  readonly button: ThemeButtonOptions;
-  readonly input: ThemeInputOptions;
-  readonly paper: ThemePaperOptions;
+
+  readonly surfaceButton: ThemeSurfaceOptions;
+  readonly surfaceInput: ThemeSurfaceOptions;
+  readonly surfacePaper: ThemeSurfaceOptions;
 
   readonly shadow: ThemeShadowLevels;
 

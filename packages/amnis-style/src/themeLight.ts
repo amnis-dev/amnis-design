@@ -22,9 +22,6 @@ const baseTheme: BaseTheme = {
   coolColor: '#9aebfc',
   warmColor: '#ffdc2e',
   baseColor: '#c8c8c8',
-
-  buttonBorderRadius: '.5rem',
-
 };
 
 export const themeLight = themeGenerator(baseTheme);

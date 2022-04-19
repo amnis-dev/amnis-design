@@ -12,10 +12,20 @@ export interface BoxProps {
   refInner?: React.RefObject<HTMLDivElement>;
 
   /**
+   * Explicitly declare children.
+   */
+  children?: React.ReactNode;
+
+  /**
    * Color the box as one of the theme paint colors.
    * This will appropriately alter the colors of nested components.
    */
   paint?: ThemePaintOptions;
+
+  /**
+   * Applies a suface styling to the box.
+   */
+  surface?: 'paper' | 'button' | 'input';
 
   /**
    * CSS Positioning.
@@ -55,9 +65,21 @@ export interface BoxProps {
   maxWidth?: React.CSSProperties['maxWidth'];
 
   /**
+   * Alias for `maxWidth`.
+   * @ignore
+   */
+  maxW?: React.CSSProperties['maxWidth'];
+
+  /**
    * Specify minimum width.
    */
   minWidth?: React.CSSProperties['minWidth'];
+
+  /**
+   * Alias for `minWidth`.
+   * @ignore
+   */
+  minW?: React.CSSProperties['minWidth'];
 
   /**
    * Specify a width amount.
@@ -76,9 +98,21 @@ export interface BoxProps {
   maxHeight?: React.CSSProperties['maxHeight'];
 
   /**
+   * Alias for `maxHeight`.
+   * @ignore
+   */
+  maxH?: React.CSSProperties['maxHeight'];
+
+  /**
    * Specify minimum height.
    */
   minHeight?: React.CSSProperties['minHeight'];
+
+  /**
+   * Alias for `minHeight`.
+   * @ignore
+   */
+  minH?: React.CSSProperties['minHeight'];
 
   /**
    * Specify a height amount.
@@ -170,9 +204,4 @@ export interface BoxProps {
    * @ignore
    */
   b?: ThemeColumnWidthOptions;
-
-  /**
-   * Explicitly declare children.
-   */
-  children?: React.ReactNode
 }

@@ -35,7 +35,7 @@ export default function styledWrapper<
         theme,
         ...props
       }, ref) => {
-        const finalTheme = theme?.type ? theme : defaultTheme;
+        const finalTheme = theme?.mode ? theme : defaultTheme;
 
         return (sx ? (
           <ClassNames>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-underscore-dangle */
-import React, { useMemo } from 'react';
-import { useTheme, ThemeProvider } from '@emotion/react';
+import React, { useContext, useMemo } from 'react';
+import { ThemeContext } from './styled';
 import { ThemePaintOptions, Theme } from './theme.types';
 import * as ThemeUtil from './themeUtil';
 import defaultTheme from './themeLight';
@@ -28,7 +28,7 @@ export const ThemeSwapProvider: React.FC<ThemeSwapProviderProps> = ({
   paint,
   children,
 }) => {
-  let theme: Theme = useTheme();
+  let theme: Theme = useContext(ThemeContext) as Theme;
   if (!theme || Object.keys(theme).length === 0) {
     theme = defaultTheme;
     /** @ts-ignore */
@@ -50,9 +50,9 @@ export const ThemeSwapProvider: React.FC<ThemeSwapProviderProps> = ({
   }, [theme, paint]);
 
   return (
-    <ThemeProvider theme={overideTheme}>
+    <ThemeContext.Provider value={overideTheme}>
       {children}
-    </ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 

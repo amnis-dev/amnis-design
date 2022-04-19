@@ -13,13 +13,16 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   flexWrap = false,
   alignItems = 'flex-start',
   justifyContent = 'flex-start',
+  surface,
 }) => {
-  const { paints, spacing } = theme;
+  const {
+    paints, spacing, shadow, surfacePaper, surfaceButton,
+  } = theme;
 
   const isPainted = !!paint;
   const flexDirection = direction || row ? 'row' : 'column';
 
-  const style: CSSObject = {
+  let style: CSSObject = {
     flexGrow: 1,
     backgroundColor: isPainted ? paints.main.neutral.backgroundColor : undefined,
     color: isPainted ? paints.main.neutral.color : 'inherit',
@@ -34,6 +37,26 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     alignItems,
     justifyContent,
   };
+
+  if (surface) {
+    switch (surface) {
+      case 'button':
+        style = {
+          ...style,
+          ...surfaceButton,
+          backgroundColor: paints.main.neutral.backgroundColor,
+        };
+        break;
+      case 'paper':
+      default:
+        style = {
+          ...style,
+          ...surfacePaper,
+          backgroundColor: paints.main.neutral.backgroundColor,
+          boxShadow: shadow[1],
+        };
+    }
+  }
 
   return style;
 });
