@@ -13,5 +13,5 @@ export interface <%= Name %>Props {
   /**
    * Explicitly declare children.
    */
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }

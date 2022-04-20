@@ -1,7 +1,7 @@
 {
   "name": "@amnis/design",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/amnis-dev/amnis-design"

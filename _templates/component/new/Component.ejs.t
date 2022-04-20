@@ -17,13 +17,17 @@ React.ComponentProps<typeof <%= Name %>Styled>
 & <%= Name %>Props
 > = ({
   refInner,
+  children,
   ...props
 }) => (
 <% } else { -%>
-export const <%= Name %>: React.FC<<%= Name %>Props> = () => (
+export const <%= Name %>: React.FC<<%= Name %>Props> = ({
+  refInner,
+  children,
+}) => (
 <% } -%>
   <%- styled ? `<${Name}Styled ref={refInner} {...props}>` : `<div ref={refInner}>` %>
-    <%= h.capitalize(type) %> Component
+    {children}
   <%- styled ? `</${Name}Styled>` : `</div>` %>
 );
 

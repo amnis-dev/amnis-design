@@ -2,69 +2,13 @@ import Color from 'color';
 import {
   Theme, BaseTheme, BaseThemeDefault, ThemePaint, ThemeShadowLevels,
 } from './theme.types';
+import { themeBaseDefault } from './themeBaseDefault';
 
 /**
  * Text color constants.
  */
-const lightTextColor = '#fcfcfc';
+const lightTextColor = '#ffffff';
 const darkTextColor = '#151515';
-
-/**
- * Default theme properties
- */
-const baseThemeDefault: BaseThemeDefault = {
-  name: 'Default theme',
-
-  maxContentWidth: '80rem',
-
-  fontImports: [
-    'https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400;700&display=swap',
-    'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
-  ],
-
-  fontFamily: 'Public Sans, Helvetica Neue, Roboto,Arial, sans-serif',
-  fontSize: '1.06rem',
-
-  fontFamilyLogo: 'Public Sans, Helvetica Neue, Roboto, Arial,sans-serif',
-  fontSizeLogo: '1.06rem',
-
-  fontFamilyProse: 'Merriweather, Arial, sans-serif',
-  fontSizeProse: '1.06rem',
-
-  backgroundColor: '#ffffff',
-
-  infoColor: '#00bde3',
-  warnColor: '#ffbe2e',
-  dangerColor: '#b50909',
-  positiveColor: '#00a91c',
-
-  primaryColor: '#005ea2',
-  secondaryColor: '#c9342e',
-  coolColor: '#00bde3',
-  warmColor: '#fa9441',
-  baseColor: '#cfcfcf',
-
-  spacing: {
-    0: '0em',
-    1: '.25em',
-    2: '.5em',
-    3: '.75em',
-    4: '1em',
-    5: '1.5em',
-    6: '2em',
-    7: '2.5em',
-  },
-
-  surfaceButton: {
-    border: '1px solid #88888888',
-    boxShadow: '1px 1px 0 1px #88888888',
-    borderRadius: '.75em',
-  },
-  surfaceInput: {},
-  surfacePaper: {
-    borderRadius: '.5em',
-  },
-};
 
 /**
  * Modifies the brightness of a color string.
@@ -155,23 +99,99 @@ export function createThemeShadowLevels(themeIsLightType: boolean): ThemeShadowL
 
 const generator = (base: BaseTheme): Theme => {
   const merge = {
-    ...baseThemeDefault,
+    ...themeBaseDefault,
     ...base,
+    fonts: {
+      main: {
+        ...themeBaseDefault.fonts.main,
+        ...base?.fonts?.main,
+        heading: {
+          ...themeBaseDefault.fonts.main.heading,
+          ...base?.fonts?.main?.heading,
+        },
+        subtitle: {
+          ...themeBaseDefault.fonts.main.subtitle,
+          ...base?.fonts?.main?.subtitle,
+        },
+        body: {
+          ...themeBaseDefault.fonts.main.body,
+          ...base?.fonts?.main?.body,
+        },
+        logo: {
+          ...themeBaseDefault.fonts.main.logo,
+          ...base?.fonts?.main?.logo,
+        },
+        label: {
+          ...themeBaseDefault.fonts.main.label,
+          ...base?.fonts?.main?.label,
+        },
+        button: {
+          ...themeBaseDefault.fonts.main.button,
+          ...base?.fonts?.main?.button,
+        },
+        caption: {
+          ...themeBaseDefault.fonts.main.caption,
+          ...base?.fonts?.main?.caption,
+        },
+        overline: {
+          ...themeBaseDefault.fonts.main.overline,
+          ...base?.fonts?.main?.overline,
+        },
+      },
+      prose: {
+        ...themeBaseDefault.fonts.prose,
+        ...base?.fonts?.prose,
+        heading: {
+          ...themeBaseDefault.fonts.prose.heading,
+          ...base?.fonts?.prose?.heading,
+        },
+        subtitle: {
+          ...themeBaseDefault.fonts.prose.subtitle,
+          ...base?.fonts?.prose?.subtitle,
+        },
+        body: {
+          ...themeBaseDefault.fonts.prose.body,
+          ...base?.fonts?.prose?.body,
+        },
+        logo: {
+          ...themeBaseDefault.fonts.prose.logo,
+          ...base?.fonts?.prose?.logo,
+        },
+        label: {
+          ...themeBaseDefault.fonts.prose.label,
+          ...base?.fonts?.prose?.label,
+        },
+        button: {
+          ...themeBaseDefault.fonts.prose.button,
+          ...base?.fonts?.prose?.button,
+        },
+        caption: {
+          ...themeBaseDefault.fonts.prose.caption,
+          ...base?.fonts?.prose?.caption,
+        },
+        overline: {
+          ...themeBaseDefault.fonts.prose.overline,
+          ...base?.fonts?.prose?.overline,
+        },
+      },
+    },
     spacing: {
-      ...baseThemeDefault.spacing,
+      ...themeBaseDefault.spacing,
       ...base.spacing,
     },
-    surfaceButton: {
-      ...baseThemeDefault.surfaceButton,
-      ...base.surfaceButton,
-    },
-    surfaceInput: {
-      ...baseThemeDefault.surfaceInput,
-      ...base.surfaceInput,
-    },
-    surfacePaper: {
-      ...baseThemeDefault.surfacePaper,
-      ...base.surfacePaper,
+    surfaces: {
+      button: {
+        ...themeBaseDefault.surfaces.button,
+        ...base?.surfaces?.button,
+      },
+      input: {
+        ...themeBaseDefault.surfaces.input,
+        ...base?.surfaces?.input,
+      },
+      paper: {
+        ...themeBaseDefault.surfaces.paper,
+        ...base?.surfaces?.paper,
+      },
     },
   } as BaseThemeDefault;
 
@@ -185,20 +205,7 @@ const generator = (base: BaseTheme): Theme => {
 
     fontImports: merge.fontImports,
 
-    fonts: {
-      main: {
-        fontFamily: merge.fontFamily,
-        fontSize: merge.fontSize,
-      },
-      logo: {
-        fontFamily: merge.fontFamilyLogo,
-        fontSize: merge.fontSizeLogo,
-      },
-      prose: {
-        fontFamily: merge.fontFamilyProse,
-        fontSize: merge.fontSizeProse,
-      },
-    },
+    fonts: merge.fonts,
 
     paints: {
       main: createThemePaint(
@@ -242,9 +249,7 @@ const generator = (base: BaseTheme): Theme => {
       pointerEvents: 'none',
     },
 
-    surfaceButton: merge.surfaceButton,
-    surfaceInput: merge.surfaceInput,
-    surfacePaper: merge.surfacePaper,
+    surfaces: merge.surfaces,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

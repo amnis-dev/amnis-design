@@ -1,5 +1,11 @@
 import type React from 'react';
-import type { ThemePaintOptions, ThemeSpacingLevelOptions, ThemeColumnWidthOptions } from '@amnis/style/theme.types';
+import type {
+  ThemePaintOptions,
+  ThemeSpacingLevelOptions,
+  ThemeColumnWidthOptions,
+  ThemeSurfaceOptions,
+  ThemeShadowLevelOptions,
+} from '@amnis/style/theme.types';
 
 /**
  * A simple container for other components.
@@ -23,9 +29,20 @@ export interface BoxProps {
   paint?: ThemePaintOptions;
 
   /**
+   * Outlines the surface with the set paint color.
+   * @default false
+   */
+  outlined?: boolean;
+
+  /**
+   * Apply a level of shadow to the layout.
+   */
+  shadow?: ThemeShadowLevelOptions;
+
+  /**
    * Applies a suface styling to the box.
    */
-  surface?: 'paper' | 'button' | 'input';
+  surface?: ThemeSurfaceOptions;
 
   /**
    * CSS Positioning.

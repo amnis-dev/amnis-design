@@ -53,3 +53,17 @@ ButtonSurface.args = {
   padding: 3,
   surface: 'button',
 };
+
+export const ButtonSurfaceOutlined = Template.bind({});
+ButtonSurfaceOutlined.args = {
+  padding: 3,
+  surface: 'button',
+  paint: 'primary',
+  outlined: true,
+};
+
+export const InputSurface = Template.bind({});
+InputSurface.args = {
+  padding: 3,
+  surface: 'input',
+};

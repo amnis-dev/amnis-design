@@ -20,6 +20,7 @@ React.ComponentProps<typeof BoxStyled>
   refInner,
   children,
   paint,
+  outlined = false,
   position,
   width,
   w,
@@ -51,7 +52,7 @@ React.ComponentProps<typeof BoxStyled>
   const { gap } = React.useContext(LayoutContext);
 
   return (
-    <ThemeSwapProvider paint={paint}>
+    <ThemeSwapProvider paint={!outlined ? paint : undefined}>
       <BoxStyled
         ref={refInner}
         style={{
@@ -72,6 +73,7 @@ React.ComponentProps<typeof BoxStyled>
           ...style,
         }}
         paint={paint}
+        outlined={outlined}
         padding={padding || p}
         margin={margin || m}
         {...props}

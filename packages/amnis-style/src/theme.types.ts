@@ -3,14 +3,27 @@ import type { CSSProperties } from 'react';
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 export interface ThemeFont {
-  readonly fontFamily: string;
-  readonly fontSize: string | number;
+  fontFamily: CSSProperties['fontFamily'];
+  fontSize: CSSProperties['fontSize'];
+  readonly heading: CSSProperties;
+  readonly subtitle: CSSProperties;
+  readonly body: CSSProperties;
+  readonly logo: CSSProperties;
+  readonly label: CSSProperties;
+  readonly button: CSSProperties;
+  readonly caption: CSSProperties;
+  readonly overline: CSSProperties;
 }
 
 export interface ThemeFonts {
   readonly main: ThemeFont;
-  readonly logo: ThemeFont;
   readonly prose: ThemeFont;
+}
+
+export interface ThemeSurfaces {
+  readonly button: CSSProperties;
+  readonly input: CSSProperties;
+  readonly paper: CSSProperties;
 }
 
 export interface ThemePaintStyle {
@@ -125,14 +138,6 @@ export interface ThemeDisabledOptions {
   readonly pointerEvents: 'none'
 }
 
-export interface ThemeSurfaceOptions {
-  readonly backgroundColor?: CSSProperties['backgroundColor'];
-  readonly opacity?: CSSProperties['opacity'];
-  readonly borderRadius?: CSSProperties['borderRadius'];
-  readonly border?: CSSProperties['border'];
-  readonly boxShadow?: CSSProperties['boxShadow'];
-}
-
 export type ThemeShadowLevelOptions = Extract<keyof ThemeShadowLevels, number>;
 export type ThemeSpacingLevelOptions = Extract<keyof ThemeSpacingLevels, number>;
 export type ThemeColumnWidthOptions = Extract<keyof ThemeColumnWidths, number>;
@@ -140,6 +145,8 @@ export type ThemePaintOptions = Extract<keyof ThemePaints, string>;
 export type ThemeMediaQueryOptions = Extract<keyof ThemeMediaQueries, string>;
 export type ThemeTransitionOptions = Extract<keyof ThemeTransitions, string>;
 export type ThemeDurationOptions = Extract<keyof ThemeDurations, string>;
+export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
+export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
 
 export interface BaseThemeDefault {
   /**
@@ -160,33 +167,9 @@ export interface BaseThemeDefault {
   fontImports: string[];
 
   /**
-   * The default font family for the entire theme.
+   * Font styles
    */
-  fontFamily: string;
-  /**
-   * The default font size for the entire theme.
-   */
-  fontSize: string;
-
-  /**
-   * Font family to use for components that contain Logos.
-   */
-  fontFamilyLogo: string;
-  /**
-   * The font size for components that contain Logos.
-   */
-  fontSizeLogo: string;
-
-  /**
-   * Font family to use for a block of running text.
-   * See the Prose component.
-   */
-  fontFamilyProse: string;
-  /**
-   * Font family to use for a block of running text.
-   * See the Prose component.
-   */
-  fontSizeProse: string;
+  fonts: ThemeFonts;
 
   backgroundColor: string;
   accentColor?: string;
@@ -204,9 +187,7 @@ export interface BaseThemeDefault {
 
   spacing: ThemeSpacingLevels;
 
-  surfaceButton: ThemeSurfaceOptions;
-  surfaceInput: ThemeSurfaceOptions;
-  surfacePaper: ThemeSurfaceOptions;
+  surfaces: ThemeSurfaces;
 }
 
 export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {
@@ -226,9 +207,7 @@ export interface Theme {
 
   readonly disabled: ThemeDisabledOptions;
 
-  readonly surfaceButton: ThemeSurfaceOptions;
-  readonly surfaceInput: ThemeSurfaceOptions;
-  readonly surfacePaper: ThemeSurfaceOptions;
+  readonly surfaces: ThemeSurfaces;
 
   readonly shadow: ThemeShadowLevels;
 

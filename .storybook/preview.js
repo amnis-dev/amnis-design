@@ -1,9 +1,11 @@
 import { addDecorator } from '@storybook/react';
 import ThemeProvider from '../packages/amnis-style/src/ThemeProvider';
 import themeLight from '../packages/amnis-style/src/themeLight';
+import themeDark from '../packages/amnis-style/src/themeDark';
 
 const themes = {
   'Light Theme': themeLight,
+  'Dark Theme': themeDark,
 };
 
 const withTheme = (Story, context) => {
@@ -38,6 +40,7 @@ export const globalTypes = {
       icon: 'circlehollow',
       items: [
         'Light Theme',
+        'Dark Theme',
       ],
     },
   }

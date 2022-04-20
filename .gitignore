@@ -1,17 +1,17 @@
 # dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp/
 .pnp.js
 
 # testing
-/coverage
+coverage/
 
 # Outputs
-/.lib
-/.build
-/.app
-/.out
-/.dist
+.lib/
+.build/
+.app/
+.out/
+.dist/
 
 # misc
 .DS_Store

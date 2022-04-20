@@ -6,7 +6,8 @@
       "@amnis/hooks/*": ["./packages/amnis-hooks/src/*"],
       "@amnis/style/*": ["./packages/amnis-style/src/*"],
       "@amnis/icons/*": ["./packages/amnis-icons/src/*"],
-      "@amnis/core/*": ["./packages/amnis-core/src/*"],
+      "@amnis/display/*": ["./packages/amnis-display/src/*"],
+      "@amnis/layout/*": ["./packages/amnis-layout/src/*"],
       "@amnis/entry/*": ["./packages/amnis-entry/src/*"],
     }
   },
