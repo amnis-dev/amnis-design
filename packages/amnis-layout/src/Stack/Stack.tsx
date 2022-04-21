@@ -7,16 +7,17 @@ import { StackProps } from './Stack.types';
  * ## Stacking Items
  * A convenient layout component to stack children horizontally or vertically.
  */
-export const Stack: React.FC<
+export const Stack = React.forwardRef<
+HTMLDivElement,
 React.ComponentProps<typeof BoxStyled>
 & StackProps
-> = ({
+>(({
   children,
   ...props
-}) => (
-  <Box display="flex" {...props}>
+}, ref) => (
+  <Box ref={ref} display="flex" {...props}>
     {children}
   </Box>
-);
+));
 
 export default Stack;

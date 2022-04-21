@@ -19,7 +19,8 @@
     "@emotion/jest": "^11.0.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0"
+    "@emotion/styled": "^11.0.0",
+    "@types/react": "^18.0.0"
   },
   "devDependencies": {
     "@amnis/eslint-config-react": "^1.2.1",
@@ -47,6 +48,7 @@
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "@types/jest-axe": "latest",
+    "@types/react": "^18.0.6",
     "babel-loader": "latest",
     "babel-plugin-module-resolver": "latest",
     "command-line-args": "^5.2.1",
@@ -69,8 +71,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts --ext .tsx \"./\"",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook:dev": "start-storybook -p 6006",
+    "storybook:build": "build-storybook -o ./.out-storybook",
     "gen:component": "hygen component new",
     "delete-node-modules": "npx rimraf ./**/node_modules"
   }

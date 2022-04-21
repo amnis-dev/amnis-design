@@ -11,12 +11,6 @@ import type {
  * A simple container for other components.
  */
 export interface BoxProps {
-
-  /**
-   * Reference to the inner element.
-   */
-  refInner?: React.RefObject<HTMLDivElement>;
-
   /**
    * Explicitly declare children.
    */

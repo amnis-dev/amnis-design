@@ -1,20 +1,19 @@
+import { IconName } from '@amnis/icons/Icon.types';
 import type { ThemePaintOptions } from '@amnis/style/theme.types';
 import type React from 'react';
-import type { EntryProps } from '../Entry/Entry.types';
 
 export type ButtonVariant = 'text' | 'contain' | 'outline';
 
-export interface ButtonProps extends Omit<EntryProps<never>, 'value' | 'refInner' | 'suggestions'> {
-  /**
-   * Reference to the inner element.
-   * @ignore
-   */
-  refInner?: React.RefObject<HTMLButtonElement>;
-
+export interface ButtonProps {
   /**
    * Explicitly declare children.
    */
   children?: React.ReactNode;
+
+  /**
+   * Optional label
+   */
+  label?: string;
 
   /**
    * Paint color for the button.
@@ -27,4 +26,14 @@ export interface ButtonProps extends Omit<EntryProps<never>, 'value' | 'refInner
    * @default "contained"
    */
   variant?: ButtonVariant;
+
+  /**
+   * Icon key for the start icon.
+   */
+  iconStart?: IconName;
+
+  /**
+   * Key for the end icon.
+   */
+  iconEnd?: IconName;
 }

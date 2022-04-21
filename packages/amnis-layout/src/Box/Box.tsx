@@ -13,11 +13,11 @@ import { LayoutContext } from '../LayoutContext';
  * This component is also useful for changing the context of theme paint colors to ensure
  * text and other backgrounds remain visible.
  */
-export const Box: React.FC<
+export const Box = React.forwardRef<
+HTMLDivElement,
 React.ComponentProps<typeof BoxStyled>
 & BoxProps
-> = ({
-  refInner,
+>(({
   children,
   paint,
   outlined = false,
@@ -48,13 +48,13 @@ React.ComponentProps<typeof BoxStyled>
   b = 0,
   style = {},
   ...props
-}) => {
+}, ref) => {
   const { gap } = React.useContext(LayoutContext);
 
   return (
     <ThemeSwapProvider paint={!outlined ? paint : undefined}>
       <BoxStyled
-        ref={refInner}
+        ref={ref}
         style={{
           position,
           width: width || w || stretch ? '100%' : undefined,
@@ -82,6 +82,6 @@ React.ComponentProps<typeof BoxStyled>
       </BoxStyled>
     </ThemeSwapProvider>
   );
-};
+});
 
 export default Box;

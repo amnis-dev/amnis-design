@@ -9,8 +9,10 @@ const noop = () => { /** No operation. */ };
  * ## Subtitle
  * TODO: Write component details
  */
-export const Entry: React.FC<EntryProps<unknown>> = ({
-  refInner,
+export const Entry = React.forwardRef<
+HTMLDivElement,
+EntryProps<unknown>
+>(({
   children,
   prefix = 'entry',
   value,
@@ -21,7 +23,7 @@ export const Entry: React.FC<EntryProps<unknown>> = ({
   disabled = false,
   suggestions = [],
   onChange = noop,
-}) => {
+}, ref) => {
   const entryRef = React.useRef<HTMLDivElement>(null);
   const entryId = useIncrementalId(prefix);
 
@@ -75,11 +77,11 @@ export const Entry: React.FC<EntryProps<unknown>> = ({
 
   return (
     <EntryContext.Provider value={contextValue}>
-      <div ref={refInner}>
+      <div ref={ref}>
         {children}
       </div>
     </EntryContext.Provider>
   );
-};
+});
 
 export default Entry;

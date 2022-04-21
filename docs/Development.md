@@ -51,7 +51,7 @@ The project's UI components are rendered within a tool called [Storybook](https:
 Run the project in development mode with the following `yarn` script.
 
 ```sh
-yarn storybook
+yarn storybook:dev
 ```
 
 The command output will provide a local address for your browser.

@@ -12,23 +12,25 @@ import type { <%= Name %>Props } from './<%= Name %>.types';
  * TODO: Write component details
  */
 <% if(styled) { -%>
-export const <%= Name %>: React.FC<
+export const <%= Name %> = React.forwardRef<
+HTMLDivElement,
 React.ComponentProps<typeof <%= Name %>Styled>
 & <%= Name %>Props
-> = ({
-  refInner = React.createRef(),
+>(({
   children,
   ...props
-}) => (
+}, ref) => (
 <% } else { -%>
-export const <%= Name %>: React.FC<<%= Name %>Props> = ({
-  refInner,
+export const <%= Name %> = React.forwardRef<
+HTMLDivElement,
+<%= Name %>Props
+>(({
   children,
-}) => (
+}, ref) => (
 <% } -%>
-  <%- styled ? `<${Name}Styled ref={refInner} {...props}>` : `<div ref={refInner}>` %>
+  <%- styled ? `<${Name}Styled ref={ref} {...props}>` : `<div ref={ref}>` %>
     {children}
   <%- styled ? `</${Name}Styled>` : `</div>` %>
-);
+));
 
 export default <%= Name %>;

@@ -7,12 +7,6 @@ export type FontVariant = 'heading-1' | 'heading-2' | 'heading-3' | 'heading-4'
 
 export interface FontProps {
   /**
-   * Reference to the inner element.
-   * @ignore
-   */
-  refInner?: React.RefObject<HTMLDivElement>;
-
-  /**
    * Explicitly declare children.
    */
   children?: React.ReactNode;

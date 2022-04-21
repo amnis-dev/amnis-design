@@ -1,33 +1,30 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import styled, { CSSObject } from '@amnis/style/styled';
+import { Box } from '@amnis/layout/Box';
 import { InteractiveProps } from './Interactive.types';
 
-export const InteractiveStyled = styled<HTMLButtonElement>('button')<Partial<InteractiveProps>>(({
+export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partial<InteractiveProps>>(({
   theme,
-  surface,
+  paint,
 }) => {
   const {
     mode,
     paints,
-    spacing,
     durations,
     transitions,
     pseudoQueries,
-    surfaces,
   } = theme;
 
-  let style: CSSObject = {
+  const style: CSSObject = {
     display: 'inline-block',
     boxSizing: 'border-box',
     cursor: 'pointer',
-    border: '0',
-    margin: 0,
-    padding: 0,
     outlineOffset: '0rem',
     outline: `0 solid ${paints.main.neutral.color}00`,
     filter: 'brightness(1)',
-    backgroundColor: 'transparent',
+    backgroundColor: paint ? paints.main.neutral.backgroundColor : 'transparent',
+    color: paint ? paints.main.neutral.color : 'inherit',
     transition:
       `outline-offset ${durations.short} ${transitions.easeInOut},\
 outline ${durations.short} ${transitions.easeInOut},\
@@ -60,23 +57,6 @@ color ${durations.short} ${transitions.easeInOut}`,
       WebkitFontSmoothing: 'antialiased',
     },
   };
-
-  if (surface) {
-    switch (surface) {
-      case 'button':
-        style = {
-          ...style,
-          borderRadius: surfaces.button?.borderRadius,
-        };
-        break;
-      case 'input':
-      default:
-        style = {
-          ...style,
-          borderRadius: surfaces.input?.borderRadius,
-        };
-    }
-  }
 
   return style;
 });

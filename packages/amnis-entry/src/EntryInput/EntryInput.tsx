@@ -1,5 +1,4 @@
 import React from 'react';
-import type { EntryInputProps } from './EntryInput.types';
 import { EntryInputStyled } from './EntryInput.styled';
 import { EntryContext } from '../EntryContext';
 import useEntryAriaProps from '../useEntryAriaProps';
@@ -8,14 +7,12 @@ import useEntryAriaProps from '../useEntryAriaProps';
  * ## Base Entry Input
  * A basis for a text input within entry context.
  */
-export const EntryInput: React.FC<
+export const EntryInput = React.forwardRef<
+HTMLInputElement,
 React.ComponentProps<typeof EntryInputStyled>
-& EntryInputProps
-> = ({
-  refInner = React.createRef(),
-  children,
+>(({
   ...props
-}) => {
+}, ref) => {
   const {
     entryInputId,
     value,
@@ -29,18 +26,6 @@ React.ComponentProps<typeof EntryInputStyled>
   const ariaProps = useEntryAriaProps();
 
   /**
-   * Updates the input if a suggestion is selected from context.
-   */
-  React.useEffect(() => {
-    if (suggestionSelect && refInner?.current) {
-      const nativeInputValueSetter = Object?.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
-      nativeInputValueSetter?.call(refInner.current, suggestionSelect);
-      const event = new Event('input', { bubbles: true });
-      refInner.current.dispatchEvent(event);
-    }
-  }, [suggestionSelect]);
-
-  /**
    * Handles input changes.
    */
   const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +36,8 @@ React.ComponentProps<typeof EntryInputStyled>
 
   return (
     <EntryInputStyled
-      ref={refInner}
+      /** @ts-ignore */
+      ref={ref}
       id={entryInputId}
       required={required}
       disabled={disabled}
@@ -59,10 +45,8 @@ React.ComponentProps<typeof EntryInputStyled>
       onChange={handleChange}
       {...ariaProps}
       {...props}
-    >
-      {children}
-    </EntryInputStyled>
+    />
   );
-};
+});
 
 export default EntryInput;

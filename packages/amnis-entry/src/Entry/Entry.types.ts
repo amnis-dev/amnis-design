@@ -3,12 +3,6 @@ import type { EntryContextType } from '../EntryContext';
 
 export interface EntryProps<T> {
   /**
-   * Reference to the inner element.
-   * @ignore
-   */
-  refInner?: React.RefObject<HTMLDivElement>;
-
-  /**
    * Explicitly declare children.
    */
   children?: React.ReactNode;

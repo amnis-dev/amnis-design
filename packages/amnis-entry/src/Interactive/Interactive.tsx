@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeSwapProvider } from '@amnis/style/ThemeSwapProvider';
 import { Box } from '@amnis/layout/Box';
 import { InteractiveProps } from './Interactive.types';
 import { InteractiveStyled } from './Interactive.styled';
@@ -7,27 +8,30 @@ import { InteractiveStyled } from './Interactive.styled';
  * ## Focusable
  * Provides a focusable area that the user can interact with.
  */
-export const Interactive: React.FC<
+export const Interactive = React.forwardRef<
+HTMLButtonElement,
 InteractiveProps
-> = ({
-  refInner,
+>(({
   children,
   toggle,
-  surface,
+  outlined,
+  paint,
   ...props
-}) => (
-  <InteractiveStyled
-    ref={refInner}
-    tabIndex={0}
-    type="button"
-    aria-pressed={toggle}
-    toggle={toggle}
-    surface={surface}
-  >
-    <Box surface={surface} {...props}>
+}, ref) => (
+  <ThemeSwapProvider paint={!outlined ? paint : undefined}>
+    <InteractiveStyled
+      ref={ref}
+      paint={paint}
+      outlined={outlined}
+      tabIndex={0}
+      type="button"
+      aria-pressed={toggle}
+      toggle={toggle}
+      {...props}
+    >
       {children}
-    </Box>
-  </InteractiveStyled>
-);
+    </InteractiveStyled>
+  </ThemeSwapProvider>
+));
 
 export default Interactive;

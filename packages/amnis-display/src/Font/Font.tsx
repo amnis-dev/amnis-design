@@ -24,25 +24,25 @@ const variantElementMap: Record<FontVariant, string> = {
  * ## Typography
  * Component that uses the theme's design to present content.
  */
-export const Font: React.FC<
+export const Font = React.forwardRef<
+HTMLElement,
 React.ComponentProps<typeof FontStyled>
 & FontProps
-> = ({
-  refInner,
+>(({
   children,
   variant,
   v,
   as,
   ...props
-}) => (
+}, ref) => (
   <FontStyled
-    ref={refInner}
+    ref={ref}
     as={as || variantElementMap[(variant || v || 'body-1') as FontVariant]}
     variant={variant || v}
     {...props}
   >
     {children}
   </FontStyled>
-);
+));
 
 export default Font;

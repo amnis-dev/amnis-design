@@ -14,14 +14,15 @@ import { LayoutContext, LayoutContextType } from '../LayoutContext';
  * This system does use the common 12-column flexible grid, but uses a basis to determine column
  * widths.
  */
-export const Fluid: React.FC<
+export const Fluid = React.forwardRef<
+HTMLDivElement,
 React.ComponentProps<typeof BoxStyled>
 & FluidProps
-> = ({
+>(({
   gap = 0,
   children,
   ...props
-}) => {
+}, ref) => {
   let theme = React.useContext(ThemeContext) as Theme;
   if (theme && Object.keys(theme).length === 0) {
     theme = styledDefaultTheme;
@@ -33,11 +34,11 @@ React.ComponentProps<typeof BoxStyled>
 
   return (
     <LayoutContext.Provider value={layoutContextValue}>
-      <Stack flexWrap row gap={gap} {...props}>
+      <Stack ref={ref} flexWrap row gap={gap} {...props}>
         {children}
       </Stack>
     </LayoutContext.Provider>
   );
-};
+});
 
 export default Fluid;

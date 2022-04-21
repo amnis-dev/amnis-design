@@ -34,4 +34,12 @@ Basic.args = {
   children: 'Button',
 };
 
+export const Icons = Template.bind({});
+Icons.args = {
+  paint: 'primary',
+  children: 'Button',
+  iconStart: 'IoAlarm',
+  iconEnd: 'IoSend',
+};
+
 export const PaintsAndVariants = TemplatePaintsVariants.bind({});
