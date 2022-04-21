@@ -4,7 +4,7 @@ const noop = () => {
   // No operation
 };
 
-export interface EntryContextType {
+export interface EntryContextType<T> {
   entryRef: React.RefObject<HTMLDivElement>;
   entryId: string;
   entryBoxId: string;
@@ -13,21 +13,27 @@ export interface EntryContextType {
   entryErrorId: string;
   entryDescriptionId: string;
   entrySuggestionsId: string;
-  label?: string;
-  description?: string;
-  errors?: string[];
+  value: T;
+  label: string;
+  description: string;
+  errors: string[];
   required: boolean;
   disabled: boolean;
   focused: boolean;
-  setFocused: (arg0: boolean) => void;
+  focusedSetter: (arg0: boolean) => void;
   suggestions: string[];
   suggestionFilter: string;
-  setSuggestionFilter: (arg0: string) => void;
+  suggestionFilterSetter: (arg0: string) => void;
   suggestionSelect: string | null;
-  setSuggestionSelect: (arg0: string | null) => void;
+  suggestionSelectSetter: (arg0: string | null) => void;
+  onChange: (arg0: T, event: React.ChangeEvent<HTMLElement>) => void;
+  hasLabelElement: boolean;
+  hasLabelElementSetter: (arg0: boolean) => void;
+  hasDescriptionElement: boolean;
+  hasDescriptionElementSetter: (arg0: boolean) => void;
 }
 
-export const entryContextDefault: EntryContextType = {
+export const entryContextDefault: EntryContextType<unknown> = {
   entryRef: React.createRef<HTMLDivElement>(),
   entryId: 'entry',
   entryBoxId: 'entry-box',
@@ -36,17 +42,26 @@ export const entryContextDefault: EntryContextType = {
   entryErrorId: 'entry-error',
   entryDescriptionId: 'entry-desc',
   entrySuggestionsId: 'entry-sugg',
+  value: null,
+  label: 'unlabelled',
+  description: '',
+  errors: [],
   suggestions: [],
   suggestionFilter: '',
-  setSuggestionFilter: noop,
+  suggestionFilterSetter: noop,
   suggestionSelect: null,
-  setSuggestionSelect: noop,
+  suggestionSelectSetter: noop,
   required: false,
   disabled: false,
   focused: false,
-  setFocused: noop,
+  focusedSetter: noop,
+  hasLabelElement: false,
+  hasLabelElementSetter: noop,
+  hasDescriptionElement: false,
+  hasDescriptionElementSetter: noop,
+  onChange: noop,
 };
 
-export const EntryContext = React.createContext<EntryContextType>(entryContextDefault);
+export const EntryContext = React.createContext<EntryContextType<unknown>>(entryContextDefault);
 
 export default EntryContext;

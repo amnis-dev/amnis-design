@@ -1,6 +1,6 @@
 import Color from 'color';
 import {
-  Theme, BaseTheme, BaseThemeDefault, ThemePaint, ThemeShadowLevels,
+  Theme, BaseTheme, BaseThemeDefault, ThemePaint, ThemeShadowLevels, ThemeSurfaces,
 } from './theme.types';
 import { themeBaseDefault } from './themeBaseDefault';
 
@@ -249,7 +249,7 @@ const generator = (base: BaseTheme): Theme => {
       pointerEvents: 'none',
     },
 
-    surfaces: merge.surfaces,
+    surfaces: merge.surfaces as ThemeSurfaces,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

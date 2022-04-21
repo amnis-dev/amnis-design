@@ -3,29 +3,35 @@ import { useIncrementalId } from '@amnis/hooks/useIncrementalId';
 import { EntryProps } from './Entry.types';
 import { EntryContext, EntryContextType } from '../EntryContext';
 
+const noop = () => { /** No operation. */ };
+
 /**
  * ## Subtitle
  * TODO: Write component details
  */
-export const Entry: React.FC<EntryProps> = ({
+export const Entry: React.FC<EntryProps<unknown>> = ({
   refInner,
   children,
   prefix = 'entry',
+  value,
   label,
-  description,
-  errors,
+  description = '',
+  errors = [],
   required = true,
   disabled = false,
   suggestions = [],
+  onChange = noop,
 }) => {
   const entryRef = React.useRef<HTMLDivElement>(null);
   const entryId = useIncrementalId(prefix);
 
-  const [suggestionFilter, setSuggestionFilter] = React.useState<EntryContextType['suggestionFilter']>('');
-  const [suggestionSelect, setSuggestionSelect] = React.useState<EntryContextType['suggestionSelect']>(null);
-  const [focused, setFocused] = React.useState<boolean>(false);
+  const [suggestionFilter, suggestionFilterSetter] = React.useState<EntryContextType<typeof value>['suggestionFilter']>('');
+  const [suggestionSelect, suggestionSelectSetter] = React.useState<EntryContextType<typeof value>['suggestionSelect']>(null);
+  const [focused, focusedSetter] = React.useState<boolean>(false);
+  const [hasLabelElement, hasLabelElementSetter] = React.useState<boolean>(false);
+  const [hasDescriptionElement, hasDescriptionElementSetter] = React.useState<boolean>(false);
 
-  const contextValue: EntryContextType = useMemo(() => ({
+  const contextValue = useMemo<EntryContextType<typeof value>>(() => ({
     entryRef,
     entryId,
     entryBoxId: `${entryId}-box`,
@@ -34,6 +40,7 @@ export const Entry: React.FC<EntryProps> = ({
     entryErrorId: `${entryId}-error`,
     entryDescriptionId: `${entryId}-desc`,
     entrySuggestionsId: `${entryId}-sugg`,
+    value,
     label,
     description,
     errors,
@@ -41,11 +48,16 @@ export const Entry: React.FC<EntryProps> = ({
     disabled,
     suggestions,
     suggestionFilter,
-    setSuggestionFilter,
+    suggestionFilterSetter,
     suggestionSelect,
-    setSuggestionSelect,
+    suggestionSelectSetter,
     focused,
-    setFocused,
+    focusedSetter,
+    hasLabelElement,
+    hasLabelElementSetter,
+    hasDescriptionElement,
+    hasDescriptionElementSetter,
+    onChange,
   }), [
     entryRef,
     entryId,
@@ -55,6 +67,7 @@ export const Entry: React.FC<EntryProps> = ({
     required,
     disabled,
     suggestions,
+    onChange,
   ]);
 
   return (

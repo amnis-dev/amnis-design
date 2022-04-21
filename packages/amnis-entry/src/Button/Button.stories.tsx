@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Stack } from '@amnis/layout/Stack';
 
+import { ThemePaintOptions } from '@amnis/style/theme.types';
 import { Button } from './Button';
 
 export default {
@@ -9,15 +10,21 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
+const paints: ThemePaintOptions[] = ['primary', 'secondary', 'cool', 'warm', 'base'];
+
 const Template: ComponentStory<typeof Button> = (args) => (
   <Button {...args} />
 );
 
-const TemplateVariants: ComponentStory<typeof Button> = () => (
-  <Stack gap={3} row>
-    <Button paint="primary">Text</Button>
-    <Button paint="primary">Painted</Button>
-    <Button paint="primary">Outlined</Button>
+const TemplatePaintsVariants: ComponentStory<typeof Button> = () => (
+  <Stack gap={3}>
+    {paints.map((paint) => (
+      <Stack key={paint} gap={3} row>
+        <Button paint={paint} variant="text">Text</Button>
+        <Button paint={paint} variant="contain">Contain</Button>
+        <Button paint={paint} variant="outline">Outline</Button>
+      </Stack>
+    ))}
   </Stack>
 );
 
@@ -27,4 +34,4 @@ Basic.args = {
   children: 'Button',
 };
 
-export const Variants = TemplateVariants.bind({});
+export const PaintsAndVariants = TemplatePaintsVariants.bind({});

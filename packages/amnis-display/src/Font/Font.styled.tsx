@@ -6,6 +6,7 @@ export const FontStyled = styled<HTMLSpanElement>('span')<Partial<FontProps>>(({
   theme,
   paint,
   variant = 'body-1',
+  decoration = 'initial',
 }) => {
   const { fonts, paints } = theme as Theme;
   const [fontType, fontLevelString] = variant.split('-') as [ThemeFontOptions, string];
@@ -17,7 +18,8 @@ export const FontStyled = styled<HTMLSpanElement>('span')<Partial<FontProps>>(({
   const style: CSSObject = {
     ...fonts.main[fontType] as CSSObject,
     fontSize,
-    color: paint ? paints[paint].neutral.color : 'inherit',
+    textDecoration: decoration,
+    color: paint ? paints[paint].neutral.backgroundColor : 'inherit',
   };
 
   return style;

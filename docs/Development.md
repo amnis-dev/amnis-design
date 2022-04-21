@@ -18,7 +18,7 @@ You'll need tools `git`, `node` and `yarn` to begin.
 * [Get Node.JS](https://nodejs.org/)
 * [Setup Yarn](https://classic.yarnpkg.com/en/docs/getting-started)
 
-It is highly recommended to develop with [Visual Studio Code](https://code.visualstudio.com/). There are settings and plugins in this workspace that help development.
+It is highly recommended to develop with [Visual Studio Code](https://code.visualstudio.com/). There are settings in this workspace that help provide useful feedback on types and formatting.
 
 ### Prepare Workspace
 
@@ -58,3 +58,28 @@ The command output will provide a local address for your browser.
 
 ## New Components
 
+New componet are created from a boilerplate.
+
+You can generate a new component using the following command in the project's root.
+
+```sh
+yarn gen:component
+```
+
+This will take you though a three-step wizard with a few questions.
+
+```sh
+# Determines which package to generate the component in.
+# Use the arrow keys to toggle and enter to select
+? Select type of component. ... 
+> display
+  entry
+  landmark
+  layout
+
+# The name of the component. It should start with a capital letter.
+? Name of the new component? » Button
+
+# If new CSS styling needs to be created for the component.
+? Include a styling component? (y/N) » N
+```

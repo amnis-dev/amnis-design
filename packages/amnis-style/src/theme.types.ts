@@ -187,7 +187,7 @@ export interface BaseThemeDefault {
 
   spacing: ThemeSpacingLevels;
 
-  surfaces: ThemeSurfaces;
+  surfaces: Partial<ThemeSurfaces>;
 }
 
 export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {

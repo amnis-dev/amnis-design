@@ -35,6 +35,11 @@ export interface FontProps {
   v?: FontVariant;
 
   /**
+   * Apply text decoration.
+   */
+  decoration?: React.CSSProperties['textDecoration'];
+
+  /**
    * Option to render the component as a different HTML element.
    */
   as?: string;

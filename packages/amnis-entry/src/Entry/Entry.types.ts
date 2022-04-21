@@ -1,6 +1,7 @@
 import type React from 'react';
+import type { EntryContextType } from '../EntryContext';
 
-export interface EntryProps {
+export interface EntryProps<T> {
   /**
    * Reference to the inner element.
    * @ignore
@@ -13,6 +14,11 @@ export interface EntryProps {
   children?: React.ReactNode;
 
   /**
+   * Entry's value.
+   */
+  value?: T;
+
+  /**
    * An optional prefix to apply to identifiers.
    * @default 'entry'
    */
@@ -21,7 +27,7 @@ export interface EntryProps {
   /**
     * Label for the entry input.
     */
-  label?: string;
+  label: string;
 
   /**
     * Description for the entry input.
@@ -46,7 +52,12 @@ export interface EntryProps {
   disabled?: boolean;
 
   /**
-    * Input suggestions for the entry.
-    */
+   * Input suggestions for the entry.
+   */
   suggestions?: string[];
+
+  /**
+   * Change callback
+   */
+  onChange?: EntryContextType<T>['onChange'];
 }

@@ -2,7 +2,7 @@
 to: <%= `packages/amnis-${type}/src/${Name}/${Name}.tsx` %>
 ---
 import React from 'react';
-import { <%= Name %>Props } from './<%= Name %>.types';
+import type { <%= Name %>Props } from './<%= Name %>.types';
 <% if(styled) { -%>
 <%- `import { ${Name}Styled } from './${Name}.styled';` %>
 <% } -%>
@@ -16,7 +16,7 @@ export const <%= Name %>: React.FC<
 React.ComponentProps<typeof <%= Name %>Styled>
 & <%= Name %>Props
 > = ({
-  refInner,
+  refInner = React.createRef(),
   children,
   ...props
 }) => (

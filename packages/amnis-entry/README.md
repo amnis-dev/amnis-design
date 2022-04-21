@@ -36,8 +36,8 @@ The following is a list of reusable components for creating many types of entrie
 | Component | Description |
 | --- | --- |
 | Entry | The highest level component that manages the context of the entry. |
-| EntryInput | An invisible input area for text. |
-| EntryInputBoolean | An invisible input area for a toggled value. |
+| EntryInput | An unstyled input area for text. |
+| EntryBoolean | An unstyled input area for a toggled value. |
 | EntryDetails | Component that displays the labels, descriptions, errors, and if the field is required or not. |
 | EntryBox | A visible box that wraps text or object values within. |
 | EntrySuggestions | A dialog for providing additional suggestions from textual input. |
@@ -72,30 +72,53 @@ export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 
 ### Step 2: Allow Input
 
-Add an area for textual input and contain it within a visible box.
+Add an area for textual input to capture text entry from the user.
 
 ```tsx
 import React from 'react';
 import { Entry, EntryProps } from '@amnis/entry/Entry';
-// Import the input element and a box to contain it within.
+// Import the entry input component.
 import { EntryInput } from '@amnis/entry/EntryInput';
-import { EntryBox } from '@amnis/entry/EntryBox';
 
 export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 
   return (
     <Entry {...props}>
       
-      <EntryBox>
         <EntryInput />
-      </EntryBox>
 
     </Entry>
   );
 }
 ```
 
-### Step 3: Show Details (optional)
+### Step 3: Provide Interactive Feedback
+
+Wrapp the input with an interactive component that provides visuals and feedback to the user.
+
+```tsx
+import React from 'react';
+import { Entry, EntryProps } from '@amnis/entry/Entry';
+// Import the input element and a box to contain it within.
+import { EntryInput } from '@amnis/entry/EntryInput';
+import { Interactive } from '@amnis/entry/Interactive';
+
+export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
+
+  return (
+    <Entry {...props}>
+      
+      {/** Set the surface style to "input" **/}
+      <Interactive surface="input">
+        <EntryInput />
+      </Interactive>
+
+    </Entry>
+  );
+}
+```
+
+### Step 4: Show Details (optional)
 
 Insert where the entry details should be displayed.
 
@@ -125,7 +148,7 @@ export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 }
 ```
 
-### Step 4: Provide Suggestions (optional)
+### Step 5: Provide Suggestions (optional)
 
 For textual entries, it is sometimes nice to provide input suggestions while the user is typing.
 
@@ -156,4 +179,4 @@ export const MyTextInput: React.FC<EntryProps<string>> = (props) => {
 }
 ```
 
-That's it! You have a completely accessilble and functional text input component that provides all sorts of labeling, feedback, and suggestions!
+A completely accessilble and functional text input component has be created.

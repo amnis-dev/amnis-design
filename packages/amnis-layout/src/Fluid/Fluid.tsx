@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeContext } from '@amnis/style/styled';
+import { ThemeContext, styledDefaultTheme } from '@amnis/style/styled';
 import { Theme } from '@amnis/style/theme.types';
 import { Stack } from '../Stack/Stack';
 import { BoxStyled } from '../Box/Box.styled';
@@ -22,10 +22,13 @@ React.ComponentProps<typeof BoxStyled>
   children,
   ...props
 }) => {
-  const { spacing } = React.useContext(ThemeContext) as Theme;
+  let theme = React.useContext(ThemeContext) as Theme;
+  if (theme && Object.keys(theme).length === 0) {
+    theme = styledDefaultTheme;
+  }
 
   const layoutContextValue: LayoutContextType = React.useMemo(() => ({
-    gap: spacing[gap],
+    gap: theme.spacing[gap],
   }), [gap]);
 
   return (

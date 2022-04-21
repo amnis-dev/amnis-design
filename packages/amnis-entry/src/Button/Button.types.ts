@@ -1,9 +1,10 @@
 import type { ThemePaintOptions } from '@amnis/style/theme.types';
 import type React from 'react';
+import type { EntryProps } from '../Entry/Entry.types';
 
-export type ButtonVariant = 'text' | 'contained' | 'outlined';
+export type ButtonVariant = 'text' | 'contain' | 'outline';
 
-export interface ButtonProps {
+export interface ButtonProps extends Omit<EntryProps<never>, 'value' | 'refInner' | 'suggestions'> {
   /**
    * Reference to the inner element.
    * @ignore
