@@ -31,6 +31,8 @@ export interface EntryContextType<T> {
   hasLabelElementSetter: (arg0: boolean) => void;
   hasDescriptionElement: boolean;
   hasDescriptionElementSetter: (arg0: boolean) => void;
+  hasErrorElement: boolean;
+  hasErrorElementSetter: (arg0: boolean) => void;
 }
 
 export const entryContextDefault: EntryContextType<unknown> = {
@@ -59,6 +61,8 @@ export const entryContextDefault: EntryContextType<unknown> = {
   hasLabelElementSetter: noop,
   hasDescriptionElement: false,
   hasDescriptionElementSetter: noop,
+  hasErrorElement: false,
+  hasErrorElementSetter: noop,
   onChange: noop,
 };
 

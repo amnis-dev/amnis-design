@@ -14,8 +14,6 @@ it('renders basic story properly with no a11y violations', async () => {
   const { container } = render(<Basic {...Basic.args} />);
   const element = container.querySelector('div');
 
-  expect(element).toHaveStyleRule('flex-direction', 'column');
-
   expect(element).toBeDefined();
   expect(await axe(container)).toHaveNoViolations();
 });

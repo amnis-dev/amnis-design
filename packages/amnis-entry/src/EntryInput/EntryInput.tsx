@@ -2,6 +2,7 @@ import React from 'react';
 import type { EntryInputProps } from './EntryInput.types';
 import { EntryInputStyled } from './EntryInput.styled';
 import { EntryContext } from '../EntryContext';
+import useEntryAriaProps from '../useEntryAriaProps';
 
 /**
  * ## Base Entry Input
@@ -17,44 +18,15 @@ React.ComponentProps<typeof EntryInputStyled>
 }) => {
   const {
     entryInputId,
-    entryLabelId,
-    entryDescriptionId,
-    entryErrorId,
     value,
-    label,
-    description,
-    errors,
     disabled,
     required,
     suggestionSelect,
     suggestionFilterSetter,
-    hasLabelElement,
-    hasDescriptionElement,
     onChange,
   } = React.useContext(EntryContext);
 
-  /**
-   * Compiles aria properties
-   */
-  const ariaProps = React.useMemo(() => {
-    const nextProps: React.ComponentProps<typeof EntryInputStyled> = {
-      'aria-invalid': errors.length > 0,
-    };
-    if (hasLabelElement) {
-      nextProps['aria-labelledby'] = entryLabelId;
-    } else {
-      nextProps['aria-label'] = label;
-    }
-    if (hasDescriptionElement) {
-      nextProps['aria-describedby'] = entryDescriptionId;
-    }
-    return nextProps;
-  }, [
-    entryLabelId, label,
-    entryDescriptionId, description,
-    hasLabelElement, hasDescriptionElement,
-    errors,
-  ]);
+  const ariaProps = useEntryAriaProps();
 
   /**
    * Updates the input if a suggestion is selected from context.

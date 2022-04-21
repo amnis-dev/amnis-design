@@ -30,6 +30,7 @@ export const Entry: React.FC<EntryProps<unknown>> = ({
   const [focused, focusedSetter] = React.useState<boolean>(false);
   const [hasLabelElement, hasLabelElementSetter] = React.useState<boolean>(false);
   const [hasDescriptionElement, hasDescriptionElementSetter] = React.useState<boolean>(false);
+  const [hasErrorElement, hasErrorElementSetter] = React.useState<boolean>(false);
 
   const contextValue = useMemo<EntryContextType<typeof value>>(() => ({
     entryRef,
@@ -57,6 +58,8 @@ export const Entry: React.FC<EntryProps<unknown>> = ({
     hasLabelElementSetter,
     hasDescriptionElement,
     hasDescriptionElementSetter,
+    hasErrorElement,
+    hasErrorElementSetter,
     onChange,
   }), [
     entryRef,
