@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Box } from '@amnis/layout/Box';
 
 import { Interactive } from './Interactive';
 

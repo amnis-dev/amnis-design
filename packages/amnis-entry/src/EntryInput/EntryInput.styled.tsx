@@ -1,7 +1,6 @@
 import styled, { CSSObject } from '@amnis/style/styled';
-import { EntryInputProps } from './EntryInput.types';
 
-export const EntryInputStyled = styled<HTMLInputElement>('input')<Partial<EntryInputProps>>(({
+export const EntryInputStyled = styled<HTMLInputElement>('input')(({
   theme,
 }) => {
   const { fonts, paints, pseudoQueries } = theme;

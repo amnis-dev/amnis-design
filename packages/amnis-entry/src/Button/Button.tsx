@@ -33,7 +33,6 @@ ButtonProps
   variant = 'contain',
   iconStart,
   iconEnd,
-  ...props
 }, ref) => {
   const interactiveVariantProps: InteractiveProps = React.useMemo(() => {
     switch (variant) {

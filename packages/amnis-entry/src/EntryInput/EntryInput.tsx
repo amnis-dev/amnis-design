@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import { EntryInputStyled } from './EntryInput.styled';
 import { EntryContext } from '../EntryContext';
@@ -18,7 +19,6 @@ React.ComponentProps<typeof EntryInputStyled>
     value,
     disabled,
     required,
-    suggestionSelect,
     suggestionFilterSetter,
     onChange,
   } = React.useContext(EntryContext);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeSwapProvider } from '@amnis/style/ThemeSwapProvider';
-import { Box } from '@amnis/layout/Box';
 import { InteractiveProps } from './Interactive.types';
 import { InteractiveStyled } from './Interactive.styled';
 
