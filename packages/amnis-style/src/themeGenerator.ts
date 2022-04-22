@@ -1,6 +1,12 @@
 import Color from 'color';
 import {
-  Theme, BaseTheme, BaseThemeDefault, ThemePaint, ThemeShadowLevels, ThemeSurfaces,
+  Theme,
+  BaseTheme,
+  BaseThemeDefault,
+  ThemePaint,
+  ThemeShadowLevels,
+  ThemeSurfaces,
+  ThemeStates,
 } from './theme.types';
 import { themeBaseDefault } from './themeBaseDefault';
 
@@ -193,6 +199,12 @@ const generator = (base: BaseTheme): Theme => {
         ...base?.surfaces?.paper,
       },
     },
+    states: {
+      disabled: {
+        ...themeBaseDefault.states.disabled,
+        ...base?.states?.disabled,
+      },
+    },
   } as BaseThemeDefault;
 
   const modeType = Color(merge.backgroundColor).isLight();
@@ -242,14 +254,8 @@ const generator = (base: BaseTheme): Theme => {
       baseLight: createThemePaint(merge.baseColor, focusColor, modeType, 'lighten'),
     },
 
-    disabled: {
-      backgroundColor: '#888888',
-      color: '#ffffff',
-      opacity: 0.5,
-      pointerEvents: 'none',
-    },
-
     surfaces: merge.surfaces as ThemeSurfaces,
+    states: merge.states as ThemeStates,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

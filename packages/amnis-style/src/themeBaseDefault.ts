@@ -115,6 +115,15 @@ export const themeBaseDefault: BaseThemeDefault = {
       boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
     },
   },
+
+  states: {
+    disabled: {
+      backgroundColor: '#888888',
+      color: '#ffffff',
+      opacity: 0.5,
+      pointerEvents: 'none',
+    },
+  },
 };
 
 export default themeBaseDefault;

@@ -26,6 +26,10 @@ export interface ThemeSurfaces {
   readonly paper: CSSProperties;
 }
 
+export interface ThemeStates {
+  readonly disabled: CSSProperties;
+}
+
 export interface ThemePaintStyle {
   readonly backgroundColor: string;
   readonly color: string;
@@ -131,13 +135,6 @@ export interface ThemeDurations {
   readonly complex: string
 }
 
-export interface ThemeDisabledOptions {
-  readonly backgroundColor: string,
-  readonly color: string,
-  readonly opacity: number,
-  readonly pointerEvents: 'none'
-}
-
 export type ThemeShadowLevelOptions = Extract<keyof ThemeShadowLevels, number>;
 export type ThemeSpacingLevelOptions = Extract<keyof ThemeSpacingLevels, number>;
 export type ThemeColumnWidthOptions = Extract<keyof ThemeColumnWidths, number>;
@@ -147,6 +144,7 @@ export type ThemeTransitionOptions = Extract<keyof ThemeTransitions, string>;
 export type ThemeDurationOptions = Extract<keyof ThemeDurations, string>;
 export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
 export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
+export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
 
 export interface BaseThemeDefault {
   /**
@@ -188,6 +186,7 @@ export interface BaseThemeDefault {
   spacing: ThemeSpacingLevels;
 
   surfaces: Partial<ThemeSurfaces>;
+  states: Partial<ThemeStates>;
 }
 
 export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {
@@ -205,9 +204,9 @@ export interface Theme {
 
   readonly paints: ThemePaints;
 
-  readonly disabled: ThemeDisabledOptions;
-
   readonly surfaces: ThemeSurfaces;
+
+  readonly states: ThemeStates;
 
   readonly shadow: ThemeShadowLevels;
 

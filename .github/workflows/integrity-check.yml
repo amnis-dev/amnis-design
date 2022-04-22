@@ -1,7 +1,6 @@
 name: Integrity Check
 
 on:
-  push:
   pull_request:
     types: [opened, synchronize, reopened]
 
