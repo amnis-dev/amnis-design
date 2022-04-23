@@ -33,6 +33,7 @@ ButtonProps
   variant = 'contain',
   iconStart,
   iconEnd,
+  disabled,
 }, ref) => {
   const interactiveVariantProps: InteractiveProps = React.useMemo(() => {
     switch (variant) {
@@ -76,6 +77,7 @@ ButtonProps
       aria-label={getLabelFromChildren(children)}
       minWidth="2.5em"
       padding={3}
+      disabled={disabled}
       {...interactiveVariantProps}
     >
       <Stack row gap={2} alignItems="center">

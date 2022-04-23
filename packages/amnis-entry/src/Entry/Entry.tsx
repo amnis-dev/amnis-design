@@ -6,8 +6,8 @@ import { EntryContext, EntryContextType } from '../EntryContext';
 const noop = () => { /** No operation. */ };
 
 /**
- * ## Subtitle
- * TODO: Write component details
+ * ## User Entries
+ * This is a utility component that supplies entry context to help simplify user input components.
  */
 export const Entry = React.forwardRef<
 HTMLDivElement,

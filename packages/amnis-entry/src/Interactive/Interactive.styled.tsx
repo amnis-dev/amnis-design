@@ -14,6 +14,7 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
     durations,
     transitions,
     pseudoQueries,
+    states,
   } = theme;
 
   const style: CSSObject = {
@@ -50,11 +51,7 @@ color ${durations.short} ${transitions.easeInOut}`,
     },
 
     [pseudoQueries.disabled]: {
-      opacity: 0.7,
-      cursor: 'unset',
-      pointerEvents: 'none',
-      MozOsxFontSmoothing: 'antialiased',
-      WebkitFontSmoothing: 'antialiased',
+      ...states.disabled,
     },
   };
 

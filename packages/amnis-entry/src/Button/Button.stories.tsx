@@ -23,6 +23,7 @@ const TemplatePaintsVariants: ComponentStory<typeof Button> = () => (
         <Button paint={paint} variant="text">Text</Button>
         <Button paint={paint} variant="contain">Contain</Button>
         <Button paint={paint} variant="outline">Outline</Button>
+        <Button paint={paint} disabled>Disabled</Button>
       </Stack>
     ))}
   </Stack>
@@ -32,6 +33,13 @@ export const Basic = Template.bind({});
 Basic.args = {
   paint: 'primary',
   children: 'Button',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  paint: 'primary',
+  children: 'Button',
+  disabled: true,
 };
 
 export const Icons = Template.bind({});

@@ -11,4 +11,9 @@ export interface InteractiveProps extends BoxProps {
    * When set, the component indicates it's toggled value.
    */
   toggle?: boolean;
+
+  /**
+   * Disables interaction.
+   */
+  disabled?: boolean;
 }

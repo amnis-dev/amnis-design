@@ -16,6 +16,11 @@ export interface ButtonProps {
   label?: string;
 
   /**
+   * Disables button interaction.
+   */
+  disabled?: boolean;
+
+  /**
    * Paint color for the button.
    * @default "primary"
    */
