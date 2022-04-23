@@ -2,26 +2,12 @@ import React from 'react';
 import { Icon } from '@amnis/icons/Icon';
 import { Font, FontProps } from '@amnis/display/Font';
 import { Stack } from '@amnis/layout/Stack';
+import { useChildrenText } from '@amnis/hooks/useChildrenText';
 import type { ButtonProps } from './Button.types';
 import { Interactive, InteractiveProps } from '../Interactive';
 
 /**
- * Extracts a label string from the react children.
- */
-const getLabelFromChildren = (children: React.ReactNode) => {
-  let label = '';
-
-  React.Children.map(children, (child) => {
-    if (typeof child === 'string') {
-      label += child;
-    }
-  });
-
-  return label;
-};
-
-/**
- * # Click Input
+ * ## Click Input
  * A simple button for user interaction.
  */
 export const Button = React.forwardRef<
@@ -30,11 +16,14 @@ ButtonProps
 >(({
   children,
   paint,
+  label,
   variant = 'contain',
   iconStart,
   iconEnd,
   disabled,
 }, ref) => {
+  const childrenLabel = useChildrenText(children);
+
   const interactiveVariantProps: InteractiveProps = React.useMemo(() => {
     switch (variant) {
       case 'text':
@@ -52,7 +41,7 @@ ButtonProps
           surface: 'button',
         };
     }
-  }, [variant]);
+  }, [variant, paint]);
 
   const fontVariantProps: FontProps = React.useMemo(() => {
     switch (variant) {
@@ -69,12 +58,12 @@ ButtonProps
       default:
         return {};
     }
-  }, [variant]);
+  }, [variant, paint]);
 
   return (
     <Interactive
       ref={ref}
-      aria-label={getLabelFromChildren(children)}
+      aria-label={label || childrenLabel}
       minWidth="2.5em"
       padding={3}
       disabled={disabled}

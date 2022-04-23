@@ -37,7 +37,6 @@ The following is a list of reusable components for creating many types of entrie
 | --- | --- |
 | Entry | The highest level component that manages the context of the entry. |
 | EntryInput | An unstyled input area for text. |
-| EntryBoolean | An unstyled input area for a toggled value. |
 | EntryDetails | Component that displays the labels, descriptions, errors, and if the field is required or not. |
 | EntryBox | A visible box that wraps text or object values within. |
 | EntrySuggestions | A dialog for providing additional suggestions from textual input. |

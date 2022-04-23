@@ -58,9 +58,9 @@ The command output will provide a local address for your browser.
 
 ## New Components
 
-New componet are created from a boilerplate.
+New componets are created from a boilerplate.
 
-You can generate a new component using the following command in the project's root.
+You can generate a new component using the following command from the project's root.
 
 ```sh
 yarn gen:component

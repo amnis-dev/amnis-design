@@ -10,13 +10,23 @@
 
 </div>
 
+**Table of Contents**
+* [Example](#example)
+* [Motivation](#motivation)
+* [Installation](#installation)
+* [Contributing](#contributing)
+
+## Example
+
+[Browse through the Storybook webpage of Design Componets](storybook.amnis.dev)
+
 ## Motivation
 
 There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind. This design library hopes to abstract and provide guidance on the best accessibility and user experience practices for desktop and mobile environments; to both ease developer efforts and make the web a better place for internet users.
 
 This library is inspired by qualities from both the [U.S. Web Design System](https://github.com/uswds/uswds) and [MUI Core](https://github.com/mui/material-ui).
 
-For federal sites, this library should also help ensure compliance with [Section 508 of the Rehabilitation Act (29 U.S.C. §794d)](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology).
+For U.S. federal sites, this library should also help ensure compliance with [Section 508 of the Rehabilitation Act (29 U.S.C. §794d)](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology).
 
 ## Installation
 

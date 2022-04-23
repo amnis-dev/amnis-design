@@ -11,8 +11,4 @@
       "@amnis/entry/*": ["./packages/amnis-entry/src/*"],
     }
   },
-  "include": [
-    "./packages/**/*.ts",
-    "./packages/**/*.tsx"
-  ]
 }

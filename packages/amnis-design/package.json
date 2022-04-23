@@ -1,5 +1,5 @@
 {
-  "name": "@amnis/entry",
+  "name": "@amnis/display",
   "version": "0.1.0",
   "main": "src/index.ts",
   "author": "Eric Crowell <eric.crowell@ecrow.dev>",
@@ -16,8 +16,9 @@
   "dependencies": {
     "@amnis/hooks": "0.1.0",
     "@amnis/style": "0.1.0",
+    "@amnis/icons": "0.1.0",
     "@amnis/layout": "0.1.0",
     "@amnis/display": "0.1.0",
-    "@amnis/icons": "0.1.0"
+    "@amnis/entry": "0.1.0"
   }
 }
