@@ -1,6 +1,6 @@
 # Amnis Entry
 
-This package presents a collection of components for building or using preconfigured entries for user input. Each entry component has their own context for managing labels, descriptions, suggestions, state, errors, values, and hints.
+This package presents a collection of components for building or using preconfigured components for user input. Each input component has their own context for managing labels, descriptions, suggestions, state, errors, values, and hints.
 
 ## Using an Entry Component
 

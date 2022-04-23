@@ -120,8 +120,12 @@ export const themeBaseDefault: BaseThemeDefault = {
     disabled: {
       backgroundColor: '#888888',
       color: '#ffffff',
-      opacity: 0.5,
+      opacity: 0.7,
       pointerEvents: 'none',
+      cursor: 'unset',
+      MozOsxFontSmoothing: 'antialiased',
+      WebkitFontSmoothing: 'antialiased',
+      boxShadow: 'none',
     },
   },
 };

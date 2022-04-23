@@ -13,6 +13,7 @@ InteractiveProps
 >(({
   children,
   toggle,
+  disabled,
   outlined,
   paint,
   ...props
@@ -26,6 +27,7 @@ InteractiveProps
       type="button"
       aria-pressed={toggle}
       toggle={toggle}
+      disabled={disabled}
       {...props}
     >
       {children}
