@@ -10,7 +10,7 @@
 
 Workflows
 
-[![Deploy Storybook](https://github.com/amnis-dev/amnis-design/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/deploy-storybook.yml)
+[![Storybook](https://github.com/amnis-dev/amnis-design/actions/workflows/storybook.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/storybook.yml)
 [![Integrity Check](https://github.com/amnis-dev/amnis-design/actions/workflows/integrity-check.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/integrity-check.yml)
 
 </div>
