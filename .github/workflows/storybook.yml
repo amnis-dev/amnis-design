@@ -35,12 +35,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
-<<<<<<< HEAD:.github/workflows/storybook.yml
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.ref == 'refs/heads/main'
-=======
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    if: github.event.pull_request.merged == 'true'
->>>>>>> c5ac5f3 (fix: Fixes workflow for storybook deployment):.github/workflows/deploy-storybook.yml
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
