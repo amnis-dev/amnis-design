@@ -55,6 +55,26 @@ npm install @amnis/hooks @amnis/style @amnis/icons @amnis/layout @amnis/display 
 npm add @amnis/hooks @amnis/style @amnis/icons @amnis/layout @amnis/display @amnis/entry
 ```
 
+## Getting Started with Amnis
+
+Below is a basic example of rendering a `Button` component:
+
+```tsx
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from '@amnis/design/Button';
+
+const App: React.FC = () => {
+  return (
+    <Button paint="primary" variant="contained">
+      Hello Amnis
+    </Button>
+  );
+}
+
+ReactDOM.createRoot(document.querySelector('#app')).render(<App />);
+```
+
 ## Contributing
 
 This is a growing project that you can add and improve upon! I'm welcoming to new PRs. Contrubuting can be more than just code too. If you identify an improvement, please [submit a new GitHub issue](https://github.com/amnis-dev/amnis-design/issues/new).

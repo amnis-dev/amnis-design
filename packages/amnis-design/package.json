@@ -19,6 +19,9 @@
     "@amnis/icons": "0.1.0-alpha.2",
     "@amnis/layout": "0.1.0-alpha.2",
     "@amnis/display": "0.1.0-alpha.2",
-    "@amnis/entry": "0.1.0-alpha.2"
+    "@amnis/entry": "0.1.0-alpha.2",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "color": "^4.2.1"
   }
 }
