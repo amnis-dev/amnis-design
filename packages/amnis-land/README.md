@@ -1,4 +1,4 @@
-# Amnis Landmark
+# Amnis Land
 
 A library of components that serve as landmarks on a web pages. Landmarks are ways to define the purpose sectional regions.
 
@@ -8,23 +8,22 @@ For more information, see [W3 Landmarks](https://www.w3.org/TR/wai-aria-practice
 
 As components, these landmarks also include responsiveness.
 
-## Use within a Page Component
+## Use within a Land Component
 
-Landmarks are best used as direct children of a `Page` component that organizes and handles the responsiveness of the landmarks.
+Landmarks are best used as direct children of a `Land` component that organizes and handles the responsiveness of the landmarks.
 
 ```tsx
 import React from 'react';
-import Page from '@amnis/page';
-import { Header, Main, Nav, Footer } from '@amnis/landmarks';
+import { Land, Header, Main, Nav, Footer } from '@amnis/land';
 
 export const MyApp: React.FC = () => {
   return (
-    <Page>
+    <Land>
       <Header>My Header</Header>
       <Nav>My navigational links</Nav>
       <Main>Main content</Main>
       <Footer>Footer details</Footer>
-    </Page>
+    </Land>
   )
 }
 ```

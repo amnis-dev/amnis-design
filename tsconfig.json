@@ -9,10 +9,8 @@
       "@amnis/display/*": ["./packages/amnis-display/src/*"],
       "@amnis/layout/*": ["./packages/amnis-layout/src/*"],
       "@amnis/entry/*": ["./packages/amnis-entry/src/*"],
+      "@amnis/land/*": ["./packages/amnis-land/src/*"],
     }
   },
-  "include": [
-    "./packages/**/*.ts",
-    "./packages/**/*.tsx"
-  ]
+  "include": ["./packages/**/*.ts*"]
 }

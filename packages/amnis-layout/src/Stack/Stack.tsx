@@ -5,7 +5,8 @@ import { StackProps } from './Stack.types';
 
 /**
  * ## Stacking Items
- * A convenient layout component to stack children horizontally or vertically.
+ * A convenient layout component to stack children horizontally or vertically. Use this component to
+ * clearly indicate a stack of items in your code.
  */
 export const Stack = React.forwardRef<
 HTMLDivElement,

@@ -1,7 +1,8 @@
 {
   "name": "@amnis/style",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "src/index.ts",
+  "author": "Eric Crowell <eric.crowell@ecrow.dev>",
   "license": "MIT",
   "private": true,
   "repository": {

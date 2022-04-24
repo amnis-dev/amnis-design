@@ -1,4 +1,20 @@
 {
   "extends": "../../tsconfig",
-  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "./.dist",
+    "declarationDir": "./.dist",
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src"
+  },
+  "include": ["./src/**/*.ts*"],
+  "exclude": [
+    "./src/**/*.test.*",
+    "./src/**/*.stories.*",
+  ],
+  "references": [
+    { "path": "../amnis-hooks/tsconfig.json" },
+    { "path": "../amnis-style/tsconfig.json" },
+    { "path": "../amnis-icons/tsconfig.json" }
+  ]
 }

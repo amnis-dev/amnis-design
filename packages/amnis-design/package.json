@@ -1,0 +1,24 @@
+{
+  "name": "@amnis/design",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "author": "Eric Crowell <eric.crowell@ecrow.dev>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amnis-dev/amnis-design"
+  },
+  "homepage": "https://github.com/amnis-dev/amnis-design",
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0"
+  },
+  "dependencies": {
+    "@amnis/hooks": "0.1.0",
+    "@amnis/style": "0.1.0",
+    "@amnis/icons": "0.1.0",
+    "@amnis/layout": "0.1.0",
+    "@amnis/display": "0.1.0",
+    "@amnis/entry": "0.1.0"
+  }
+}

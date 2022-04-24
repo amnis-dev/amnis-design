@@ -1,9 +1,8 @@
 import React, { useMemo } from 'react';
+import { noop } from '@amnis/hooks/util';
 import { useIncrementalId } from '@amnis/hooks/useIncrementalId';
 import { EntryProps } from './Entry.types';
 import { EntryContext, EntryContextType } from '../EntryContext';
-
-const noop = () => { /** No operation. */ };
 
 /**
  * ## User Entries

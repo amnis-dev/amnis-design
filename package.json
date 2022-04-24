@@ -1,13 +1,13 @@
 {
   "name": "@amnis/design",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/amnis-dev/amnis-design"
   },
   "homepage": "https://github.com/amnis-dev/amnis-design",
-  "author": "eCrow <eric.crowell@ecrow.dev>",
+  "author": "Eric Crowell <eric.crowell@ecrow.dev>",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@amnis/eslint-config-react": "^1.2.1",
+    "@amnis/tsconfig-node": "^1.3.2",
     "@amnis/tsconfig-react": "^1.3.1",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
@@ -47,14 +48,16 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
+    "@types/fs-extra": "^9.0.13",
     "@types/jest-axe": "latest",
     "@types/react": "^18.0.6",
     "babel-loader": "latest",
     "babel-plugin-module-resolver": "latest",
-    "command-line-args": "^5.2.1",
     "eslint": "^8.12.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-storybook": "^0.5.11",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.1",
     "hygen": "^6.2.0",
     "jest": "latest",
     "jest-axe": "latest",
@@ -71,9 +74,15 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts --ext .tsx \"./\"",
+    "build": "ts-node -P scripts/tsconfig.json scripts/build",
+    "clean": "yarn clean:dist && yarn clean:ts",
+    "clean:dist": "npx rimraf ./**/.dist",
+    "clean:ts": "npx rimraf ./**/*.tsbuildinfo",
+    "tsc": "tsc",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./.out-storybook",
     "gen:component": "hygen component new",
-    "delete-node-modules": "npx rimraf ./**/node_modules"
+    "delete-node-modules": "npx rimraf ./**/node_modules",
+    "set:version": "ts-node -P scripts/tsconfig.json scripts/version"
   }
 }
