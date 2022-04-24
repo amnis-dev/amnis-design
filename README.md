@@ -45,7 +45,7 @@ npm install @amnis/design
 npm add @amnis/design
 ```
 
-You can optionally install the design system individually.
+You can optionally install the design system in a partially.
 
 ```sh
 # NPM
@@ -59,12 +59,12 @@ npm add @amnis/hooks @amnis/style @amnis/icons @amnis/layout @amnis/display @amn
 
 Below is a basic example of rendering a `Button` component:
 
-```tsx
+```jsx
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@amnis/design/Button';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Button paint="primary" variant="contained">
       Hello Amnis
@@ -74,6 +74,10 @@ const App: React.FC = () => {
 
 ReactDOM.createRoot(document.querySelector('#app')).render(<App />);
 ```
+
+Check it out in an interactive sandbox:
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/amnis-design-basic-button-08tb3x?file=/src/index.js)
 
 ## Contributing
 
