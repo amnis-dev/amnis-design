@@ -75,7 +75,7 @@
     "test": "jest",
     "lint": "eslint --ext .ts --ext .tsx \"./\"",
     "build": "ts-node -P scripts/tsconfig.json scripts/build",
-    "clean": "npx rimraf ./**/.dist",
+    "clean": "yarn clean:dist && yarn clean:ts",
     "clean:dist": "npx rimraf ./**/.dist",
     "clean:ts": "npx rimraf ./**/*.tsbuildinfo",
     "tsc": "tsc",
