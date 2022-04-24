@@ -1,6 +1,6 @@
 {
   "name": "@amnis/display",
-  "version": "0.1.0-alpha-1",
+  "version": "0.1.0-alpha.1",
   "main": "index.js",
   "author": "Eric Crowell <eric.crowell@ecrow.dev>",
   "license": "MIT",
@@ -14,8 +14,8 @@
     "react": "^17.0.2 || ^18.0.0"
   },
   "dependencies": {
-    "@amnis/hooks": "0.1.0-alpha-1",
-    "@amnis/style": "0.1.0-alpha-1",
-    "@amnis/layout": "0.1.0-alpha-1"
+    "@amnis/hooks": "0.1.0-alpha.1",
+    "@amnis/style": "0.1.0-alpha.1",
+    "@amnis/layout": "0.1.0-alpha.1"
   }
 }

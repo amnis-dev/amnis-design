@@ -1,6 +1,6 @@
 {
   "name": "@amnis/icons",
-  "version": "0.1.0-alpha-1",
+  "version": "0.1.0-alpha.1",
   "description": "Package that uses Ionicons 5.",
   "main": "index.js",
   "author": "Eric Crowell <eric.crowell@ecrow.dev>",
