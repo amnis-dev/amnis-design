@@ -1,25 +1,27 @@
-name: Integrity Check
+name: Package
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
+  release:
+    types: [created]
 
 jobs:
-  build:
+  build_and_publish:
     runs-on: ubuntu-latest
+    name: Build and Publish
 
     steps:
 
-    - name: Checkout Repository
+    - name: Checkout Respository
       uses: actions/checkout@v2
 
     - name: Setup NodeJS with Yarn Caching
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '14'
         cache: 'yarn'
         cache-dependency-path: 'yarn.lock'
-    
+        scope: '@amnis'
+
     - name: Install NodeJS Dependencies
       run: yarn install
 
@@ -28,3 +30,8 @@ jobs:
 
     - name: Run Unit Tests
       run: yarn test
+
+    - name: Publish Packages
+      run: yarn pub
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
