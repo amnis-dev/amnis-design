@@ -19,7 +19,7 @@ Workflows
 
 |       | URL    |
 | :---: | :----- |
-| ![Sorybook Logo](media/storybook-logo.png) | [Storybook webpage of Design Componets](storybook.amnis.dev) |
+| ![Sorybook Logo](media/storybook-logo.png) | [Storybook webpage of Design Componets](https://storybook.amnis.dev) |
 
 ## Philosophy
 
