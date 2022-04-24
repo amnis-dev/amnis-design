@@ -3,9 +3,7 @@
  * Builds the amnis design packages.
  */
 import { execSync } from 'child_process';
-// import glob from 'glob';
-// import fse from 'fs-extra';
-// import type { PackageJson } from 'type-fest/source/package-json';
+import fse from 'fs-extra';
 
 // Order of build.
 const packagePaths = [
@@ -21,8 +19,15 @@ const packagePaths = [
 function tsCompile() {
   packagePaths.forEach((path) => {
     const command = `yarn tsc --project ${path}/tsconfig.json`;
-    console.log(`Running '${command}'`);
+    console.log(`Running '${command}...'`);
     execSync(command);
+    console.log('Command complete.');
+    console.log('');
+
+    console.log(`Copying '${path}/package.json' into the build directory...`);
+    fse.copySync(`${path}/package.json`, `${path}/.dist/package.json`);
+    console.log('Copy complete.');
+    console.log('');
   });
 }
 

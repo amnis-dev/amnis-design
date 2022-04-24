@@ -78,6 +78,7 @@
     "clean": "yarn clean:dist && yarn clean:ts",
     "clean:dist": "npx rimraf ./**/.dist",
     "clean:ts": "npx rimraf ./**/*.tsbuildinfo",
+    "pub": "ts-node -P scripts/tsconfig.json scripts/publish",
     "tsc": "tsc",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./.out-storybook",
