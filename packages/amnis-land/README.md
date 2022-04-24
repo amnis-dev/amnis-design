@@ -8,9 +8,9 @@ For more information, see [W3 Landmarks](https://www.w3.org/TR/wai-aria-practice
 
 As components, these landmarks also include responsiveness.
 
-## Use within a Page Component
+## Use within a Land Component
 
-Landmarks are best used as direct children of a `Page` component that organizes and handles the responsiveness of the landmarks.
+Landmarks are best used as direct children of a `Land` component that organizes and handles the responsiveness of the landmarks.
 
 ```tsx
 import React from 'react';

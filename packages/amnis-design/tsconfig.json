@@ -3,10 +3,21 @@
   "compilerOptions": {
     "outDir": "./.dist",
     "declarationDir": "./.dist",
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": ["./src/**/*.ts*"],
   "exclude": [
-    "src/**/*.test.*",
-    "src/**/*.stories.*",
+    "./src/**/*.test.*",
+    "./src/**/*.stories.*",
+  ],
+  "references": [
+    { "path": "../amnis-hooks/tsconfig.json" },
+    { "path": "../amnis-style/tsconfig.json" },
+    { "path": "../amnis-icons/tsconfig.json" },
+    { "path": "../amnis-layout/tsconfig.json" },
+    { "path": "../amnis-display/tsconfig.json" },
+    { "path": "../amnis-entry/tsconfig.json" }
   ]
 }

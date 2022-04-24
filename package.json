@@ -74,7 +74,10 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts --ext .tsx \"./\"",
-    "build": "tsnode -P scripts/tsconfig.json scripts/build",
+    "build": "ts-node -P scripts/tsconfig.json scripts/build",
+    "clean": "npx rimraf ./**/.dist",
+    "clean:dist": "npx rimraf ./**/.dist",
+    "clean:ts": "npx rimraf ./**/*.tsbuildinfo",
     "tsc": "tsc",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./.out-storybook",

@@ -1,0 +1,16 @@
+{
+  "name": "@amnis/land",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Eric Crowell <eric.crowell@ecrow.dev>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amnis-dev/amnis-design"
+  },
+  "homepage": "https://github.com/amnis-dev/amnis-design",
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0"
+  }
+}

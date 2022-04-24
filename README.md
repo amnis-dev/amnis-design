@@ -15,12 +15,6 @@ Workflows
 
 </div>
 
-**Table of Contents**
-* [Example](#example)
-* [Motivation](#motivation)
-* [Installation](#installation)
-* [Contributing](#contributing)
-
 ## Example
 
 |       | URL    |
@@ -47,4 +41,4 @@ No package installation at this time. However, the project should be ready for p
 
 This is a growing project that you can add and improve upon! I'm welcoming to new PRs. Contrubuting can be more than just code too. If you identify an improvement, please [submit a new GitHub issue](https://github.com/amnis-dev/amnis-design/issues/new).
 
-See the [development documentation](docs/CONTRIBUTING.md).
+See the **[contributing documentation](docs/CONTRIBUTING.md)**.

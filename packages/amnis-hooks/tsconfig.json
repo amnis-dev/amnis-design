@@ -3,10 +3,13 @@
   "compilerOptions": {
     "outDir": "./.dist",
     "declarationDir": "./.dist",
+    "composite": true,
+    "declaration": true,
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": ["./src/**/*.ts*"],
   "exclude": [
-    "src/**/*.test.*",
-    "src/**/*.stories.*",
-  ]
+    "./src/**/*.test.*",
+    "./src/**/*.stories.*",
+  ],
 }

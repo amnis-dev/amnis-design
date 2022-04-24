@@ -1,6 +1,6 @@
 # Amnis Design: Contributing
 
-Thank you for taking interest in improving this design system! As you make your contribution, these guidelines should help provide an alignment with the goals of this project, as well as achieve a level of continued quality/maintainability.
+Thank you for taking interest in improving this design system! I'm welcoming to new pull requests and label [good first issues](https://github.com/amnis-dev/amnis-design/labels/good%20first%20issue) when possible. As you make your contribution, these guidelines should help you setup and align with the goals of this project, as well as achieve a level of continued quality/maintainability.
 
 **Table of Contents**
 - Setup
@@ -22,7 +22,7 @@ You'll need tools `git`, `node` and `yarn` to begin.
 * [Get Node.JS](https://nodejs.org/)
 * [Setup Yarn](https://classic.yarnpkg.com/en/docs/getting-started)
 
-It is highly recommended to develop with [Visual Studio Code](https://code.visualstudio.com/). There are settings in this workspace that help provide useful feedback on types and formatting.
+It is highly recommended to develop with [Visual Studio Code](https://code.visualstudio.com/). There are settings in this workspace that help provide useful feedback and automate formatting.
 
 ### Prepare Workspace
 
@@ -90,9 +90,17 @@ This will take you though a three-step wizard with a few questions.
 ? Include a styling component? (y/N) » N
 ```
 
-Once complete, you'll find your new files under the following directory, based on your inputs.
+Once complete, you'll find the new files under the following directory (based on your inputs):
 
-`packages/amnis-{{type}}/src/{{Component Name}}/...`
+`packages/amnis-{type}/src/{Component Name}/...`
+
+| File | Purpose |
+| :--- | :------ |
+| {Name}.tsx | Contains the React functional component |
+| {Name}.types.ts | TypeScript types for the React component properties |
+| {Name}.styled.tsx | Styled component to define CSS rules |
+| {Name}.stories.tsx | Storybook renders of the component in specfic states |
+| {Name}.schema.ts | JSON Schema of the serializable component properties (updated by script) |
 
 ## Component Accessibility
 
@@ -104,14 +112,14 @@ There are automated tests created with the boilerplate to help catch possible is
 
 ## Component Design
 
-When designing a new component, consider code resources that already exist. Reuse those assets to the best of your ability, or improve on them to deliver what you need.
+When designing a new component, consider code resources that already exist. Reuse those assets when possible or improve upon them to deliver what you need.
 
 For example, if you need to layout a series of elements within your new component, don't create a new styling rule... Use the existing `Stack` component under the `@admin/layout` package. If you need a container with a specific surface style, use the `Box` component.
 
-This greatly helps provide predictable and maintainable code. The unit tests will help identify where issues reside, if they occur.
+This greatly helps provide predictable and maintainable code. The unit tests will help identify where issues reside (if they occur).
 
 ## Component Testing
 
-This project uses [Testing Library](https://testing-library.com/) with [Jest](https://jestjs.io/) to render and check conditions. The boilerplate will create a basic test that will ensure the component renders and identify possible a11y issues against a [Story](https://storybook.js.org/docs/react/get-started/whats-a-story).
+This project uses [Testing Library](https://testing-library.com/) with [Jest](https://jestjs.io/) to render and check conditions. The boilerplate creates a basic test to check the render and identify possible a11y issues against a [Story](https://storybook.js.org/docs/react/get-started/whats-a-story).
 
-Each [story](https://storybook.js.org/docs/react/get-started/whats-a-story) should demo the component at a determind state. Design your tests to meet the expectations of the component in that state; such as dimensions, applied css styled, etc...
+Each [story](https://storybook.js.org/docs/react/get-started/whats-a-story) usually demos the component at a certain state. Design your tests to meet the expectations of the component in that state; such as dimensions, applied css styles, etc...

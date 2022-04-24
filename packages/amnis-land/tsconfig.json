@@ -8,5 +8,6 @@
   "exclude": [
     "src/**/*.test.*",
     "src/**/*.stories.*",
-  ]
+  ],
+  "references": []
 }
