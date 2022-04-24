@@ -1,6 +1,6 @@
 {
   "name": "@amnis/design",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha-1",
   "main": "index.ts",
   "repository": {
     "type": "git",
