@@ -35,7 +35,25 @@ For U.S. federal sites, this library should also help legal compliance with [Sec
 
 ## Installation
 
-No package installation at this time. However, the project should be ready for publishing very soon.
+Amnis Design is available as an [npm package](https://www.npmjs.com/package/@amnis/design).
+
+```sh
+# NPM
+npm install @amnis/design
+
+# Yarn
+npm add @amnis/design
+```
+
+You can optionally install the design system individually.
+
+```sh
+# NPM
+npm install @amnis/hooks @amnis/style @amnis/icons @amnis/layout @amnis/display @amnis/entry
+
+# Yarn
+npm add @amnis/hooks @amnis/style @amnis/icons @amnis/layout @amnis/display @amnis/entry
+```
 
 ## Contributing
 
