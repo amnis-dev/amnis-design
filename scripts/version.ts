@@ -6,10 +6,6 @@ import glob from 'glob';
 import fse from 'fs-extra';
 import type { PackageJson } from 'type-fest/source/package-json';
 
-interface Args {
-  version: string;
-}
-
 const { argv } = yargs(process.argv.slice(2))
   .version(false)
   .options({
