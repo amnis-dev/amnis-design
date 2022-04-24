@@ -4,6 +4,7 @@
 import yargs from 'yargs';
 import glob from 'glob';
 import fse from 'fs-extra';
+import { execSync } from 'child_process';
 import type { PackageJson } from 'type-fest/source/package-json';
 
 const { argv } = yargs(process.argv.slice(2))
@@ -47,3 +48,9 @@ packageJsonPaths.forEach((path) => {
 
   fse.writeJSONSync(path, packageJson, { spaces: 2 });
 });
+
+execSync(`git add ${packageJsonPaths.join(' ')}`);
+execSync(`git commit -m "feat: Bumped version to ${version}"`);
+execSync('git push');
+execSync(`git tag v${version}`);
+execSync(`git push origin v${version}`);
