@@ -19,7 +19,10 @@ function publish() {
   packagePaths.forEach((path) => {
     const command = 'yarn publish --access public';
     console.log(`Running '${command}' in '${path}'...`);
-    execSync(command, { cwd: path });
+    execSync(command, {
+      cwd: path,
+      env: { ...process.env },
+    });
     console.log('Publishing complete.');
     console.log('');
   });
