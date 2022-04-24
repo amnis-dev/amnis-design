@@ -17,9 +17,10 @@ jobs:
     - name: Setup NodeJS with Yarn Caching
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '16.x'
         cache: 'yarn'
         cache-dependency-path: 'yarn.lock'
+        registry-url: 'https://registry.npmjs.org'
         scope: '@amnis'
 
     - name: Install NodeJS Dependencies
@@ -28,44 +29,7 @@ jobs:
     - name: Build Project
       run: yarn build
 
-    - name: Publish Hooks
-      working-directory: packages/amnis-hooks/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Style
-      working-directory: packages/amnis-style/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Icons
-      working-directory: packages/amnis-icons/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Layout
-      working-directory: packages/amnis-layout/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Display
-      working-directory: packages/amnis-display/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Entry
-      working-directory: packages/amnis-entry/.dist
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - name: Publish Design
-      working-directory: packages/amnis-design/.dist
-      run: yarn publish --access public
+    - name: Publish Projects
+      run: yarn pub
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
