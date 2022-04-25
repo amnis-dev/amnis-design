@@ -34,7 +34,7 @@ This design system focuses on delivering modern methods that abstract and bundle
 
 This library is inspired by qualities from both the [U.S. Web Design System](https://github.com/uswds/uswds) and [MUI Core](https://github.com/mui/material-ui).
 
-For U.S. federal sites, this library should also help legal compliance with [Section 508 of the Rehabilitation Act (29 U.S.C. §794d)](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology). There are many other [governmental policies](https://www.w3.org/WAI/policies/) this library hopes to help achieve. You should always provide your own testing to ensure you meet your specific requirements.
+This library also aims help with legal compliance of many [governmental policies](https://www.w3.org/WAI/policies/) for the public and private sectors. You should always provide your own testing to ensure you meet your specific requirements.
 
 ## Installation
 
