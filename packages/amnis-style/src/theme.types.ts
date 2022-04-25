@@ -185,12 +185,14 @@ export interface BaseThemeDefault {
 
   spacing: ThemeSpacingLevels;
 
-  surfaces: Partial<ThemeSurfaces>;
-  states: Partial<ThemeStates>;
+  surfaces: ThemeSurfaces;
+  states: ThemeStates;
 }
 
-export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing'>> {
+export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing' | 'surfaces' | 'states'>> {
   spacing?: Partial<ThemeSpacingLevels>;
+  surfaces: Partial<ThemeSurfaces>;
+  states: Partial<ThemeStates>;
 }
 
 export interface Theme {
