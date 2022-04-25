@@ -7,11 +7,14 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/amnis-dev/amnis-design/blob/main/LICENSE)
+[![npm latest package](https://img.shields.io/npm/v/@amnis/design/latest.svg)](https://www.npmjs.com/package/@amnis/design)
+[![npm downloads](https://img.shields.io/npm/dm/@amnis/design.svg)](https://www.npmjs.com/package/@amnis/design)
 
 Workflows
 
 [![Storybook](https://github.com/amnis-dev/amnis-design/actions/workflows/storybook.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/storybook.yml)
 [![Integrity Check](https://github.com/amnis-dev/amnis-design/actions/workflows/integrity-check.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/integrity-check.yml)
+[![Package](https://github.com/amnis-dev/amnis-design/actions/workflows/package.yml/badge.svg)](https://github.com/amnis-dev/amnis-design/actions/workflows/package.yml)
 
 </div>
 
@@ -31,7 +34,7 @@ This design system focuses on delivering modern methods that abstract and bundle
 
 This library is inspired by qualities from both the [U.S. Web Design System](https://github.com/uswds/uswds) and [MUI Core](https://github.com/mui/material-ui).
 
-For U.S. federal sites, this library should also help legal compliance with [Section 508 of the Rehabilitation Act (29 U.S.C. §794d)](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology). There are many other [governmental policies](https://www.w3.org/WAI/policies/) this library can help achieve. You should always provide your own testing to ensure you meet your specific requirements.
+For U.S. federal sites, this library should also help legal compliance with [Section 508 of the Rehabilitation Act (29 U.S.C. §794d)](https://www.access-board.gov/law/ra.html#section-508-federal-electronic-and-information-technology). There are many other [governmental policies](https://www.w3.org/WAI/policies/) this library hopes to help achieve. You should always provide your own testing to ensure you meet your specific requirements.
 
 ## Installation
 

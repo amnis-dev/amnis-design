@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/amnis-dev/amnis-design",
   "peerDependencies": {
-    "react": "^17.0.2 || ^18.0.0"
+    "react": "^18.0.0"
   },
   "dependencies": {
     "@amnis/style": "0.1.0-alpha.3"

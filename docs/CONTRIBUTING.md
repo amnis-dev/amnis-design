@@ -98,9 +98,10 @@ Once complete, you'll find the new files under the following directory (based on
 | :--- | :------ |
 | {Name}.tsx | Contains the React functional component |
 | {Name}.types.ts | TypeScript types for the React component properties |
-| {Name}.styled.tsx | Styled component to define CSS rules |
-| {Name}.stories.tsx | Storybook renders of the component in specfic states |
+| {Name}.styled.tsx | [Emotion](https://emotion.sh/docs/introduction) Styled component to define CSS rules |
+| {Name}.stories.tsx | [Storybook](https://storybook.js.org/) renders of the component in specfic states |
 | {Name}.schema.ts | JSON Schema of the serializable component properties (updated by script) |
+| {Name}.test.ts | [Testing Library](https://testing-library.com/) with [Jest](https://jestjs.io/) for checking component conditions |
 
 ## Component Accessibility
 
@@ -110,11 +111,15 @@ Consider the qualities of the component, then read the [Web Content Accessibilit
 
 There are automated tests created with the boilerplate to help catch possible issues, but they can't catch everything.
 
+The [U.S. Web Design System](https://designsystem.digital.gov/) is an excellent resource for UX accessibility.
+
 ## Component Design
 
 When designing a new component, consider code resources that already exist. Reuse those assets when possible or improve upon them to deliver what you need.
 
 For example, if you need to layout a series of elements within your new component, don't create a new styling rule... Use the existing `Stack` component under the `@admin/layout` package. If you need a container with a specific surface style, use the `Box` component.
+
+The [MUI Core](https://mui.com/) UI is a great place to gather inspiration for React component design.
 
 This greatly helps provide predictable and maintainable code. The unit tests will help identify where issues reside (if they occur).
 
