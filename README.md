@@ -80,7 +80,7 @@ ReactDOM.createRoot(document.querySelector('#app')).render(<App />);
 
 Check it out in an interactive sandbox:
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/amnis-design-basic-button-08tb3x?file=/src/index.js)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/amnis-design-basic-button-08tb3x)
 
 ## Contributing
 
