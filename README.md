@@ -48,7 +48,7 @@ npm install @amnis/design
 npm add @amnis/design
 ```
 
-You can optionally install the design system in a partially.
+You can optionally install the design system by its individual parts.
 
 ```sh
 # NPM
