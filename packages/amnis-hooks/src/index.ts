@@ -12,3 +12,5 @@ export * from './useOnClickOutside';
 export * from './useReadLocalStorage';
 export * from './useTimeout';
 export * from './useWindowSize';
+export * from './useImageLoader';
+export * from './useInnerRef';

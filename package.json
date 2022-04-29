@@ -83,6 +83,7 @@
     "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o ./.out-storybook",
     "gen:component": "hygen component new",
+    "gen:hook": "hygen hook new",
     "delete-node-modules": "npx rimraf ./**/node_modules",
     "set:version": "ts-node -P scripts/tsconfig.json scripts/version"
   }
