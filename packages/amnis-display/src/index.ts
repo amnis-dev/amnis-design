@@ -1,1 +1,3 @@
 export * from './Font';
+export * from './Image';
+export * from './Picture';

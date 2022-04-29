@@ -18,6 +18,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y'
   ],
+  'staticDirs': ['../static'],
   'framework': '@storybook/react',
   webpackFinal: async config => {
     config.resolve.alias = { ...config.resolve.alias,
