@@ -4,7 +4,7 @@ import { TooltipStyled } from './Tooltip.styled';
 
 /**
  * ## Subtitle
- * TODO: Write component details
+ * This is tooltip display when we hover on it an element
  */
 export const Tooltip = React.forwardRef<
 HTMLDivElement,

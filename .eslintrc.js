@@ -1,6 +1,6 @@
 module.exports = {
   extends: '@amnis/eslint-config-react',
   rules: {
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
   },
 };

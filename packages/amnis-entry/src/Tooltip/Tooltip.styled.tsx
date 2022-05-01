@@ -5,6 +5,8 @@ export const TooltipStyled = styled<HTMLDivElement>('div')<
 Partial<TooltipProps>
 >(({ theme, paint }) => {
   const { paints } = theme;
+  const isPainted = !!paint;
+
   const style: CSSObject = {
     position: 'relative',
     padding: 20,
@@ -22,10 +24,8 @@ Partial<TooltipProps>
       left: '50%',
       transform: 'translateX(-50%)',
       padding: 5,
-      backgroundColor: paint
-        ? paints.main.neutral.backgroundColor
-        : 'rgba(0,0,0,0.75)',
-      color: paint ? paints.main.neutral.color : '#fff',
+      backgroundColor: isPainted ? paints.main.neutral.backgroundColor : 'rgba(0,0,0,0.75)',
+      color: isPainted ? paints.main.neutral.color : '#fff',
     },
   };
 
