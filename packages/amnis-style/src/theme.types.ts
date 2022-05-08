@@ -26,6 +26,11 @@ export interface ThemeSurfaces {
   readonly paper: CSSProperties;
 }
 
+export interface ThemeShapes {
+  readonly square: CSSProperties;
+  readonly circle: CSSProperties;
+}
+
 export interface ThemeStates {
   readonly disabled: CSSProperties;
 }
@@ -144,6 +149,7 @@ export type ThemeTransitionOptions = Extract<keyof ThemeTransitions, string>;
 export type ThemeDurationOptions = Extract<keyof ThemeDurations, string>;
 export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
 export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
+export type ThemeShapeOptions = Extract<keyof ThemeShapes, string>;
 export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
 
 export interface BaseThemeDefault {
@@ -186,13 +192,15 @@ export interface BaseThemeDefault {
   spacing: ThemeSpacingLevels;
 
   surfaces: ThemeSurfaces;
+  shapes: ThemeShapes;
   states: ThemeStates;
 }
 
-export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing' | 'surfaces' | 'states'>> {
+export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing' | 'surfaces' | 'shapes' | 'states'>> {
   spacing?: Partial<ThemeSpacingLevels>;
-  surfaces: Partial<ThemeSurfaces>;
-  states: Partial<ThemeStates>;
+  surfaces?: Partial<ThemeSurfaces>;
+  shapes?: Partial<ThemeShapes>;
+  states?: Partial<ThemeStates>;
 }
 
 export interface Theme {
@@ -207,6 +215,8 @@ export interface Theme {
   readonly paints: ThemePaints;
 
   readonly surfaces: ThemeSurfaces;
+
+  readonly shapes: ThemeShapes;
 
   readonly states: ThemeStates;
 
