@@ -5,8 +5,6 @@ import {
   BaseThemeDefault,
   ThemePaint,
   ThemeShadowLevels,
-  ThemeSurfaces,
-  ThemeStates,
 } from './theme.types';
 import { themeBaseDefault } from './themeBaseDefault';
 
@@ -199,6 +197,16 @@ const generator = (base: BaseTheme): Theme => {
         ...base?.surfaces?.paper,
       },
     },
+    shapes: {
+      square: {
+        ...themeBaseDefault.shapes.square,
+        ...base?.shapes?.square,
+      },
+      circle: {
+        ...themeBaseDefault.shapes.circle,
+        ...base?.shapes?.circle,
+      },
+    },
     states: {
       disabled: {
         ...themeBaseDefault.states.disabled,
@@ -254,8 +262,9 @@ const generator = (base: BaseTheme): Theme => {
       baseLight: createThemePaint(merge.baseColor, focusColor, modeType, 'lighten'),
     },
 
-    surfaces: merge.surfaces as ThemeSurfaces,
-    states: merge.states as ThemeStates,
+    surfaces: merge.surfaces,
+    shapes: merge.shapes,
+    states: merge.states,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

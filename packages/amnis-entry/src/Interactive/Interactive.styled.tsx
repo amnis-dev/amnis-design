@@ -18,7 +18,6 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
   } = theme;
 
   const style: CSSObject = {
-    display: 'inline-block',
     boxSizing: 'border-box',
     cursor: 'pointer',
     outlineOffset: '0rem',

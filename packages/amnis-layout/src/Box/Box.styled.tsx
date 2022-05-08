@@ -19,9 +19,10 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   alignItems = 'flex-start',
   justifyContent = 'flex-start',
   surface,
+  shape = 'square',
 }) => {
   const {
-    paints, spacing, shadow: themeShadow, surfaces,
+    paints, spacing, shadow: themeShadow, surfaces, shapes,
   } = theme;
 
   const isPainted = !!paint;
@@ -54,6 +55,13 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
       ...style,
       backgroundColor: paints.main.neutral.backgroundColor,
       ...surfaces[surface] as Record<string, unknown>,
+    };
+  }
+
+  if (shape) {
+    style = {
+      ...style,
+      ...shapes[shape],
     };
   }
 

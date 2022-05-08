@@ -4,6 +4,7 @@ import type {
   ThemeSpacingLevelOptions,
   ThemeColumnWidthOptions,
   ThemeSurfaceOptions,
+  ThemeShapeOptions,
   ThemeShadowLevelOptions,
 } from '@amnis/style/theme.types';
 
@@ -37,6 +38,11 @@ export interface BoxProps {
    * Applies a suface styling to the box.
    */
   surface?: ThemeSurfaceOptions;
+
+  /**
+   * Changes the shape of the box.
+   */
+  shape?: ThemeShapeOptions;
 
   /**
    * CSS Positioning.

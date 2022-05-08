@@ -116,6 +116,18 @@ export const themeBaseDefault: BaseThemeDefault = {
     },
   },
 
+  shapes: {
+    square: {},
+    circle: {
+      borderRadius: '50%',
+      aspectRatio: '1 / 1',
+      overflow: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
+
   states: {
     disabled: {
       backgroundColor: '#888888',
