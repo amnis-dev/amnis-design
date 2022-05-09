@@ -35,6 +35,11 @@ export interface ThemeStates {
   readonly disabled: CSSProperties;
 }
 
+export interface ThemeSeparators {
+  readonly basic: CSSProperties;
+  readonly thematic: CSSProperties;
+}
+
 export interface ThemePaintStyle {
   readonly backgroundColor: string;
   readonly color: string;
@@ -151,6 +156,7 @@ export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
 export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
 export type ThemeShapeOptions = Extract<keyof ThemeShapes, string>;
 export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
+export type ThemeSeparatorOptions = Extract<keyof ThemeSeparators, string>;
 
 export interface BaseThemeDefault {
   /**
@@ -194,13 +200,17 @@ export interface BaseThemeDefault {
   surfaces: ThemeSurfaces;
   shapes: ThemeShapes;
   states: ThemeStates;
+  separators: ThemeSeparators;
 }
 
-export interface BaseTheme extends Partial<Omit<BaseThemeDefault, 'spacing' | 'surfaces' | 'shapes' | 'states'>> {
+export interface BaseTheme extends Partial<Omit<
+BaseThemeDefault, 'spacing' | 'surfaces' | 'shapes' | 'states' | 'separators'>
+> {
   spacing?: Partial<ThemeSpacingLevels>;
   surfaces?: Partial<ThemeSurfaces>;
   shapes?: Partial<ThemeShapes>;
   states?: Partial<ThemeStates>;
+  separators?: Partial<ThemeSeparators>;
 }
 
 export interface Theme {
@@ -219,6 +229,8 @@ export interface Theme {
   readonly shapes: ThemeShapes;
 
   readonly states: ThemeStates;
+
+  readonly separators: ThemeSeparators;
 
   readonly shadow: ThemeShadowLevels;
 

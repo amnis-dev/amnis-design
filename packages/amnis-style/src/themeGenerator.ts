@@ -213,6 +213,16 @@ const generator = (base: BaseTheme): Theme => {
         ...base?.states?.disabled,
       },
     },
+    separators: {
+      basic: {
+        ...themeBaseDefault.separators.basic,
+        ...base?.separators?.basic,
+      },
+      thematic: {
+        ...themeBaseDefault.separators.thematic,
+        ...base?.separators?.thematic,
+      },
+    },
   } as BaseThemeDefault;
 
   const modeType = Color(merge.backgroundColor).isLight();
@@ -265,6 +275,7 @@ const generator = (base: BaseTheme): Theme => {
     surfaces: merge.surfaces,
     shapes: merge.shapes,
     states: merge.states,
+    separators: merge.separators,
 
     shadow: createThemeShadowLevels(modeType),
     spacing: merge.spacing,

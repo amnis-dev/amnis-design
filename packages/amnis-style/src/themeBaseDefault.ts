@@ -140,6 +140,21 @@ export const themeBaseDefault: BaseThemeDefault = {
       boxShadow: 'none',
     },
   },
+
+  separators: {
+    basic: {
+      border: 0,
+      height: 1,
+      backgroundColor: '#aaa',
+      backgroundImage: 'linear-gradient(to right, #aaa, #000, #aaa)',
+    },
+    thematic: {
+      border: 0,
+      height: 1,
+      backgroundColor: '#aaa',
+      backgroundImage: 'linear-gradient(to right, #aaa, #000, #aaa)',
+    },
+  },
 };
 
 export default themeBaseDefault;
