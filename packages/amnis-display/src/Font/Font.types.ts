@@ -3,7 +3,7 @@ import type React from 'react';
 
 export type FontVariant = 'heading-1' | 'heading-2' | 'heading-3' | 'heading-4'
 | 'heading-5' | 'heading-6' | 'subtitle-1' | 'subtitle-2' | 'body-1' | 'body-2'
-| 'logo' | 'label' | 'button' | 'caption' | 'overline';
+| 'logo' | 'label' | 'button' | 'caption' | 'overline' | 'link';
 
 export interface FontProps {
   /**

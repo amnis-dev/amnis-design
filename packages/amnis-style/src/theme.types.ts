@@ -13,6 +13,7 @@ export interface ThemeFont {
   readonly button: CSSProperties;
   readonly caption: CSSProperties;
   readonly overline: CSSProperties;
+  readonly link: CSSProperties;
 }
 
 export interface ThemeFonts {

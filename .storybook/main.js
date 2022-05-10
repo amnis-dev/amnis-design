@@ -20,6 +20,9 @@ module.exports = {
   ],
   'staticDirs': ['../static'],
   'framework': '@storybook/react',
+  typescript: {
+    reactDocgen: false,
+  },
   webpackFinal: async config => {
     config.resolve.alias = { ...config.resolve.alias,
       '@amnis/hooks': path.resolve(__dirname, "../packages/amnis-hooks/src"),

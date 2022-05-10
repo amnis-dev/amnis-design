@@ -43,6 +43,11 @@ export const themeBaseDefault: BaseThemeDefault = {
       overline: {
         fontSize: '0.95em',
       },
+      link: {
+        fontSize: 'inherit',
+        textDecoration: 'underline',
+        cursor: 'pointer',
+      },
     },
     prose: {
       fontFamily: 'Merriweather, Arial, sans-serif',
@@ -70,6 +75,10 @@ export const themeBaseDefault: BaseThemeDefault = {
       },
       overline: {
         fontSize: '0.95em',
+      },
+      link: {
+        fontSize: 'inherit',
+        textDecoration: 'underline',
       },
     },
   },
