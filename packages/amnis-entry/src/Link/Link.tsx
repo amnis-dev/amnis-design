@@ -43,9 +43,12 @@ React.ComponentProps<typeof LinkStyled>
   const text = useChildrenText(children);
 
   /**
-   * Throw an error if the text is too generic.
+   * Throw an error if the text is too generic or empty.
    */
   React.useEffect(() => {
+    if (!text.length) {
+      throw new Error('The link must have inner text.');
+    }
     if (genericLinkText.includes(text.toLowerCase())) {
       throw new Error(`The text "${text}" is too generic for links. Please use more descriptive text.`);
     }

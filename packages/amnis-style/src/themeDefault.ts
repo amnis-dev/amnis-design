@@ -1,10 +1,11 @@
-import type { BaseThemeDefault } from './theme.types';
+import type { Theme } from './theme.types';
 
 /**
  * Default theme properties
  */
-export const themeBaseDefault: BaseThemeDefault = {
+export const themeDefault: Theme = {
   name: 'Default theme',
+  mode: 'light',
 
   maxContentWidth: '80rem',
 
@@ -83,28 +84,49 @@ export const themeBaseDefault: BaseThemeDefault = {
     },
   },
 
-  backgroundColor: '#ffffff',
+  paints: {
+    main: {
+      backgroundColor: '#ffffff',
+      color: '#151515',
+    },
 
-  infoColor: '#00bde3',
-  warnColor: '#ffbe2e',
-  dangerColor: '#b50909',
-  positiveColor: '#00a91c',
+    information: {
+      backgroundColor: '#00bde3',
+      color: '#151515',
+    },
+    warning: {
+      backgroundColor: '#ffbe2e',
+      color: '#151515',
+    },
+    danger: {
+      backgroundColor: '#b50909',
+      color: '#151515',
+    },
+    positive: {
+      backgroundColor: '#00a91c',
+      color: '#151515',
+    },
 
-  primaryColor: '#005ea2',
-  secondaryColor: '#c9342e',
-  coolColor: '#00bde3',
-  warmColor: '#fa9441',
-  baseColor: '#cfcfcf',
-
-  spacing: {
-    0: '0em',
-    1: '.25em',
-    2: '.5em',
-    3: '.75em',
-    4: '1em',
-    5: '1.5em',
-    6: '2em',
-    7: '2.5em',
+    primary: {
+      backgroundColor: '#005ea2',
+      color: '#ffffff',
+    },
+    secondary: {
+      backgroundColor: '#c9342e',
+      color: '#ffffff',
+    },
+    cool: {
+      backgroundColor: '#00bde3',
+      color: '#151515',
+    },
+    warm: {
+      backgroundColor: '#fa9441',
+      color: '#151515',
+    },
+    base: {
+      backgroundColor: '#cfcfcf',
+      color: '#151515',
+    },
   },
 
   surfaces: {
@@ -138,6 +160,10 @@ export const themeBaseDefault: BaseThemeDefault = {
   },
 
   states: {
+    focused: {
+      outlineOffset: '.2rem',
+      outline: '.25rem solid #219cde',
+    },
     disabled: {
       backgroundColor: '#888888',
       color: '#ffffff',
@@ -164,6 +190,53 @@ export const themeBaseDefault: BaseThemeDefault = {
       backgroundImage: 'linear-gradient(to right, #aaa, #000, #aaa)',
     },
   },
+
+  spacing: {
+    0: '0em',
+    1: '.25em',
+    2: '.5em',
+    3: '.75em',
+    4: '1em',
+    5: '1.5em',
+    6: '2em',
+    7: '2.5em',
+  },
+
+  shadow: {
+    0: 'none',
+    1: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
+    2: '0 4px 8px 0 rgba(0, 0, 0, 0.4)',
+    3: '0 8px 16px 0 rgba(0, 0, 0, 0.4)',
+    4: '0 12px 24px 0 rgba(0, 0, 0, 0.4)',
+    5: '0 16px 32px 0 rgba(0, 0, 0, 0.4)',
+    6: '0 18px 36px 0 rgba(0, 0, 0, 0.4)',
+  },
+
+  pseudoQueries: {
+    hover: '&:hover',
+    active: '&:active',
+    focus: '&:not([disabled]):focus',
+    disabled: '&:disabled',
+  },
+
+  mediaQueries: {
+    phone: '@media (max-width: 600px)',
+    mobile: '@media (max-width: 768px)',
+    tablet: '@media (max-width: 1024px)',
+  },
+
+  transitions: {
+    easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
+    easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
+    sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
+  },
+
+  durations: {
+    short: '200ms',
+    normal: '350ms',
+    complex: '640ms',
+  },
 };
 
-export default themeBaseDefault;
+export default themeDefault;

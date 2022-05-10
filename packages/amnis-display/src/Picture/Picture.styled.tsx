@@ -5,7 +5,7 @@ export const PictureStyled = styled<HTMLPictureElement>('picture')<Partial<Pictu
   const style: CSSObject = {
     position: 'relative',
     display: 'inline-block',
-    backgroundColor: theme.paints.base.neutral.backgroundColor,
+    backgroundColor: theme.paints.base.backgroundColor,
   };
 
   return style;

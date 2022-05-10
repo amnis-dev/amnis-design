@@ -1,19 +1,23 @@
 import type { CSSProperties } from 'react';
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+type CSSProp = Readonly<CSSProperties>;
+
+type RecursivePartial<T> = {
+  [P in keyof T]?: RecursivePartial<T[P]>;
+};
 
 export interface ThemeFont {
-  fontFamily: CSSProperties['fontFamily'];
-  fontSize: CSSProperties['fontSize'];
-  readonly heading: CSSProperties;
-  readonly subtitle: CSSProperties;
-  readonly body: CSSProperties;
-  readonly logo: CSSProperties;
-  readonly label: CSSProperties;
-  readonly button: CSSProperties;
-  readonly caption: CSSProperties;
-  readonly overline: CSSProperties;
-  readonly link: CSSProperties;
+  fontFamily: CSSProp['fontFamily'];
+  fontSize: CSSProp['fontSize'];
+  readonly heading: CSSProp;
+  readonly subtitle: CSSProp;
+  readonly body: CSSProp;
+  readonly logo: CSSProp;
+  readonly label: CSSProp;
+  readonly button: CSSProp;
+  readonly caption: CSSProp;
+  readonly overline: CSSProp;
+  readonly link: CSSProp;
 }
 
 export interface ThemeFonts {
@@ -22,36 +26,29 @@ export interface ThemeFonts {
 }
 
 export interface ThemeSurfaces {
-  readonly button: CSSProperties;
-  readonly input: CSSProperties;
-  readonly paper: CSSProperties;
+  readonly button: CSSProp;
+  readonly input: CSSProp;
+  readonly paper: CSSProp;
 }
 
 export interface ThemeShapes {
-  readonly square: CSSProperties;
-  readonly circle: CSSProperties;
+  readonly square: CSSProp;
+  readonly circle: CSSProp;
 }
 
 export interface ThemeStates {
-  readonly disabled: CSSProperties;
+  readonly focused: CSSProp;
+  readonly disabled: CSSProp;
 }
 
 export interface ThemeSeparators {
-  readonly basic: CSSProperties;
-  readonly thematic: CSSProperties;
+  readonly basic: CSSProp;
+  readonly thematic: CSSProp;
 }
 
-export interface ThemePaintStyle {
+export interface ThemePaint extends Omit<CSSProp, 'backgroundColor' | 'color'> {
   readonly backgroundColor: string;
   readonly color: string;
-  readonly colorLink: string;
-}
-
-export interface ThemePaint {
-  readonly neutral: ThemePaintStyle;
-  readonly hover: ThemePaintStyle;
-  readonly active: ThemePaintStyle;
-  readonly focus: ThemePaintStyle;
 }
 
 export interface ThemePaints {
@@ -63,24 +60,10 @@ export interface ThemePaints {
   readonly positive: ThemePaint;
 
   readonly primary: ThemePaint;
-  readonly primaryLight: ThemePaint;
-  readonly primaryDark: ThemePaint;
-
   readonly secondary: ThemePaint;
-  readonly secondaryLight: ThemePaint;
-  readonly secondaryDark: ThemePaint;
-
   readonly cool: ThemePaint;
-  readonly coolLight: ThemePaint;
-  readonly coolDark: ThemePaint;
-
   readonly warm: ThemePaint;
-  readonly warmLight: ThemePaint;
-  readonly warmDark: ThemePaint;
-
   readonly base: ThemePaint;
-  readonly baseLight: ThemePaint;
-  readonly baseDark: ThemePaint;
 }
 
 export interface ThemeShadowLevels {
@@ -159,61 +142,6 @@ export type ThemeShapeOptions = Extract<keyof ThemeShapes, string>;
 export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
 export type ThemeSeparatorOptions = Extract<keyof ThemeSeparators, string>;
 
-export interface BaseThemeDefault {
-  /**
-   * Name of the theme.
-   */
-  name: string;
-
-  /**
-   * The content max-widths of template sections.
-   */
-  maxContentWidth: string;
-
-  /**
-   * Array of fonts to import.
-   * The string should be a url to the css that defines the font faces.
-   * For example, this imports from Google Fonts: https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap
-   */
-  fontImports: string[];
-
-  /**
-   * Font styles
-   */
-  fonts: ThemeFonts;
-
-  backgroundColor: string;
-  accentColor?: string;
-
-  infoColor: string;
-  warnColor: string;
-  dangerColor: string;
-  positiveColor: string;
-
-  primaryColor: string;
-  secondaryColor: string;
-  coolColor: string;
-  warmColor: string;
-  baseColor: string;
-
-  spacing: ThemeSpacingLevels;
-
-  surfaces: ThemeSurfaces;
-  shapes: ThemeShapes;
-  states: ThemeStates;
-  separators: ThemeSeparators;
-}
-
-export interface BaseTheme extends Partial<Omit<
-BaseThemeDefault, 'spacing' | 'surfaces' | 'shapes' | 'states' | 'separators'>
-> {
-  spacing?: Partial<ThemeSpacingLevels>;
-  surfaces?: Partial<ThemeSurfaces>;
-  shapes?: Partial<ThemeShapes>;
-  states?: Partial<ThemeStates>;
-  separators?: Partial<ThemeSeparators>;
-}
-
 export interface Theme {
   readonly name: string;
   readonly mode: 'light' | 'dark';
@@ -245,6 +173,8 @@ export interface Theme {
 
   readonly durations: ThemeDurations;
 }
+
+export type ThemeBase = RecursivePartial<Theme>;
 
 export interface ThemeProps {
   theme: Theme;

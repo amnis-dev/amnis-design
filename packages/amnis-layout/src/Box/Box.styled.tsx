@@ -33,8 +33,8 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
 
   let style: CSSObject = {
     flexGrow: 1,
-    backgroundColor: isPainted ? paints.main.neutral.backgroundColor : undefined,
-    color: isPainted ? paints.main.neutral.color : 'inherit',
+    backgroundColor: isPainted ? paints.main.backgroundColor : undefined,
+    color: isPainted ? paints.main.color : 'inherit',
     padding: `${spacing[paddingVertical]} ${spacing[padding]}`,
     margin: `${spacing[marginVertical]} ${spacing[margin]}`,
     display,
@@ -53,7 +53,7 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   if (surface) {
     style = {
       ...style,
-      backgroundColor: paints.main.neutral.backgroundColor,
+      ...paints.main,
       ...surfaces[surface] as Record<string, unknown>,
     };
   }
@@ -70,9 +70,9 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
       ...style,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: paint ? paints[paint || 'main'].neutral.backgroundColor : paints.main.neutral.color,
-      color: paint ? paints[paint].neutral.backgroundColor : paints.main.neutral.color,
-      backgroundColor: 'transparent',
+      borderColor: paint ? paints[paint || 'main'].backgroundColor : paints.main.color,
+      color: paint ? paints[paint].backgroundColor : paints.main.color,
+      backgroundColor: paint ? `${paints[paint].color} !important` : 'transparent',
     };
   }
 

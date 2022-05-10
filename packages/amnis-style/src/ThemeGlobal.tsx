@@ -15,10 +15,10 @@ export const GlobalStyles: React.FC<{ root: boolean }> = ({ root }) => {
     }
 
     body {
-      ${root ? `background-color: ${theme.paints.main.neutral.backgroundColor};` : ''}
+      ${root ? `background-color: ${theme.paints.main.backgroundColor};` : ''}
       font-family: ${theme.fonts.main.fontFamily};
       font-size: ${theme.fonts.main.fontSize};
-      color: ${theme.paints.main.neutral.color};
+      color: ${theme.paints.main.color};
       margin: 0;
     }
 

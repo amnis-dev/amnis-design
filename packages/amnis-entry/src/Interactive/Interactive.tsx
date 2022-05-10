@@ -9,7 +9,8 @@ import { InteractiveStyled } from './Interactive.styled';
  */
 export const Interactive = React.forwardRef<
 HTMLButtonElement,
-InteractiveProps
+React.ComponentProps<typeof InteractiveStyled>
+& InteractiveProps
 >(({
   children,
   toggle,

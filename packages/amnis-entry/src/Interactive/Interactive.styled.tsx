@@ -21,10 +21,10 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
     boxSizing: 'border-box',
     cursor: 'pointer',
     outlineOffset: '0rem',
-    outline: `0 solid ${paints.main.neutral.color}00`,
+    outline: `0 solid ${paints.main.color}00`,
     filter: 'brightness(1)',
-    backgroundColor: paint ? paints.main.neutral.backgroundColor : 'transparent',
-    color: paint ? paints.main.neutral.color : 'inherit',
+    backgroundColor: paint ? paints.main.backgroundColor : 'transparent',
+    color: paint ? paints.main.color : 'inherit',
     transition:
       `outline-offset ${durations.short} ${transitions.easeInOut},\
 outline ${durations.short} ${transitions.easeInOut},\
@@ -32,21 +32,19 @@ background-color ${durations.short} ${transitions.easeInOut},\
 color ${durations.short} ${transitions.easeInOut}`,
 
     [pseudoQueries.hover]: {
-      filter: mode === 'light' ? 'brightness(0.9)' : 'brightness(1.1)',
+      filter: mode === 'light' ? 'brightness(0.8)' : 'brightness(1.2)',
     },
 
     [pseudoQueries.active]: {
-      filter: mode === 'light' ? 'brightness(0.85)' : 'brightness(1.15)',
+      filter: mode === 'light' ? 'brightness(0.7)' : 'brightness(1.3)',
     },
 
     [pseudoQueries.focus]: {
-      outlineOffset: '.2rem',
-      outline: `.25rem solid ${paints.main.focus.backgroundColor}`,
+      ...states.focused,
     },
 
     '&:focus-within': {
-      outlineOffset: '.2rem',
-      outline: `.25rem solid ${paints.main.focus.backgroundColor}`,
+      ...states.focused,
     },
 
     [pseudoQueries.disabled]: {

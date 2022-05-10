@@ -3,6 +3,7 @@ import type { ThemePaintOptions } from '@amnis/style/theme.types';
 import type React from 'react';
 
 export type ButtonVariant = 'text' | 'contain' | 'outline';
+export type ButtonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps {
   /**
@@ -31,6 +32,12 @@ export interface ButtonProps {
    * @default "contained"
    */
   variant?: ButtonVariant;
+
+  /**
+   * Button sizes
+   * @default "medium"
+   */
+  size?: ButtonSize;
 
   /**
    * Icon key for the start icon.

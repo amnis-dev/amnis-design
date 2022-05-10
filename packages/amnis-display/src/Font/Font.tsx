@@ -18,6 +18,7 @@ const variantElementMap: Record<FontVariant, string> = {
   button: 'span',
   caption: 'caption',
   overline: 'span',
+  link: 'a',
 };
 
 /**
@@ -32,13 +33,17 @@ React.ComponentProps<typeof FontStyled>
   children,
   variant,
   v,
+  size,
+  s,
   as,
+  style,
   ...props
 }, ref) => (
   <FontStyled
     ref={ref}
     as={as || variantElementMap[(variant || v || 'body-1') as FontVariant]}
     variant={variant || v}
+    style={{ fontSize: size || s, ...style }}
     {...props}
   >
     {children}

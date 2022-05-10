@@ -29,6 +29,18 @@ export interface FontProps {
   v?: FontVariant;
 
   /**
+   * Overrides font size.
+   * @default "1em"
+   */
+  size?: React.CSSProperties['fontSize'];
+
+  /**
+    * Alias for `size`.
+    * @ignore
+    */
+  s?: React.CSSProperties['fontSize'];
+
+  /**
    * Apply text decoration.
    */
   decoration?: React.CSSProperties['textDecoration'];

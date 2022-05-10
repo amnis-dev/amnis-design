@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import type {
-  Theme, ThemeColumnWidths, ThemePaint, ThemePaintOptions,
+  Theme, ThemeColumnWidths, ThemePaint, ThemePaintOptions, ThemeShadowLevels,
 } from './theme.types';
 
 /**
@@ -45,3 +45,20 @@ export const columnWidths: ThemeColumnWidths = {
   11: `${(11 / 12) * 100}%`,
   12: `${(12 / 12) * 100}%`,
 };
+
+/**
+ * Creates the levels for shadows.
+ */
+export function createThemeShadowLevels(themeIsLightType: boolean): ThemeShadowLevels {
+  const shadowColor = themeIsLightType ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.75)';
+
+  return {
+    0: 'none',
+    1: `0 1px 4px 0 ${shadowColor}`,
+    2: `0 4px 8px 0 ${shadowColor}`,
+    3: `0 8px 16px 0 ${shadowColor}`,
+    4: `0 12px 24px 0 ${shadowColor}`,
+    5: `0 16px 32px 0 ${shadowColor}`,
+    6: `0 18px 36px 0 ${shadowColor}`,
+  };
+}

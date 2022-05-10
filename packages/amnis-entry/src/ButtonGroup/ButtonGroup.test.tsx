@@ -5,13 +5,13 @@ import '@testing-library/jest-dom';
 import { matchers as emotionMatchers } from '@emotion/jest';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
-import { Basic } from './ButtonIcon.stories';
+import { Basic } from './ButtonGroup.stories';
 
 expect.extend(emotionMatchers);
 expect.extend(toHaveNoViolations);
 
 it('renders basic story properly with no a11y violations', async () => {
-  const { container } = render(<Basic label="Test" icon="HiQuestionMarkCircle" {...Basic.args} />);
+  const { container } = render(<Basic buttons={[]} {...Basic.args} />);
   const element = container.querySelector('div');
 
   expect(element).toBeDefined();

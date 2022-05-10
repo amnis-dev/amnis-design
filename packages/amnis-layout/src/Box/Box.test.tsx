@@ -25,8 +25,8 @@ it('renders painted story properly with no a11y violations', async () => {
 
   expect(element).toBeDefined();
 
-  expect(element).toHaveStyleRule('background-color', styledDefaultTheme.paints.primary.neutral.backgroundColor);
-  expect(element).toHaveStyleRule('color', styledDefaultTheme.paints.primary.neutral.color);
+  expect(element).toHaveStyleRule('background-color', styledDefaultTheme.paints.primary.backgroundColor);
+  expect(element).toHaveStyleRule('color', styledDefaultTheme.paints.primary.color);
 
   expect(await axe(container)).toHaveNoViolations();
 });

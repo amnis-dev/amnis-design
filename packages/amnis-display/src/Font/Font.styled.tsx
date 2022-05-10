@@ -15,12 +15,26 @@ export const FontStyled = styled<HTMLSpanElement>('span')<Partial<FontProps>>(({
 
   const fontSize = `calc(${fontProps.fontSize} - ${fontProps.fontSize} / 7 * ${fontLevel})`;
 
-  const style: CSSObject = {
+  let style: CSSObject = {
     ...fonts.main[fontType] as CSSObject,
     fontSize,
     textDecoration: decoration,
-    color: paint ? paints[paint].neutral.backgroundColor : 'inherit',
+    color: paint ? paints[paint].backgroundColor : 'inherit',
   };
+
+  if (paint) {
+    style = {
+      ...style,
+      backgroundColor: paints[paint].color,
+    //   textShadow: `
+    //   -1px -1px 0 ${paints[paint].color},
+    //   1px -1px 0 ${paints[paint].color},
+    //   -1px 1px 0 ${paints[paint].color},
+    //   1px 1px 0 ${paints[paint].color},
+    //   -1px 0 0 ${paints[paint].color},
+    //   1px 0 0 ${paints[paint].color}`,
+    };
+  }
 
   return style;
 });

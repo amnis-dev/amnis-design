@@ -9,7 +9,7 @@ export interface LinkProps {
   /**
    * Hyperlink
    */
-  href?: string;
+  href: string;
 
   /**
    * Specify where to open the linked document

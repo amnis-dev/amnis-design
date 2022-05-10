@@ -1,10 +1,8 @@
-import { BaseTheme } from './theme.types';
+import { ThemeBase } from './theme.types';
 import themeGenerator from './themeGenerator';
 
-const baseTheme: BaseTheme = {
+const baseTheme: ThemeBase = {
   name: 'Amnis Light Theme',
-
-  backgroundColor: '#ffffff',
 };
 
 export const themeLight = themeGenerator(baseTheme);

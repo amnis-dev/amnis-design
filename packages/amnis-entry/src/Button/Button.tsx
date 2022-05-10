@@ -3,6 +3,7 @@ import { Icon } from '@amnis/icons/Icon';
 import { Font, FontProps } from '@amnis/display/Font';
 import { Stack } from '@amnis/layout/Stack';
 import { useChildrenText } from '@amnis/hooks/useChildrenText';
+import { ThemeSpacingLevelOptions } from '@amnis/style/theme.types';
 import type { ButtonProps } from './Button.types';
 import { Interactive, InteractiveProps } from '../Interactive';
 
@@ -12,7 +13,8 @@ import { Interactive, InteractiveProps } from '../Interactive';
  */
 export const Button = React.forwardRef<
 HTMLButtonElement,
-ButtonProps
+React.ComponentProps<typeof Interactive>
+& ButtonProps
 >(({
   children,
   paint,
@@ -21,6 +23,8 @@ ButtonProps
   iconStart,
   iconEnd,
   disabled,
+  size = 'medium',
+  ...props
 }, ref) => {
   const childrenLabel = useChildrenText(children);
 
@@ -60,19 +64,55 @@ ButtonProps
     }
   }, [variant, paint]);
 
+  const sizeProps = React.useMemo<{
+    fontSize: string;
+    padding: ThemeSpacingLevelOptions;
+    height: string;
+  }>(() => {
+    switch (size) {
+      case 'small':
+        return {
+          fontSize: '0.67em',
+          padding: 2,
+          height: '1.5em',
+        };
+      case 'large':
+        return {
+          fontSize: '1.6em',
+          padding: 4,
+          height: '3.65em',
+        };
+      case 'medium':
+      default:
+        return {
+          fontSize: '1em',
+          padding: 3,
+          height: '2.4em',
+        };
+    }
+  }, [size]);
+
   return (
     <Interactive
       ref={ref}
       aria-label={label || childrenLabel}
       minWidth="2.5em"
-      padding={3}
       disabled={disabled}
+      sx={({ spacing }) => ({
+        display: 'flex',
+        alignItems: 'center',
+        paddingLeft: spacing[sizeProps.padding],
+        paddingRight: spacing[sizeProps.padding],
+        height: sizeProps.height,
+      })}
       {...interactiveVariantProps}
+      {...props}
     >
       <Stack row gap={2} alignItems="center">
         {iconStart && (<Icon name={iconStart} />)}
         <Font
           variant="button"
+          size={sizeProps.fontSize}
           {...fontVariantProps}
         >
           {children || ' '}

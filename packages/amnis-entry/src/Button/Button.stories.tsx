@@ -50,4 +50,18 @@ Icons.args = {
   iconEnd: 'IoSend',
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  paint: 'primary',
+  children: 'Button',
+  size: 'small',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  paint: 'primary',
+  children: 'Button',
+  size: 'large',
+};
+
 export const PaintsAndVariants = TemplatePaintsVariants.bind({});

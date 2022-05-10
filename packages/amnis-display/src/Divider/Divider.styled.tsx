@@ -10,7 +10,7 @@ export const DividerStyled = styled<HTMLHRElement>('hr')<Partial<DividerProps>>(
 
   const style: CSSObject = {
     ...separators[variant],
-    backgroundColor: paints.main.neutral.color,
+    backgroundColor: paints.main.color,
     opacity: light ? 0.5 : 1,
   };
 

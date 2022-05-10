@@ -8,7 +8,7 @@ export const EntryInputStyled = styled<HTMLInputElement>('input')(({
   const style: CSSObject = {
     fontFamily: fonts.main.fontFamily,
     fontSize: fonts.main.fontSize,
-    color: `${paints.main.neutral.color}ee`,
+    color: `${paints.main.color}ee`,
     border: 'none',
     borderRadius: 0,
     backgroundColor: 'transparent',
