@@ -21,6 +21,7 @@ React.ComponentProps<typeof PictureStyled>
   alt,
   width,
   height,
+  style,
   ...props
 }, ref) => {
   const imageRef = React.useRef(null);
@@ -37,6 +38,10 @@ React.ComponentProps<typeof PictureStyled>
         alt={alt}
         height={height}
         width={width}
+        style={{
+          filter: successful ? undefined : 'blur(1.5em)',
+          ...style,
+        }}
       />
     </PictureStyled>
   );
