@@ -1,5 +1,3 @@
-import type React from 'react';
-
 export interface SkeletonProps {
   /**
    * Variant of the skeleton.

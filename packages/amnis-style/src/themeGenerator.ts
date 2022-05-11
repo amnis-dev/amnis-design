@@ -8,7 +8,7 @@ import { themeDefault } from './themeDefault';
  * Deep merge example.
  */
 export function deepMerge<T>(objects: Record<string, unknown>[]): T {
-  const isObject = (obj: any) => obj && typeof obj === 'object';
+  const isObject = (obj: unknown) => obj && typeof obj === 'object';
 
   function deepMergeInner(target: Record<string, unknown>, source: Record<string, unknown>) {
     Object.keys(source).forEach((key: string) => {
