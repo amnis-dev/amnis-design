@@ -148,6 +148,9 @@ export const themeDefault: Theme = {
   },
 
   shapes: {
+    rectangle: {
+      borderRadius: '.5em',
+    },
     square: {},
     circle: {
       borderRadius: '50%',

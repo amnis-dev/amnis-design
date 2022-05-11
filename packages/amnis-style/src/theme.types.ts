@@ -32,6 +32,7 @@ export interface ThemeSurfaces {
 }
 
 export interface ThemeShapes {
+  readonly rectangle: CSSProp;
   readonly square: CSSProp;
   readonly circle: CSSProp;
 }

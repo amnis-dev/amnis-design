@@ -23,7 +23,7 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
     outlineOffset: '0rem',
     outline: `0 solid ${paints.main.color}00`,
     filter: 'brightness(1)',
-    backgroundColor: paint ? paints.main.backgroundColor : 'transparent',
+    backgroundColor: paints.main.backgroundColor,
     color: paint ? paints.main.color : 'inherit',
     transition:
       `outline-offset ${durations.short} ${transitions.easeInOut},\
