@@ -32,7 +32,8 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   const marginVertical = (margin > 1 ? margin - 1 : margin) as ThemeSpacingLevelOptions;
 
   let style: CSSObject = {
-    flexGrow: 1,
+    flexGrow: 0,
+    flexShrink: 1,
     backgroundColor: isPainted ? paints.main.backgroundColor : undefined,
     color: isPainted ? paints.main.color : 'inherit',
     padding: `${spacing[paddingVertical]} ${spacing[padding]}`,
@@ -42,7 +43,6 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     flexDirection,
     gap: spacing[gap],
     flexWrap: flexWrap ? 'wrap' : 'nowrap',
-    flexShrink: 1,
     alignItems,
     justifyContent,
     borderWidth: 1,

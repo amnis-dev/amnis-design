@@ -108,7 +108,7 @@ React.ComponentProps<typeof Interactive>
       {...interactiveVariantProps}
       {...props}
     >
-      <Stack row gap={2} alignItems="center">
+      <Stack row flex={1} gap={2} alignItems="center" justifyContent="center">
         {iconStart && (<Icon name={iconStart} />)}
         <Font
           variant="button"

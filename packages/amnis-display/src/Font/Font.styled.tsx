@@ -17,9 +17,12 @@ export const FontStyled = styled<HTMLSpanElement>('span')<Partial<FontProps>>(({
 
   let style: CSSObject = {
     ...fonts.main[fontType] as CSSObject,
+    display: 'inline',
     fontSize,
     textDecoration: decoration,
     color: paint ? paints[paint].backgroundColor : 'inherit',
+    margin: 0,
+    padding: 0,
   };
 
   if (paint) {

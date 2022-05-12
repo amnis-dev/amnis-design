@@ -1,4 +1,5 @@
 import React from 'react';
+import useWindowSize from './useWindowSize';
 
 /**
  * Gets the bounding client rect from a component reference.
@@ -20,6 +21,8 @@ export function useBoundingClientRect<T extends HTMLElement = HTMLElement>(
     rectSet(ref.current.getBoundingClientRect());
   }, [ref]);
 
+  const windowSize = useWindowSize();
+
   React.useLayoutEffect(() => {
     const element = ref?.current;
     if (!element) return () => { /** do nothing */ };
@@ -30,7 +33,7 @@ export function useBoundingClientRect<T extends HTMLElement = HTMLElement>(
     return () => {
       resizeObserver?.disconnect();
     };
-  }, [ref?.current]);
+  }, [ref?.current, windowSize]);
 
   return rect;
 }

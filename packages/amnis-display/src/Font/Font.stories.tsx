@@ -16,8 +16,10 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pr
 culpa qui officia deserunt mollit anim id est laborum.\
 `;
 
-const Template: ComponentStory<typeof Font> = (args) => (
-  <>
+// const Template: ComponentStory<typeof Font> = (args) => <Font {...args} />;
+
+const TemplateVariants: ComponentStory<typeof Font> = (args) => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}>
     <Font v="heading-1" {...args}>h1. Heading 1</Font>
     <Font v="heading-2" {...args}>h2. Heading 2</Font>
     <Font v="heading-3" {...args}>h3. Heading 3</Font>
@@ -36,9 +38,9 @@ const Template: ComponentStory<typeof Font> = (args) => (
       {' '}
       {ipsum}
     </Font>
-  </>
+  </div>
 );
 
-export const Variants = Template.bind({});
+export const Variants = TemplateVariants.bind({});
 Variants.args = {
 };
