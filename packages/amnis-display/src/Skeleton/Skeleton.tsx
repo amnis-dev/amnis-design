@@ -14,7 +14,7 @@ React.ComponentProps<typeof SkeletonStyled>
   variant,
   buffer = 0,
   width = 50,
-  height = 50,
+  height,
   style,
   ...props
 }, ref) => {
@@ -27,13 +27,13 @@ React.ComponentProps<typeof SkeletonStyled>
       case 'rectangle':
         return {
           width,
-          height,
+          height: height || width,
         };
       case 'text':
       default:
         return {};
     }
-  }, [variant, width]);
+  }, [variant, width, height]);
 
   return (
     <SkeletonStyled

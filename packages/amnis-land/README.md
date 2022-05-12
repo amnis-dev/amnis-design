@@ -14,7 +14,7 @@ Landmarks are best used as direct children of a `Land` component that organizes 
 
 ```tsx
 import React from 'react';
-import { Land, Header, Main, Nav, Footer } from '@amnis/land';
+import { Land, Header, Main, Nav, Footer } from '@amnis/lands';
 
 export const MyApp: React.FC = () => {
   return (

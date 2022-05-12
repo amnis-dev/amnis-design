@@ -119,10 +119,10 @@ export function useRelativeRectAlignment(
   }, [
     anchorRect,
     boatRect,
-    anchorAlignment.horizontal,
-    anchorAlignment.vertical,
-    boatAlignment.horizontal,
-    boatAlignment.vertical,
+    anchorAlignment?.horizontal,
+    anchorAlignment?.vertical,
+    boatAlignment?.horizontal,
+    boatAlignment?.vertical,
   ]);
 
   return origin;

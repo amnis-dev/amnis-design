@@ -67,12 +67,12 @@ React.ComponentProps<typeof DialogStyled>
   useOnClickOutside([ref, anchor], () => onClickAway());
 
   React.useEffect(() => {
-    if (open && ref?.current) {
+    if (open) {
       positionSet(boatPosition);
       childrenMountedSet(true);
-      ref.current.focus();
+      ref?.current?.focus();
     }
-  }, [open, ref.current, boatPosition]);
+  }, [open, ref?.current, boatPosition]);
 
   React.useEffect(() => {
     portalEleSet(document.body);
@@ -112,7 +112,7 @@ React.ComponentProps<typeof DialogStyled>
       }}
       {...props}
     >
-      {childrenMounted && children}
+      {childrenMounted ? children : undefined}
     </DialogStyled>,
     portalEle,
   );

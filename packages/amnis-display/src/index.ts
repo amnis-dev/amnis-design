@@ -4,3 +4,4 @@ export * from './Picture';
 export * from './Divider';
 export * from './Skeleton';
 export * from './Dialog';
+export * from './Overlay';
