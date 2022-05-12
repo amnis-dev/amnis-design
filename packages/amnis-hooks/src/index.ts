@@ -15,3 +15,5 @@ export * from './useWindowSize';
 export * from './useImageLoader';
 export * from './useInnerRef';
 export * from './useLocation';
+export * from './useBoundingClientRect';
+export * from './useRelativeRectAlignment';

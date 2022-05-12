@@ -170,7 +170,7 @@ export interface Theme {
 
   readonly mediaQueries: ThemeMediaQueries;
 
-  readonly transitions: ThemeTransitions;
+  readonly timings: ThemeTransitions;
 
   readonly durations: ThemeDurations;
 }

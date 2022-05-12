@@ -25,7 +25,15 @@ React.ComponentProps<typeof PictureStyled>
   ...props
 }, ref) => {
   const imageRef = React.useRef(null);
-  const { successful } = useImageLoader(imageRef, src);
+  const { successful, observed } = useImageLoader(imageRef, src);
+
+  const lazySrc = React.useMemo(() => {
+    if (successful) {
+      return src;
+    }
+
+    return observed ? placeholder : dataUrlPlaceholder;
+  }, [successful, observed]);
 
   return (
     <PictureStyled
@@ -34,7 +42,7 @@ React.ComponentProps<typeof PictureStyled>
     >
       <Image
         ref={imageRef}
-        src={successful ? src : placeholder}
+        src={lazySrc}
         alt={alt}
         height={height}
         width={width}

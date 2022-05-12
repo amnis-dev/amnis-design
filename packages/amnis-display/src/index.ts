@@ -3,3 +3,4 @@ export * from './Image';
 export * from './Picture';
 export * from './Divider';
 export * from './Skeleton';
+export * from './Dialog';

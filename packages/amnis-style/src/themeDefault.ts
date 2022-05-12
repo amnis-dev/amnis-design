@@ -144,6 +144,7 @@ export const themeDefault: Theme = {
     paper: {
       borderRadius: '.5em',
       boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
+      backgroundColor: '#f8f8f8',
     },
   },
 
@@ -228,7 +229,7 @@ export const themeDefault: Theme = {
     tablet: '@media (max-width: 1024px)',
   },
 
-  transitions: {
+  timings: {
     easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
     easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
     easeIn: 'cubic-bezier(0.4, 0, 1, 1)',

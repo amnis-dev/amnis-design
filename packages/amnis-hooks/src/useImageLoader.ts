@@ -5,6 +5,7 @@ export interface UseImageLoaderOutput {
   completed: boolean;
   successful: boolean;
   errored: boolean;
+  observed: boolean;
 }
 
 /**
@@ -38,13 +39,13 @@ export function useImageLoader(
    * Intersection observer to tell us when the image comes into view.
    */
   const intersectionObserver = useIntersectionObserver(ref, { freezeOnceVisible: true });
-  const imageVisible = !!intersectionObserver?.isIntersecting;
+  const observed = !!intersectionObserver?.isIntersecting;
 
   /**
    * Effect to trigger when the image is visible in the user's viewport.
    */
   React.useEffect(() => {
-    if (image && imageVisible) {
+    if (image && observed) {
       image.onload = () => {
         completedSet(true);
         successfulSet(true);
@@ -55,9 +56,11 @@ export function useImageLoader(
       };
       image.src = src;
     }
-  }, [image, imageVisible]);
+  }, [image, observed]);
 
-  return { completed, successful, errored };
+  return {
+    completed, successful, errored, observed,
+  };
 }
 
 export default useImageLoader;

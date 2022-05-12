@@ -7,7 +7,7 @@ export const SkeletonStyled = styled<HTMLDivElement>('div')<Partial<SkeletonProp
 }) => {
   const {
     mode,
-    transitions,
+    timings,
     shapes,
   } = theme;
 
@@ -25,7 +25,7 @@ export const SkeletonStyled = styled<HTMLDivElement>('div')<Partial<SkeletonProp
     fontFamily: 'inherit',
     fontSize: 'inherit',
     lineHeight: 'inherit',
-    animation: `amnis-skeletonPulse 1.2s ${transitions.easeInOut} infinite`,
+    animation: `amnis-skeletonPulse 1.2s ${timings.easeInOut} infinite`,
     color: 'transparent',
     boxSizing: 'border-box',
 

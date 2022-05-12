@@ -2,7 +2,7 @@
 import React from 'react';
 
 /**
- * Hook description.
+ * Copies a reference to be used internally in a component.
  */
 export function useInnerRef<T>(ref: React.Ref<T>): React.RefObject<T> {
   const innerRef = React.useRef(null);

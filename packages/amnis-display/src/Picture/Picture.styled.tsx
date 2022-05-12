@@ -6,6 +6,7 @@ export const PictureStyled = styled<HTMLPictureElement>('picture')<Partial<Pictu
     position: 'relative',
     display: 'inline-block',
     backgroundColor: theme.paints.base.backgroundColor,
+    overflow: 'hidden',
   };
 
   return style;

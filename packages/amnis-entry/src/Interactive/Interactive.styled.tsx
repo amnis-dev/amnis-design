@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import styled, { CSSObject } from '@amnis/style/styled';
-import { Box } from '@amnis/layout/Box';
+import { BoxStyled } from '@amnis/layout/Box/Box.styled';
 import { InteractiveProps } from './Interactive.types';
 
-export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partial<InteractiveProps>>(({
+export const InteractiveStyled = styled<HTMLButtonElement>(BoxStyled, 'button')<Partial<InteractiveProps>>(({
   theme,
   paint,
 }) => {
@@ -12,7 +12,7 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
     mode,
     paints,
     durations,
-    transitions,
+    timings,
     pseudoQueries,
     states,
   } = theme;
@@ -26,10 +26,10 @@ export const InteractiveStyled = styled<HTMLButtonElement>(Box, 'button')<Partia
     backgroundColor: paints.main.backgroundColor,
     color: paint ? paints.main.color : 'inherit',
     transition:
-      `outline-offset ${durations.short} ${transitions.easeInOut},\
-outline ${durations.short} ${transitions.easeInOut},\
-background-color ${durations.short} ${transitions.easeInOut},\
-color ${durations.short} ${transitions.easeInOut}`,
+      `outline-offset ${durations.short} ${timings.easeInOut},\
+outline ${durations.short} ${timings.easeInOut},\
+background-color ${durations.short} ${timings.easeInOut},\
+color ${durations.short} ${timings.easeInOut}`,
 
     [pseudoQueries.hover]: {
       filter: mode === 'light' ? 'brightness(0.8)' : 'brightness(1.2)',
