@@ -7,7 +7,9 @@ export function useBoundingClientRect<T extends HTMLElement = HTMLElement>(
   ref?: React.RefObject<T> | null,
 ): DOMRect {
   const [rect, rectSet] = React.useState<DOMRect>(
-    ref?.current?.getBoundingClientRect() || new DOMRect(),
+    ref?.current?.getBoundingClientRect() || {
+      top: 0, left: 0, right: 0, bottom: 0, width: 0, height: 0,
+    } as DOMRect,
   );
 
   const handleResize = React.useCallback(() => {

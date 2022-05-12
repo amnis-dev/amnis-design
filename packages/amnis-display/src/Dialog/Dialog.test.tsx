@@ -11,7 +11,7 @@ expect.extend(emotionMatchers);
 expect.extend(toHaveNoViolations);
 
 it('renders basic story properly with no a11y violations', async () => {
-  const { container } = render(<Basic {...Basic.args} />);
+  const { container } = render(<Basic label="" {...Basic.args} />);
   const element = container.querySelector('div');
 
   expect(element).toBeDefined();
