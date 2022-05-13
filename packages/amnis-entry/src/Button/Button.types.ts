@@ -48,4 +48,10 @@ export interface ButtonProps {
    * Key for the end icon.
    */
   iconEnd?: IconName;
+
+  /**
+   * Flag to indicate a loading state.
+   * @default false
+   */
+  loading?: boolean;
 }

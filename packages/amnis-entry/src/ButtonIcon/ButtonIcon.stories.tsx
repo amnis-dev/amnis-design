@@ -19,6 +19,14 @@ Basic.args = {
   paint: 'primary',
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Icon Button',
+  icon: 'IoAdd',
+  paint: 'primary',
+  disabled: true,
+};
+
 export const Small = Template.bind({});
 Small.args = {
   label: 'Icon Button',
@@ -33,4 +41,12 @@ Large.args = {
   icon: 'IoAdd',
   size: 'large',
   paint: 'primary',
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  label: 'Icon Button',
+  icon: 'IoAdd',
+  paint: 'primary',
+  loading: true,
 };

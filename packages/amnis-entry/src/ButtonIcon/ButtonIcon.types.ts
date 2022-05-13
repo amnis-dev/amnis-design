@@ -43,4 +43,10 @@ export interface ButtonIconProps {
    * @default "medium"
    */
   size?: ButtonIconSize;
+
+  /**
+   * Flag to indicate a loading state.
+   * @default false
+   */
+  loading?: boolean;
 }

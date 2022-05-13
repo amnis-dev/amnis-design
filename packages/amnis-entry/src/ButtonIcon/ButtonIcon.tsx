@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from '@amnis/icons/index';
 import { ThemeSpacingLevelOptions } from '@amnis/style/theme.types';
+import { LoaderSpin } from '@amnis/display/LoaderSpin';
 import type { ButtonIconProps } from './ButtonIcon.types';
 import { Interactive, InteractiveProps } from '../Interactive';
 
@@ -10,7 +11,7 @@ import { Interactive, InteractiveProps } from '../Interactive';
  */
 export const ButtonIcon = React.forwardRef<
 HTMLButtonElement,
-React.ComponentProps<typeof Interactive>
+Omit<React.ComponentProps<typeof Interactive>, 'size'>
 & ButtonIconProps
 >(({
   paint,
@@ -19,6 +20,7 @@ React.ComponentProps<typeof Interactive>
   icon = 'IoAdd',
   size = 'medium',
   disabled,
+  loading = false,
   ...props
 }, ref) => {
   const interactiveVariantProps: InteractiveProps = React.useMemo(() => {
@@ -80,6 +82,7 @@ React.ComponentProps<typeof Interactive>
       sx={({ spacing }) => ({
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         paddingLeft: spacing[sizeProps.padding],
         paddingRight: spacing[sizeProps.padding],
         width: sizeProps.height,
@@ -88,7 +91,11 @@ React.ComponentProps<typeof Interactive>
       {...interactiveVariantProps}
       {...props}
     >
-      <Icon name={icon} size={sizeProps.fontSize} style={{ position: 'absolute' }} />
+      {loading ? (
+        <LoaderSpin size="inherit" />
+      ) : (
+        <Icon name={icon} size={sizeProps.fontSize} style={{ position: 'absolute' }} />
+      )}
     </Interactive>
   );
 });

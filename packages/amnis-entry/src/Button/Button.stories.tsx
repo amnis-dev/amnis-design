@@ -64,4 +64,11 @@ Large.args = {
   size: 'large',
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  paint: 'primary',
+  children: 'Button',
+  loading: true,
+};
+
 export const PaintsAndVariants = TemplatePaintsVariants.bind({});

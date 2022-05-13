@@ -4,6 +4,7 @@ import { Font, FontProps } from '@amnis/display/Font';
 import { Stack } from '@amnis/layout/Stack';
 import { useChildrenText } from '@amnis/hooks/useChildrenText';
 import { ThemeSpacingLevelOptions } from '@amnis/style/theme.types';
+import { LoaderEllipses } from '@amnis/display/LoaderEllipses';
 import type { ButtonProps } from './Button.types';
 import { Interactive, InteractiveProps } from '../Interactive';
 
@@ -13,7 +14,7 @@ import { Interactive, InteractiveProps } from '../Interactive';
  */
 export const Button = React.forwardRef<
 HTMLButtonElement,
-React.ComponentProps<typeof Interactive>
+Omit<React.ComponentProps<typeof Interactive>, 'size'>
 & ButtonProps
 >(({
   children,
@@ -24,6 +25,7 @@ React.ComponentProps<typeof Interactive>
   iconEnd,
   disabled,
   size = 'medium',
+  loading = false,
   ...props
 }, ref) => {
   const childrenLabel = useChildrenText(children);
@@ -108,16 +110,34 @@ React.ComponentProps<typeof Interactive>
       {...interactiveVariantProps}
       {...props}
     >
-      <Stack row flex={1} gap={2} alignItems="center" justifyContent="center">
+      <Stack row flex={1} gap={2} alignItems="center" justifyContent="center" position="relative">
         {iconStart && (<Icon name={iconStart} />)}
         <Font
           variant="button"
           size={sizeProps.fontSize}
+          style={{ color: loading ? 'transparent' : undefined }}
           {...fontVariantProps}
         >
           {children || ' '}
         </Font>
         {iconEnd && (<Icon name={iconEnd} />)}
+        {loading ? (
+          <Stack
+            position="absolute"
+            width="100%"
+            height="100%"
+            alignItems="center"
+            justifyContent="center"
+            style={{ top: 0, left: 0 }}
+          >
+            <Font
+              variant="button"
+              size={sizeProps.fontSize}
+            >
+              <LoaderEllipses />
+            </Font>
+          </Stack>
+        ) : null}
       </Stack>
     </Interactive>
   );
