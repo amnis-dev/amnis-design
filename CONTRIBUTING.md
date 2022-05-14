@@ -107,7 +107,7 @@ Once complete, you'll find the new files under the following directory (based on
 
 Once you've created your component from the boilerplate, you should already have an idea of what your component is going to be.
 
-Consider the qualities of the component, then read the [Web Content Accessibility Guidelines (WCAG) 2](https://www.w3.org/WAI/WCAG21/quickref/) guidelines that may be relatable. Keep these guidelines in mind as you develop.
+Consider the qualities of the component, then read the [Web Content Accessibility Guidelines (WCAG) 2](https://www.w3.org/WAI/WCAG21/quickref/) guidelines that may be relatable. Use [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/) for design patterns of common widget Keep these guidelines in mind as you develop.
 
 There are automated tests created with the boilerplate to help catch possible issues, but they can't catch everything.
 

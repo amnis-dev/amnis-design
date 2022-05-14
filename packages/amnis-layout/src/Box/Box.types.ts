@@ -8,6 +8,15 @@ import type {
   ThemeShadowLevelOptions,
 } from '@amnis/style/theme.types';
 
+export interface BoxDepths {
+  background: number,
+  ground: number,
+  system: number,
+  overlay: number,
+}
+
+export type BoxDepthOptions = Extract<keyof BoxDepths, string>;
+
 /**
  * A simple container for other components.
  */
@@ -45,9 +54,35 @@ export interface BoxProps {
   shape?: ThemeShapeOptions;
 
   /**
+   * Index depth
+   * @default "ground"
+   */
+  depth?: BoxDepthOptions;
+
+  /**
    * CSS Positioning.
    */
   position?: React.CSSProperties['position'];
+
+  /**
+   * CSS Top
+   */
+  top?: React.CSSProperties['top'];
+
+  /**
+   * CSS Right
+   */
+  right?: React.CSSProperties['right'];
+
+  /**
+   * CSS Bottom
+   */
+  bottom?: React.CSSProperties['bottom'];
+
+  /**
+   * CSS Left
+   */
+  left?: React.CSSProperties['left'];
 
   /**
    * CSS Display.

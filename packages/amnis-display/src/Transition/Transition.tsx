@@ -1,5 +1,6 @@
 import { ThemeContext } from '@amnis/style/styled';
 import type { Theme } from '@amnis/style/theme.types';
+import { Box } from '@amnis/layout/Box';
 import React from 'react';
 import type { TransitionProps, TransitionVariant } from './Transition.types';
 
@@ -15,6 +16,7 @@ const transitionCSS: Record<TransitionVariant, TransitionStyles> = {
     },
     inactive: {
       opacity: 0,
+      visibility: 'hidden',
     },
   },
   scale: {
@@ -23,6 +25,7 @@ const transitionCSS: Record<TransitionVariant, TransitionStyles> = {
     },
     inactive: {
       transform: 'scale(0)',
+      visibility: 'hidden',
     },
   },
   scaleHalf: {
@@ -31,6 +34,14 @@ const transitionCSS: Record<TransitionVariant, TransitionStyles> = {
     },
     inactive: {
       transform: 'scale(0.5)',
+    },
+  },
+  scaleQuarter: {
+    active: {
+      transform: 'scale(1)',
+    },
+    inactive: {
+      transform: 'scale(0.75)',
     },
   },
   spin: {
@@ -49,6 +60,14 @@ const transitionCSS: Record<TransitionVariant, TransitionStyles> = {
       transform: 'rotate(180deg)',
     },
   },
+  spinQuarter: {
+    active: {
+      transform: 'rotate(0deg)',
+    },
+    inactive: {
+      transform: 'rotate(90deg)',
+    },
+  },
 };
 
 /**
@@ -57,15 +76,19 @@ const transitionCSS: Record<TransitionVariant, TransitionStyles> = {
  */
 export const Transition = React.forwardRef<
 HTMLDivElement,
-TransitionProps
+React.ComponentProps<typeof Box>
+& TransitionProps
 >(({
   children,
+  display,
   duration = 'normal',
   timing = 'easeInOut',
   variants = [],
   styleActive = {},
   styleInactive = {},
   active = false,
+  style = {},
+  ...props
 }, ref) => {
   const { durations, timings } = React.useContext(ThemeContext) as Theme;
 
@@ -99,22 +122,25 @@ TransitionProps
   }, [variants]);
 
   const customStyle = React.useMemo<React.CSSProperties>(
-    () => (active ? styleActive : styleInactive),
-    [styleActive, styleInactive],
+    () => (active ? { ...styleActive } : { ...styleInactive }),
+    [styleActive, styleInactive, active],
   );
 
   return (
-    <div
+    <Box
       ref={ref}
+      aria-hidden={!!transitionStyles[active ? 'active' : 'inactive'].visibility}
+      display={display || 'inline-block'}
       style={{
-        transition: `all ${durations[duration]} ${timings[timing]}`,
-        display: 'inline-block',
+        transition: `all ${durations ? durations[duration] : '350ms'} ${timings ? timings[timing] : 'cubic-bezier(0.4, 0, 0.2, 1)'}`,
         ...transitionStyles[active ? 'active' : 'inactive'],
         ...customStyle,
+        ...style,
       }}
+      {...props}
     >
       {children}
-    </div>
+    </Box>
   );
 });
 

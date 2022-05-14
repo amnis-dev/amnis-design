@@ -29,6 +29,7 @@ export interface ThemeSurfaces {
   readonly button: CSSProp;
   readonly input: CSSProp;
   readonly paper: CSSProp;
+  readonly overlay: CSSProp;
 }
 
 export interface ThemeShapes {

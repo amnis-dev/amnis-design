@@ -146,6 +146,10 @@ export const themeDefault: Theme = {
       boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
       backgroundColor: '#f8f8f8',
     },
+    overlay: {
+      backgroundColor: '#00000088',
+      backdropFilter: 'blur(2px)',
+    },
   },
 
   shapes: {

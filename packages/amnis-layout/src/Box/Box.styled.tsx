@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import styled, { CSSObject } from '@amnis/style/styled';
 import { ThemeSpacingLevelOptions } from '@amnis/style/theme.types';
-import { BoxProps } from './Box.types';
+import type { BoxProps } from './Box.types';
 
 export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   theme,
@@ -32,6 +32,7 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   const marginVertical = (margin > 1 ? margin - 1 : margin) as ThemeSpacingLevelOptions;
 
   let style: CSSObject = {
+    position: 'relative',
     flexGrow: 0,
     flexShrink: 1,
     backgroundColor: isPainted ? paints.main.backgroundColor : undefined,

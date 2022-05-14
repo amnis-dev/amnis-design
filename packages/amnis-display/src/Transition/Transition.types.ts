@@ -1,9 +1,10 @@
+import type { BoxProps } from '@amnis/layout/Box/Box.types';
 import type { ThemeDurationOptions, ThemeTimingOptions } from '@amnis/style/theme.types';
 import type React from 'react';
 
-export type TransitionVariant = 'fade' | 'scale' | 'scaleHalf' | 'spin' | 'spinHalf';
+export type TransitionVariant = 'fade' | 'scale' | 'scaleHalf' | 'scaleQuarter' | 'spin' | 'spinHalf' | 'spinQuarter';
 
-export interface TransitionProps {
+export interface TransitionProps extends BoxProps {
   /**
    * Explicitly declare children.
    */

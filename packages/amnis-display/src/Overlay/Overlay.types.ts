@@ -23,4 +23,10 @@ export interface OverlayProps {
    * @ignore
    */
   bg?: boolean;
+
+  /**
+   * Persists children when the overlay is hidden.
+   * @default false
+   */
+  childrenPersist?: boolean;
 }

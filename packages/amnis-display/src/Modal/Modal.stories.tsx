@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 );
 
 const TemplateButton: ComponentStory<typeof Modal> = (args) => {
-  const [modalOpen, modalOpenSet] = React.useState(true);
+  const [modalOpen, modalOpenSet] = React.useState(false);
 
   return (
     <>

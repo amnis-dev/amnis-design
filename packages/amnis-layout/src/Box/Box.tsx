@@ -1,9 +1,16 @@
 import React from 'react';
 import { ThemeSwapProvider } from '@amnis/style/ThemeSwapProvider';
 import { columnWidths } from '@amnis/style/themeUtil';
-import { BoxProps } from './Box.types';
+import type { BoxProps, BoxDepths } from './Box.types';
 import { BoxStyled } from './Box.styled';
 import { LayoutContext } from '../LayoutContext';
+
+const boxDepths: BoxDepths = {
+  background: -99,
+  ground: 0,
+  system: 99,
+  overlay: 999,
+};
 
 /**
  * ## Standard Container
@@ -21,7 +28,12 @@ React.ComponentProps<typeof BoxStyled>
   children,
   paint,
   outlined = false,
+  depth = 'ground',
   position,
+  top,
+  right,
+  bottom,
+  left,
   width,
   w,
   maxWidth,
@@ -57,6 +69,11 @@ React.ComponentProps<typeof BoxStyled>
         ref={ref}
         style={{
           position,
+          zIndex: boxDepths[depth],
+          top,
+          right,
+          bottom,
+          left,
           width: width || w || stretch ? '100%' : undefined,
           maxWidth: maxWidth || maxW,
           minWidth: minWidth || minW,

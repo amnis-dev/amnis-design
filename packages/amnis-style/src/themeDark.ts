@@ -46,6 +46,9 @@ const baseTheme: ThemeBase = {
       backgroundColor: '#262d3d',
       boxShadow: '0 1px 4px 0 rgba(255, 255, 255, 0.4)',
     },
+    overlay: {
+      backgroundColor: '#88888888',
+    },
   },
 
   shadow: {
