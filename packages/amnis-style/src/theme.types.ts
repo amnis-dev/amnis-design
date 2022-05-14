@@ -117,7 +117,7 @@ export interface ThemeMediaQueries {
   readonly tablet: string;
 }
 
-export interface ThemeTransitions {
+export interface ThemeTimings {
   readonly easeInOut: string;
   readonly easeOut: string;
   readonly easeIn: string;
@@ -135,7 +135,7 @@ export type ThemeSpacingLevelOptions = Extract<keyof ThemeSpacingLevels, number>
 export type ThemeColumnWidthOptions = Extract<keyof ThemeColumnWidths, number>;
 export type ThemePaintOptions = Extract<keyof ThemePaints, string>;
 export type ThemeMediaQueryOptions = Extract<keyof ThemeMediaQueries, string>;
-export type ThemeTransitionOptions = Extract<keyof ThemeTransitions, string>;
+export type ThemeTimingOptions = Extract<keyof ThemeTimings, string>;
 export type ThemeDurationOptions = Extract<keyof ThemeDurations, string>;
 export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
 export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
@@ -170,7 +170,7 @@ export interface Theme {
 
   readonly mediaQueries: ThemeMediaQueries;
 
-  readonly timings: ThemeTransitions;
+  readonly timings: ThemeTimings;
 
   readonly durations: ThemeDurations;
 }
