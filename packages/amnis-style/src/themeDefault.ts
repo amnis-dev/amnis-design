@@ -131,24 +131,120 @@ export const themeDefault: Theme = {
 
   surfaces: {
     button: {
-      boxShadow: '1px 1px 2px 0 #00000055',
-      borderRadius: '.5em',
+      base: {
+        boxShadow: 'inset 1px 1px 1px 1px #00000000, 1px 1px 2px #00000055',
+        borderRadius: '.5em',
+        overflow: 'hidden',
+        position: 'relative',
+        filter: 'brightness(1)',
+        userSelect: 'none',
+        transition: 'outline-offset 200ms cubic-bezier(0.4, 0, 0.2, 1),'
+        + 'outline 200ms cubic-bezier(0.4, 0, 0.2, 1),'
+        + 'background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),'
+        + 'color 200ms cubic-bezier(0.4, 0, 0.2, 1),'
+        + 'box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      hover: {
+        filter: 'brightness(1.2)',
+      },
+      active: {
+        filter: 'brightness(1.35)',
+        boxShadow: 'inset 1px 1px 1px 0 #00000033, 1px 1px 2px #00000055',
+        outlineOffset: '.3rem !important',
+      },
+      focus: {
+        outlineOffset: '.2rem',
+        outline: '.25rem solid #219cde',
+      },
+      disabled: {
+        backgroundColor: '#888888',
+        color: '#ffffff',
+        opacity: 0.7,
+        pointerEvents: 'none',
+        cursor: 'unset',
+        MozOsxFontSmoothing: 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
+        boxShadow: 'none',
+      },
     },
     input: {
-      border: '1px solid #88888888',
-      borderRadius: '0',
-      boxShadow: 'inset 1px 1px 1px 0 #00000088',
-      backgroundColor: '#ffffff',
-      color: '#202020',
+      base: {
+        border: '1px solid #88888899',
+        borderRadius: '0',
+        boxShadow: 'inset 1px 1px 1px 0 #00000088, 1px 1px 1px 0 #00000000',
+        backgroundColor: '#ffffff',
+        color: '#202020',
+        overflow: 'hidden',
+        position: 'relative',
+        filter: 'brightness(1)',
+        transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      hover: {
+      },
+      active: {
+        outlineOffset: '.3rem !important',
+      },
+      focus: {
+        backgroundColor: '#ffffff',
+        outlineOffset: '.2rem',
+        outline: '.25rem solid #219cde',
+        boxShadow: 'inset 1px 1px 1px 0 #000000cc, 1px 1px 1px 0 #00000033',
+      },
+      disabled: {
+        backgroundColor: '#888888',
+        color: '#ffffff',
+        opacity: 0.7,
+        pointerEvents: 'none',
+        cursor: 'unset',
+        MozOsxFontSmoothing: 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
+        boxShadow: 'none',
+      },
     },
     paper: {
-      borderRadius: '.5em',
-      boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
-      backgroundColor: '#f8f8f8',
+      base: {
+        borderRadius: '.5em',
+        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
+        backgroundColor: '#f8f8f8',
+      },
+      hover: {},
+      active: {},
+      focus: {},
+      disabled: {},
     },
     overlay: {
-      backgroundColor: '#00000088',
-      backdropFilter: 'blur(2px)',
+      base: {
+        backgroundColor: '#00000088',
+        backdropFilter: 'blur(2px)',
+      },
+      hover: {},
+      active: {},
+      focus: {},
+      disabled: {},
+    },
+  },
+
+  states: {
+    base: {
+      transition: 'outline-offset 200ms cubic-bezier(0.4, 0, 0.2, 1)',
+    },
+    hover: {},
+    active: {
+      outlineOffset: '.3rem !important',
+    },
+    focus: {
+      outlineOffset: '.2rem',
+      outline: '.25rem solid #219cde',
+    },
+    disabled: {
+      backgroundColor: '#888888',
+      color: '#ffffff',
+      opacity: 0.7,
+      pointerEvents: 'none',
+      cursor: 'unset',
+      MozOsxFontSmoothing: 'antialiased',
+      WebkitFontSmoothing: 'antialiased',
+      boxShadow: 'none',
     },
   },
 
@@ -164,23 +260,6 @@ export const themeDefault: Theme = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    },
-  },
-
-  states: {
-    focused: {
-      outlineOffset: '.2rem',
-      outline: '.25rem solid #219cde',
-    },
-    disabled: {
-      backgroundColor: '#888888',
-      color: '#ffffff',
-      opacity: 0.7,
-      pointerEvents: 'none',
-      cursor: 'unset',
-      MozOsxFontSmoothing: 'antialiased',
-      WebkitFontSmoothing: 'antialiased',
-      boxShadow: 'none',
     },
   },
 

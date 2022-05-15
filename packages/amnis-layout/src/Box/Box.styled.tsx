@@ -55,7 +55,7 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     style = {
       ...style,
       ...paints.main,
-      ...surfaces[surface] as Record<string, unknown>,
+      ...surfaces[surface].base as Record<string, unknown>,
     };
   }
 

@@ -4,6 +4,7 @@ import { Stack } from '@amnis/layout/Stack';
 import { useIncrementalId } from '@amnis/hooks/useIncrementalId';
 import { ButtonIcon } from '@amnis/entry/ButtonIcon';
 import { Button } from '@amnis/entry/Button';
+import TrapFocus from '@mui/base/TrapFocus';
 import { Transition } from '../Transition';
 import { Font } from '../Font';
 import { Overlay } from '../Overlay';
@@ -91,71 +92,73 @@ ModalProps
       tabIndex={-1}
       childrenPersist
     >
-      <Transition
-        ref={ref}
-        surface="paper"
-        display="flex"
-        variants={['scaleHalf']}
-        padding={5}
-        margin={3}
-        gap={3}
-        width="100%"
-        active={open}
-        onTransitionEnd={() => {
-          if (!open) {
-            mountChildrenSet(false);
-          }
-        }}
-        {...sizeProps}
-        {...props}
-      >
-        {mountChildren ? (
-          <>
-            <Stack row width="100%">
-              <Box flex={1}>
+      <TrapFocus open={open}>
+        <Transition
+          ref={ref}
+          surface="paper"
+          display="flex"
+          variants={['scaleHalf']}
+          padding={5}
+          margin={3}
+          width="100%"
+          active={open}
+          onTransitionEnd={() => {
+            if (!open) {
+              mountChildrenSet(false);
+            }
+          }}
+          {...sizeProps}
+          {...props}
+        >
+          {mountChildren ? (
+            <Stack column width="100%" gap={5}>
+              <Stack row width="100%">
+                <Box flex={1}>
+                  <Font
+                    id={`${modalId}-header`}
+                    variant="heading-1"
+                  >
+                    {title}
+                  </Font>
+                </Box>
+                <Box>
+                  {onClose && (
+                    <ButtonIcon
+                      label="Close modal window"
+                      icon="HiX"
+                      variant="text"
+                      tabIndex={0}
+                      onClick={onClose}
+                    />
+                  )}
+                </Box>
+              </Stack>
+
+              <Box>
                 <Font
-                  id={`${modalId}-header`}
-                  variant="heading-1"
+                  id={`${modalId}-desc`}
+                  variant="body-1"
                 >
-                  {title}
+                  {description}
                 </Font>
               </Box>
-              <Box>
-                {onClose && (
-                  <ButtonIcon
-                    label="Close modal window"
-                    icon="HiX"
-                    variant="text"
-                    onClick={onClose}
-                  />
-                )}
+
+              <Box flex={1}>
+                {children}
               </Box>
-            </Stack>
 
-            <Box>
-              <Font
-                id={`${modalId}-desc`}
-                variant="body-1"
-              >
-                {description}
-              </Font>
-            </Box>
-
-            <Box flex={1}>
-              {children}
-            </Box>
-
-            {hasControls ? (
-              <Stack row justifyContent="flex-end" alignItems="center" gap={3} width="100%">
-                {onClose
+              {hasControls ? (
+                <Stack row justifyContent="flex-end" alignItems="center" gap={3} width="100%">
+                  {onClose
               && <Button paint="base" onClick={onClose}>{closeLabel}</Button> }
-                {onConfirm
+                  {onConfirm
               && <Button onClick={onConfirm}>{confirmLabel}</Button> }
-              </Stack>
-            ) : null}
-          </>
-        ) : null}
-      </Transition>
+                </Stack>
+              ) : null}
+            </Stack>
+          ) : null}
+        </Transition>
+      </TrapFocus>
     </Overlay>
   );
 });

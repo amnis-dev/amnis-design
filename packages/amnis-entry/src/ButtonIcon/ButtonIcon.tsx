@@ -77,6 +77,7 @@ Omit<React.ComponentProps<typeof Interactive>, 'size'>
   return (
     <Interactive
       ref={ref}
+      button
       aria-label={label}
       disabled={disabled}
       sx={({ spacing }) => ({

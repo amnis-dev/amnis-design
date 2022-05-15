@@ -61,6 +61,7 @@ React.ComponentProps<typeof ButtonGroupStyled>
       {buttons.map(({ label, icon, ...interactiveProps }) => (
         <Interactive
           key={label}
+          button
           aria-label={label}
           p={3}
           disabled={disabled}

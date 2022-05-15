@@ -4,53 +4,74 @@ import styled, { CSSObject } from '@amnis/style/styled';
 import { BoxStyled } from '@amnis/layout/Box/Box.styled';
 import { InteractiveProps } from './Interactive.types';
 
-export const InteractiveStyled = styled<HTMLButtonElement>(BoxStyled, 'button')<Partial<InteractiveProps>>(({
+export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<InteractiveProps>>(({
   theme,
+  surface,
   paint,
 }) => {
   const {
-    mode,
     paints,
-    durations,
-    timings,
     pseudoQueries,
+    surfaces,
     states,
   } = theme;
 
-  const style: CSSObject = {
+  let style: CSSObject = {
     boxSizing: 'border-box',
     cursor: 'pointer',
     outlineOffset: '0rem',
     outline: `0 solid ${paints.main.color}00`,
-    filter: 'brightness(1)',
     backgroundColor: paints.main.backgroundColor,
     color: paint ? paints.main.color : 'inherit',
-    transition:
-      `outline-offset ${durations.short} ${timings.easeInOut},\
-outline ${durations.short} ${timings.easeInOut},\
-background-color ${durations.short} ${timings.easeInOut},\
-color ${durations.short} ${timings.easeInOut}`,
+    ...states.base,
 
     [pseudoQueries.hover]: {
-      filter: mode === 'light' ? 'brightness(0.8)' : 'brightness(1.2)',
+      ...states.hover,
     },
 
     [pseudoQueries.active]: {
-      filter: mode === 'light' ? 'brightness(0.7)' : 'brightness(1.3)',
+      ...states.active,
     },
 
     [pseudoQueries.focus]: {
-      ...states.focused,
+      ...states.focus,
     },
 
     '&:focus-within': {
-      ...states.focused,
+      ...states.focus,
     },
 
     [pseudoQueries.disabled]: {
       ...states.disabled,
     },
   };
+
+  if (surface) {
+    style = {
+      ...style,
+      ...surfaces[surface].base,
+
+      [pseudoQueries.hover]: {
+        ...surfaces[surface].hover,
+      },
+
+      [pseudoQueries.active]: {
+        ...surfaces[surface].active,
+      },
+
+      [pseudoQueries.focus]: {
+        ...surfaces[surface].focus,
+      },
+
+      '&:focus-within': {
+        ...surfaces[surface].focus,
+      },
+
+      [pseudoQueries.disabled]: {
+        ...surfaces[surface].disabled,
+      },
+    };
+  }
 
   return style;
 });

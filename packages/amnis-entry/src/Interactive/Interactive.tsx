@@ -16,7 +16,10 @@ React.ComponentProps<typeof InteractiveStyled>
   toggle,
   disabled,
   outlined,
+  button = false,
+  tabIndex,
   paint,
+  style,
   ...props
 }, ref) => (
   <ThemeSwapProvider paint={!outlined ? paint : undefined}>
@@ -24,11 +27,16 @@ React.ComponentProps<typeof InteractiveStyled>
       ref={ref}
       paint={paint}
       outlined={outlined}
-      tabIndex={0}
-      type="button"
+      tabIndex={tabIndex ?? (button ? 0 : -1)}
+      type={button ? 'button' : undefined}
+      as={button ? 'button' : undefined}
       aria-pressed={toggle}
       toggle={toggle}
       disabled={disabled}
+      style={{
+        display: 'inline-flex',
+        ...style,
+      }}
       {...props}
     >
       {children}

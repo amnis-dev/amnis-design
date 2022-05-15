@@ -97,6 +97,7 @@ Omit<React.ComponentProps<typeof Interactive>, 'size'>
   return (
     <Interactive
       ref={ref}
+      button
       aria-label={label || childrenLabel}
       minWidth="2.5em"
       disabled={disabled}

@@ -16,6 +16,7 @@
   "dependencies": {
     "@amnis/hooks": "0.1.0-alpha.3",
     "@amnis/style": "0.1.0-alpha.3",
-    "@amnis/layout": "0.1.0-alpha.3"
+    "@amnis/layout": "0.1.0-alpha.3",
+    "@mui/base": "^5.0.0-alpha.80"
   }
 }

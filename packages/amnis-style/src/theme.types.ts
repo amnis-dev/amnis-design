@@ -25,11 +25,19 @@ export interface ThemeFonts {
   readonly prose: ThemeFont;
 }
 
+export interface ThemeStates {
+  readonly base: CSSProp;
+  readonly hover: CSSProp;
+  readonly active: CSSProp;
+  readonly focus: CSSProp;
+  readonly disabled: CSSProp;
+}
+
 export interface ThemeSurfaces {
-  readonly button: CSSProp;
-  readonly input: CSSProp;
-  readonly paper: CSSProp;
-  readonly overlay: CSSProp;
+  readonly button: ThemeStates;
+  readonly input: ThemeStates;
+  readonly paper: ThemeStates;
+  readonly overlay: ThemeStates;
 }
 
 export interface ThemeShapes {
@@ -38,9 +46,11 @@ export interface ThemeShapes {
   readonly circle: CSSProp;
 }
 
-export interface ThemeStates {
-  readonly focused: CSSProp;
-  readonly disabled: CSSProp;
+export interface ThemePseudoQueries {
+  readonly hover: string;
+  readonly active: string;
+  readonly focus: string;
+  readonly disabled: string;
 }
 
 export interface ThemeSeparators {
@@ -105,13 +115,6 @@ export interface ThemeColumnWidths {
   readonly 12: string;
 }
 
-export interface ThemePseudoQueries {
-  readonly hover: string;
-  readonly active: string;
-  readonly focus: string;
-  readonly disabled: string;
-}
-
 export interface ThemeMediaQueries {
   readonly phone: string;
   readonly mobile: string;
@@ -141,7 +144,7 @@ export type ThemeDurationOptions = Extract<keyof ThemeDurations, string>;
 export type ThemeFontOptions = Extract<keyof ThemeFont, string>;
 export type ThemeSurfaceOptions = Extract<keyof ThemeSurfaces, string>;
 export type ThemeShapeOptions = Extract<keyof ThemeShapes, string>;
-export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
+// export type ThemeStateOptions = Extract<keyof ThemeStates, string>;
 export type ThemeSeparatorOptions = Extract<keyof ThemeSeparators, string>;
 
 export interface Theme {
@@ -157,9 +160,9 @@ export interface Theme {
 
   readonly surfaces: ThemeSurfaces;
 
-  readonly shapes: ThemeShapes;
-
   readonly states: ThemeStates;
+
+  readonly shapes: ThemeShapes;
 
   readonly separators: ThemeSeparators;
 

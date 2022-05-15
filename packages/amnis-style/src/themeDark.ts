@@ -40,14 +40,38 @@ const baseTheme: ThemeBase = {
 
   surfaces: {
     button: {
-      boxShadow: '1px 1px 2px 0 #ffffff55',
+      base: {
+        boxShadow: '1px 1px 2px 0 #ffffff55',
+      },
+      hover: {
+        filter: 'brightness(1.2)',
+      },
+      active: {
+        filter: 'brightness(1.35)',
+      },
     },
     paper: {
-      backgroundColor: '#262d3d',
-      boxShadow: '0 1px 4px 0 rgba(255, 255, 255, 0.4)',
+      base: {
+        backgroundColor: '#262d3d',
+        boxShadow: '0 1px 4px 0 rgba(255, 255, 255, 0.4)',
+      },
+      hover: {
+        filter: 'brightness(1.2)',
+      },
+      active: {
+        filter: 'brightness(1.35)',
+      },
     },
     overlay: {
-      backgroundColor: '#88888888',
+      base: {
+        backgroundColor: '#88888888',
+      },
+      hover: {
+        filter: 'brightness(1.2)',
+      },
+      active: {
+        filter: 'brightness(1.35)',
+      },
     },
   },
 

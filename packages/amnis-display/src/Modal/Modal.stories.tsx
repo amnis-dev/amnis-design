@@ -23,7 +23,9 @@ const TemplateButton: ComponentStory<typeof Modal> = (args) => {
         open={modalOpen}
         onClose={() => modalOpenSet(false)}
       >
-        <p>This is some additional possible content for the component.</p>
+        <p style={{ padding: 0, margin: 0 }}>
+          This is some additional possible content for the component.
+        </p>
       </Modal>
     </>
   );

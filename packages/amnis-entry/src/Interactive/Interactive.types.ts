@@ -16,4 +16,15 @@ export interface InteractiveProps extends BoxProps {
    * Disables interaction.
    */
   disabled?: boolean;
+
+  /**
+   * Set tab indexing.
+   */
+  tabIndex?: number;
+
+  /**
+   * Flag to render as a button.
+   * @default false
+   */
+  button?: boolean;
 }
