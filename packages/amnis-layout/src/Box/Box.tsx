@@ -27,6 +27,7 @@ React.ComponentProps<typeof BoxStyled>
 >(({
   children,
   paint,
+  display,
   outlined = false,
   depth = 'ground',
   position,
@@ -69,6 +70,7 @@ React.ComponentProps<typeof BoxStyled>
         ref={ref}
         style={{
           position,
+          display,
           zIndex: boxDepths[depth],
           top,
           right,

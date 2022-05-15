@@ -1,3 +1,5 @@
+export type ImageLayout = 'intrinsic' | 'responsive' | 'contain' | 'cover';
+
 export interface ImageProps {
   /**
    * Source of the image content
@@ -8,11 +10,6 @@ export interface ImageProps {
    * Alternative text that describes the image for screen readers. This is required.
    */
   alt: string;
-
-  /**
-   * Title of the image.
-   */
-  title?: string;
 
   /**
    * Sets the width of the image.
@@ -28,5 +25,5 @@ export interface ImageProps {
    * Layout mode
    * @default "intrinsic"
    */
-  layout?: 'intrinsic' | 'responsive' | 'contain' | 'cover';
+  layout?: ImageLayout;
 }

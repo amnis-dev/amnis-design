@@ -1,8 +1,11 @@
 import React from 'react';
-import useImageLoader from '@amnis/hooks/useImageLoader';
+import { useImageLoader } from '@amnis/hooks/useImageLoader';
+import { Box } from '@amnis/layout/Box';
+import { Stack } from '@amnis/layout/Stack';
 import type { PictureProps } from './Picture.types';
 import { PictureStyled } from './Picture.styled';
 import { dataUrlPlaceholder } from './Picture.dataurls';
+import { Font } from '../Font';
 import { Image } from '../Image';
 
 /**
@@ -16,16 +19,23 @@ HTMLPictureElement,
 React.ComponentProps<typeof PictureStyled>
 & PictureProps
 >(({
+  children,
   placeholder = dataUrlPlaceholder,
   src,
   alt,
   width,
   height,
+  title,
+  description,
+  layout,
+  bar = 'bottom',
   style,
   ...props
 }, ref) => {
   const imageRef = React.useRef(null);
   const { successful, observed } = useImageLoader(imageRef, src);
+
+  const hasChildren = React.Children.count(children) > 0;
 
   const lazySrc = React.useMemo(() => {
     if (successful) {
@@ -36,22 +46,60 @@ React.ComponentProps<typeof PictureStyled>
   }, [successful, observed]);
 
   return (
-    <PictureStyled
-      ref={ref}
-      {...props}
+    <Box
+      position="relative"
+      display="inline-block"
+      style={{
+        lineHeight: 0,
+      }}
     >
-      <Image
-        ref={imageRef}
-        src={lazySrc}
-        alt={alt}
-        height={height}
-        width={width}
-        style={{
-          filter: successful ? undefined : 'blur(1.5em)',
-          ...style,
-        }}
-      />
-    </PictureStyled>
+      <PictureStyled
+        ref={ref}
+        {...props}
+      >
+        <Image
+          ref={imageRef}
+          src={lazySrc}
+          alt={alt}
+          height={height}
+          width={width}
+          layout={layout}
+          style={{
+            filter: successful ? undefined : 'blur(1.5em)',
+            ...style,
+          }}
+        />
+      </PictureStyled>
+      {(title || description || hasChildren) ? (
+        <Stack
+          position={bar === 'below' ? 'relative' : 'absolute'}
+          direction="row"
+          bottom={0}
+          padding={3}
+          gap={1}
+          width="100%"
+          surface={bar === 'below' ? undefined : 'overlay'}
+          style={{
+            fontSize: '0.9em',
+          }}
+        >
+          {(title || description) ? (
+            <Stack
+              flex={1}
+              gap={1}
+            >
+              {title && <Font><strong>{title}</strong></Font>}
+              {description && <Font variant="body-2">{description}</Font>}
+            </Stack>
+          ) : null}
+          {hasChildren && (
+            <Box>
+              {children}
+            </Box>
+          )}
+        </Stack>
+      ) : null}
+    </Box>
   );
 });
 

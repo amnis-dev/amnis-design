@@ -21,4 +21,10 @@ export interface SkeletonProps {
    * Height of the skeleton.
    */
   height?: number;
+
+  /**
+   * Removes any existing border radius
+   * @default false
+   */
+  sharp?: boolean;
 }

@@ -1,11 +1,12 @@
 import type React from 'react';
-import { IconName } from '@amnis/icons/Icon.types';
+import type { IconName } from '@amnis/icons/Icon.types';
 import type { ThemePaintOptions } from '@amnis/style/theme.types';
+import type { InteractiveProps } from '../Interactive/Interactive.types';
 
 export type ButtonIconVariant = 'text' | 'contain' | 'outline';
 export type ButtonIconSize = 'small' | 'medium' | 'large';
 
-export interface ButtonIconProps {
+export interface ButtonIconProps extends InteractiveProps {
   /**
    * Explicitly declare children.
    */
@@ -22,19 +23,13 @@ export interface ButtonIconProps {
   icon: IconName;
 
   /**
-   * Disables button interaction.
-   */
-  disabled?: boolean;
-
-  /**
    * Paint color for the button.
-   * @default "primary"
    */
   paint?: ThemePaintOptions;
 
   /**
    * Style variant.
-   * @default "contained"
+   * @default "contain"
    */
   variant?: ButtonIconVariant;
 

@@ -15,6 +15,7 @@ React.ComponentProps<typeof SkeletonStyled>
   buffer = 0,
   width = 50,
   height,
+  sharp = false,
   style,
   ...props
 }, ref) => {
@@ -40,6 +41,7 @@ React.ComponentProps<typeof SkeletonStyled>
       ref={ref}
       variant={variant}
       style={{
+        borderRadius: sharp ? 0 : undefined,
         ...skeletonStyle,
         ...style,
       }}

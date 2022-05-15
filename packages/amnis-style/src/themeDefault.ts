@@ -214,7 +214,8 @@ export const themeDefault: Theme = {
     },
     overlay: {
       base: {
-        backgroundColor: '#00000088',
+        backgroundColor: '#00000077',
+        color: '#ffffff',
         backdropFilter: 'blur(2px)',
       },
       hover: {},

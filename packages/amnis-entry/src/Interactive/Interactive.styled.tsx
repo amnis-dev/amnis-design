@@ -6,13 +6,17 @@ import { InteractiveProps } from './Interactive.types';
 
 export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<InteractiveProps>>(({
   theme,
-  surface,
   paint,
+  surface,
+  shape,
+  outlined,
+  color,
 }) => {
   const {
     paints,
     pseudoQueries,
     surfaces,
+    shapes,
     states,
   } = theme;
 
@@ -22,7 +26,7 @@ export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<Interact
     outlineOffset: '0rem',
     outline: `0 solid ${paints.main.color}00`,
     backgroundColor: paints.main.backgroundColor,
-    color: paint ? paints.main.color : 'inherit',
+    color: color ?? paints.main.color,
     ...states.base,
 
     [pseudoQueries.hover]: {
@@ -70,6 +74,24 @@ export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<Interact
       [pseudoQueries.disabled]: {
         ...surfaces[surface].disabled,
       },
+    };
+  }
+
+  if (shape) {
+    style = {
+      ...style,
+      ...shapes[shape],
+    };
+  }
+
+  if (outlined) {
+    style = {
+      ...style,
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: paint ? paints[paint || 'main'].backgroundColor : color ?? paints.main.color,
+      color: paint ? paints[paint].backgroundColor : color ?? paints.main.color,
+      backgroundColor: paint ? `${paints[paint].color} !important` : 'transparent',
     };
   }
 

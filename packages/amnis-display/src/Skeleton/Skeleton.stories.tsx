@@ -18,10 +18,25 @@ Text.args = {
   buffer: 256,
 };
 
+export const TextSharp = Template.bind({});
+TextSharp.args = {
+  variant: 'text',
+  buffer: 256,
+  sharp: true,
+};
+
 export const Circle = Template.bind({});
 Circle.args = {
   variant: 'circle',
   width: 50,
+};
+
+export const CircleSharp = Template.bind({});
+CircleSharp.args = {
+  variant: 'rectangle',
+  width: 50,
+  height: 50,
+  sharp: true,
 };
 
 export const Rectangle = Template.bind({});
@@ -29,4 +44,12 @@ Rectangle.args = {
   variant: 'rectangle',
   width: 50,
   height: 50,
+};
+
+export const RectangleSharp = Template.bind({});
+RectangleSharp.args = {
+  variant: 'rectangle',
+  width: 50,
+  height: 50,
+  sharp: true,
 };

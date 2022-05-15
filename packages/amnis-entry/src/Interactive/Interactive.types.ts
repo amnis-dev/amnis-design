@@ -27,4 +27,9 @@ export interface InteractiveProps extends BoxProps {
    * @default false
    */
   button?: boolean;
+
+  /**
+   * Overrides font color.
+   */
+  color?: React.CSSProperties['color'];
 }
