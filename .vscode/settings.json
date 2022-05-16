@@ -26,5 +26,8 @@
     "**/wwwroot": true
   },
   "debug.internalConsoleOptions": "neverOpen",
-  "npm.packageManager": "yarn"
+  "npm.packageManager": "yarn",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

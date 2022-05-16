@@ -30,7 +30,7 @@ Workflows
 | :---: | :----- |
 | ![Sorybook Logo](static/storybook-logo.png) | [Storybook webpage of Design Componets](https://storybook.amnis.dev) |
 
-## Philosophy
+## Motivation
 
 There's a lot to consider when designing a web application, and even more with accessibility and user experience in mind.
 
@@ -92,4 +92,4 @@ Check it out in an interactive sandbox:
 
 This is a growing project that you can add and improve upon! I'm welcoming to new PRs. Contrubuting can be more than just code too. If you identify an improvement, please [submit a new GitHub issue](https://github.com/amnis-dev/amnis-design/issues/new).
 
-See the **[contributing documentation](docs/CONTRIBUTING.md)**.
+See the **[contributing documentation](CONTRIBUTING.md)**.

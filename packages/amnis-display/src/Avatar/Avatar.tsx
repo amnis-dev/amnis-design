@@ -13,6 +13,7 @@ export const Avatar = React.forwardRef<
 HTMLDivElement,
 AvatarProps
 >(({
+  children,
   label,
   size,
   image,
@@ -33,6 +34,35 @@ AvatarProps
     }
   }, [size]);
 
+  const childComponent = React.useMemo(() => {
+    if (React.Children.count(children) > 0) {
+      return children;
+    }
+    if (image) {
+      return (
+        <Image
+          alt={`${label} avatar`}
+          src={image}
+          width={50}
+          height={50}
+          layout="cover"
+          loading="lazy"
+        />
+      );
+    }
+    return (
+      <Font
+        size={`calc(${avatarSize} * 0.7)`}
+        color="#ffffff"
+        style={{
+          textShadow: '-1px -1px 0 #333,1px -1px 0 #333,-1px 1px 0 #666,1px 1px 0 #666',
+        }}
+      >
+        {label.charAt(0)}
+      </Font>
+    );
+  }, [children, image, label]);
+
   return (
     <Box
       ref={ref}
@@ -47,26 +77,7 @@ AvatarProps
         textTransform: 'capitalize',
       }}
     >
-      {image ? (
-        <Image
-          alt={`${label} avatar`}
-          src={image}
-          width={50}
-          height={50}
-          layout="cover"
-          loading="lazy"
-        />
-      ) : (
-        <Font
-          size={`calc(${avatarSize} * 0.7)`}
-          color="#ffffff"
-          style={{
-            textShadow: '-1px -1px 0 #333,1px -1px 0 #333,-1px 1px 0 #666,1px 1px 0 #666',
-          }}
-        >
-          {label.charAt(0)}
-        </Font>
-      )}
+      {childComponent}
     </Box>
   );
 });

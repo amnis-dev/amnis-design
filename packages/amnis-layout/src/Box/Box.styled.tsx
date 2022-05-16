@@ -60,7 +60,6 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     style = {
       ...style,
       ...shapes[shape],
-      overflow: 'hidden',
     };
   }
 
