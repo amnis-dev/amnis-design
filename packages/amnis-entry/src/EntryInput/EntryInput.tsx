@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
+import { useEntryAriaProps } from '../useEntryAriaProps';
 import { EntryInputStyled } from './EntryInput.styled';
 import { EntryContext } from '../EntryContext';
-import useEntryAriaProps from '../useEntryAriaProps';
 
 /**
  * ## Base Entry Input

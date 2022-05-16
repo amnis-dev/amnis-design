@@ -5,7 +5,7 @@ module.exports = {
         type: 'select',
         name: 'type',
         message: 'Select type of component.',
-        choices: ['display', 'entry', 'landmark', 'layout'],
+        choices: ['display', 'entry', 'lands', 'layout'],
       },
       {
         type: 'input',

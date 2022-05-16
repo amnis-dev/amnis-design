@@ -90,6 +90,6 @@ Check it out in an interactive sandbox:
 
 ## Contributing
 
-This is a growing project that you can add and improve upon! I'm welcoming to new PRs. Contrubuting can be more than just code too. If you identify an improvement, please [submit a new GitHub issue](https://github.com/amnis-dev/amnis-design/issues/new).
+This is a growing project that you can add and improve upon! I'm welcoming to new PRs. Contrubuting is not just code eiter. If you identify an improvement/bug, [write a new GitHub issue](https://github.com/amnis-dev/amnis-design/issues/new) so I'm made aware and can resolve it.
 
-See the **[contributing documentation](CONTRIBUTING.md)**.
+For code contributions, see the **[contributing documentation](CONTRIBUTING.md)**.

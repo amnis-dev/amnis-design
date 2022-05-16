@@ -1,4 +1,4 @@
-import { IconName } from '@amnis/icons/Icon.types';
+import type { IconName } from '@amnis/icons/Icon/Icon.types';
 import type { ThemePaintOptions } from '@amnis/style/theme.types';
 import type React from 'react';
 

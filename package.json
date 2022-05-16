@@ -85,7 +85,8 @@
     "storybook:build": "build-storybook -o ./.out-storybook",
     "gen:component": "hygen component new",
     "gen:hook": "hygen hook new",
-    "delete-node-modules": "npx rimraf ./**/node_modules",
-    "set:version": "ts-node -P scripts/tsconfig.json scripts/version"
+    "gen:amnis-design": "ts-node -P scripts/tsconfig.json scripts/amnis-design",
+    "set:version": "ts-node -P scripts/tsconfig.json scripts/version",
+    "delete-node-modules": "npx rimraf ./**/node_modules"
   }
 }
