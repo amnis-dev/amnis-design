@@ -76,7 +76,7 @@ React.ComponentProps<typeof BoxStyled>
           right,
           bottom,
           left,
-          width: width || w || stretch ? '100%' : undefined,
+          width: width || w || (stretch ? '100%' : undefined),
           maxWidth: maxWidth || maxW,
           minWidth: minWidth || minW,
           height: height || h,

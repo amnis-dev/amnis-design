@@ -26,4 +26,9 @@ export interface ImageProps {
    * @default "intrinsic"
    */
   layout?: ImageLayout;
+
+  /**
+   * Loading option
+   */
+  loading?: 'lazy';
 }

@@ -46,9 +46,6 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     flexWrap: flexWrap ? 'wrap' : 'nowrap',
     alignItems,
     justifyContent,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'transparent',
   };
 
   if (surface) {
@@ -63,6 +60,7 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     style = {
       ...style,
       ...shapes[shape],
+      overflow: 'hidden',
     };
   }
 

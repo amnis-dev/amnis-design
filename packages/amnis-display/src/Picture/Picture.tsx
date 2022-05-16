@@ -27,7 +27,7 @@ React.ComponentProps<typeof PictureStyled>
   height,
   title,
   description,
-  layout,
+  layout = 'intrinsic',
   bar = 'bottom',
   style,
   ...props
@@ -36,6 +36,11 @@ React.ComponentProps<typeof PictureStyled>
   const { successful, observed } = useImageLoader(imageRef, src);
 
   const hasChildren = React.Children.count(children) > 0;
+
+  const layoutStyle = React.useMemo<React.CSSProperties>(
+    () => (['cover', 'contain'].includes(layout) ? ({ width: '100%', height: '100%' }) : {}),
+    [layout],
+  );
 
   const lazySrc = React.useMemo(() => {
     if (successful) {
@@ -50,11 +55,13 @@ React.ComponentProps<typeof PictureStyled>
       position="relative"
       display="inline-block"
       style={{
+        ...layoutStyle,
         lineHeight: 0,
       }}
     >
       <PictureStyled
         ref={ref}
+        style={layoutStyle}
         {...props}
       >
         <Image

@@ -17,6 +17,11 @@ export interface FontProps {
   paint?: ThemePaintOptions;
 
   /**
+   * Override the text color.
+   */
+  color?: string;
+
+  /**
    * The variant of the font typography.
    * @default "body1"
    */

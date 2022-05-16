@@ -17,3 +17,4 @@ export * from './useInnerRef';
 export * from './useLocation';
 export * from './useBoundingClientRect';
 export * from './useRelativeRectAlignment';
+export * from './useStringColor';

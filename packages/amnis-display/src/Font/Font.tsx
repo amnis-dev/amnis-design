@@ -33,6 +33,7 @@ React.ComponentProps<typeof FontStyled>
   children,
   variant,
   v,
+  color,
   size,
   s,
   as,
@@ -43,7 +44,7 @@ React.ComponentProps<typeof FontStyled>
     ref={ref}
     as={as || variantElementMap[(variant || v || 'body-1') as FontVariant]}
     variant={variant || v}
-    style={{ fontSize: size || s, ...style }}
+    style={{ fontSize: size || s, color, ...style }}
     {...props}
   >
     {children}
