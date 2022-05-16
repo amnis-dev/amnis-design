@@ -5,9 +5,9 @@ import { useIncrementalId } from '@amnis/hooks/useIncrementalId';
 import { ButtonIcon } from '@amnis/entry/ButtonIcon';
 import { Button } from '@amnis/entry/Button';
 import TrapFocus from '@mui/base/TrapFocus';
-import { Transition } from '../Transition';
-import { Font } from '../Font';
-import { Overlay } from '../Overlay';
+import { Transition } from '@amnis/display/Transition';
+import { Font } from '@amnis/display/Font';
+import { Overlay } from '@amnis/display/Overlay';
 import type { ModalProps } from './Modal.types';
 
 /**

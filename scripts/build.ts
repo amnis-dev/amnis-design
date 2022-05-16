@@ -20,7 +20,18 @@ function tsCompile() {
   packagePaths.forEach((path) => {
     const command = `yarn tsc --project ${path}/tsconfig.json`;
     console.log(`Running '${command}...'`);
-    execSync(command);
+    try {
+      execSync(command);
+    } catch (error: any) {
+      console.log('==================================================');
+      console.error('output', error.output.toString());
+      console.log('----------------------------------------');
+      console.error('stdout', error.stdout.toString());
+      console.log('----------------------------------------');
+      console.error('sdterr', error.stderr.toString());
+      console.log('==================================================');
+      process.exit(1);
+    }
     console.log('Command complete.');
     console.log('');
 

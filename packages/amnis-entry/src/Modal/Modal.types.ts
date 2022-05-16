@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { OverlayProps } from '../Overlay/Overlay.types';
+import type { OverlayProps } from '@amnis/display/Overlay/Overlay.types';
 
 export interface ModalProps extends OverlayProps {
   /**

@@ -60,5 +60,5 @@ export * from '@amnis/${type}/${util}';
   });
 }
 
-// genComponents();
+genComponents();
 genUtility();
