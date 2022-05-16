@@ -15,6 +15,7 @@
   "references": [
     { "path": "../amnis-hooks/tsconfig.json" },
     { "path": "../amnis-style/tsconfig.json" },
-    { "path": "../amnis-icons/tsconfig.json" }
+    { "path": "../amnis-icons/tsconfig.json" },
+    { "path": "../amnis-layout/tsconfig.json" }
   ]
 }

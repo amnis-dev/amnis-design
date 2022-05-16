@@ -1,1 +1,1 @@
-export * from '@amnis/display/Modal';
+export * from '@amnis/entry/Modal';

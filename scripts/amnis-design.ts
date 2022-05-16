@@ -3,6 +3,7 @@
  * Prepares amnis design package.
  */
 import fse from 'fs-extra';
+import p from 'path';
 
 const amnisDesignSourcePath = 'packages/amnis-design/src';
 
@@ -45,9 +46,7 @@ function genUtility() {
     const type = path.split('-')[1];
     const utils = fse.readdirSync(pathSource, { withFileTypes: true })
       .filter((file) => file.isFile() && !['index.ts', 'index.tsx', 'tsconfig.json'].includes(file.name))
-      .map((file) => file.name.split('.')[0]);
-
-    console.log(utils);
+      .map((file) => p.parse(file.name).name);
 
     // Create new TypeScript file for each utility.
     utils.forEach((util) => {
