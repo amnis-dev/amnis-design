@@ -10,7 +10,7 @@ const amnisDesignSourcePath = 'packages/amnis-design/src';
 // Component packages
 const packagePathsComponents = [
   'packages/amnis-icons',
-  // 'packages/amnis-layout',
+  'packages/amnis-layout',
   'packages/amnis-display',
   'packages/amnis-entry',
 ];
