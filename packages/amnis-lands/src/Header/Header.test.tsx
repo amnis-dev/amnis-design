@@ -1,3 +1,4 @@
+import './Header.testdef';
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -11,7 +12,7 @@ expect.extend(emotionMatchers);
 expect.extend(toHaveNoViolations);
 
 it('renders basic story properly with no a11y violations', async () => {
-  const { container } = render(<Basic {...Basic.args} />);
+  const { container } = render(<Basic title="" {...Basic.args} />);
   const element = container.querySelector('div');
 
   expect(element).toBeDefined();
