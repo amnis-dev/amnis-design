@@ -1,5 +1,6 @@
 import React from 'react';
 import { Enumer } from '@amnis/layout/Enumer';
+import { Item } from '@amnis/layout/Item';
 import { Button } from '@amnis/entry/Button';
 import type { NavProps } from './Nav.types';
 import { Section } from '../Section';
@@ -19,12 +20,16 @@ NavProps
     as="nav"
   >
     <Enumer>
-      <Button as="a" variant="text">
-        Link 1
-      </Button>
-      <Button as="a" variant="text">
-        Link 2
-      </Button>
+      <Item>
+        <Button as="a" variant="text">
+          Link 1
+        </Button>
+      </Item>
+      <Item>
+        <Button as="a" variant="text">
+          Link 2
+        </Button>
+      </Item>
     </Enumer>
   </Section>
 ));

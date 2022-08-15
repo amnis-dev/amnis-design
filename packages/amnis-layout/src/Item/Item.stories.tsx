@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof Item>;
 
 const Template: ComponentStory<typeof Item> = (args) => (
-  <Item {...args} />
+  <ul>
+    <Item {...args} />
+  </ul>
 );
 
 export const Basic = Template.bind({});
