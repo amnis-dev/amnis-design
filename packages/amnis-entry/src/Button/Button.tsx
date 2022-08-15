@@ -26,6 +26,7 @@ Omit<React.ComponentProps<typeof Interactive>, 'size'>
   disabled,
   size = 'medium',
   loading = false,
+  as,
   ...props
 }, ref) => {
   const childrenLabel = useChildrenText(children);
@@ -33,7 +34,9 @@ Omit<React.ComponentProps<typeof Interactive>, 'size'>
   const interactiveVariantProps: InteractiveProps = React.useMemo(() => {
     switch (variant) {
       case 'text':
-        return {};
+        return {
+          border: 'none',
+        };
       case 'outline':
         return {
           paint,
@@ -97,6 +100,7 @@ Omit<React.ComponentProps<typeof Interactive>, 'size'>
   return (
     <Interactive
       ref={ref}
+      as={as}
       button
       aria-label={label || childrenLabel}
       minWidth="2.5em"

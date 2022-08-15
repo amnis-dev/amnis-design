@@ -13,8 +13,6 @@
     "./src/**/*.stories.*"
   ],
   "references": [
-    { "path": "../amnis-hooks/tsconfig.json" },
     { "path": "../amnis-style/tsconfig.json" },
-    { "path": "../amnis-icons/tsconfig.json" }
   ]
 }

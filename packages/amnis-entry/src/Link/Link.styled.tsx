@@ -11,7 +11,7 @@ export const LinkStyled = styled<HTMLAnchorElement>(InteractiveStyled, 'a')<Part
     ...fonts.main.link,
     display: 'inline-block',
     color: 'inherit',
-    opacity: 0.7,
+    opacity: 0.8,
     '&:hover': {
       opacity: 1,
     },

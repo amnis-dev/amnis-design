@@ -42,6 +42,22 @@ Painted.args = {
   paint: 'primary',
 };
 
+export const Lighter = Template.bind({});
+Lighter.args = {
+  border: '1px dashed #888888',
+  padding: 3,
+  paint: 'primary',
+  light: true,
+};
+
+export const Darker = Template.bind({});
+Darker.args = {
+  border: '1px dashed #888888',
+  padding: 3,
+  paint: 'primary',
+  dark: true,
+};
+
 export const PaperSurface = Template.bind({});
 PaperSurface.args = {
   padding: 3,

@@ -13,6 +13,7 @@ const packagePathsComponents = [
   'packages/amnis-layout',
   'packages/amnis-display',
   'packages/amnis-entry',
+  'packages/amnis-lands',
 ];
 
 // Utility packages

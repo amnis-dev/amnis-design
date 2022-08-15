@@ -35,6 +35,20 @@ Basic.args = {
   children: 'Button',
 };
 
+export const Outlined = Template.bind({});
+Outlined.args = {
+  paint: 'primary',
+  children: 'Button',
+  outlined: true,
+};
+
+export const Text = Template.bind({});
+Text.args = {
+  paint: 'primary',
+  children: 'Button',
+  variant: 'text',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   paint: 'primary',

@@ -3,16 +3,17 @@ import type { ButtonGroupProps } from './ButtonGroup.types';
 
 export const ButtonGroupStyled = styled<HTMLDivElement>('div')<Partial<ButtonGroupProps>>(({
   theme,
+  paint,
   direction = 'row',
   disabled = false,
   outlined = false,
 }) => {
   const {
-    mode, surfaces, pseudoQueries,
+    paints, mode, surfaces, pseudoQueries,
   } = theme;
 
-  const style: CSSObject = {
-    ...surfaces.button,
+  let style: CSSObject = {
+    ...surfaces.button.base,
     position: 'relative',
     display: 'inline-flex',
     flexDirection: direction,
@@ -20,6 +21,7 @@ export const ButtonGroupStyled = styled<HTMLDivElement>('div')<Partial<ButtonGro
     justifyContent: 'center',
     '& > button': {
       position: 'relative',
+      border: 'none',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -30,9 +32,15 @@ export const ButtonGroupStyled = styled<HTMLDivElement>('div')<Partial<ButtonGro
       zIndex: 0,
       [pseudoQueries.hover]: {
         zIndex: 1,
+        ...surfaces.button.hover,
       },
       [pseudoQueries.focus]: {
         zIndex: 2,
+        ...surfaces.button.focus,
+      },
+      [pseudoQueries.active]: {
+        zIndex: 2,
+        ...surfaces.button.active,
       },
       '&:first-of-type': {
         borderTopLeftRadius: 'inherit',
@@ -51,6 +59,17 @@ export const ButtonGroupStyled = styled<HTMLDivElement>('div')<Partial<ButtonGro
       },
     },
   };
+
+  if (outlined) {
+    style = {
+      ...style,
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: paint ? paints[paint || 'main'].backgroundColor : paints.main.color,
+      color: paint ? paints[paint].backgroundColor : paints.main.color,
+      backgroundColor: paint ? `${paints[paint].color} !important` : 'transparent',
+    };
+  }
 
   return style;
 });

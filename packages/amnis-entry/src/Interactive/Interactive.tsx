@@ -13,6 +13,7 @@ React.ComponentProps<typeof InteractiveStyled>
 & InteractiveProps
 >(({
   children,
+  as,
   toggle,
   disabled,
   outlined,
@@ -28,9 +29,10 @@ React.ComponentProps<typeof InteractiveStyled>
       paint={paint}
       outlined={outlined}
       tabIndex={tabIndex ?? (button ? 0 : -1)}
-      type={button ? 'button' : undefined}
-      as={button ? 'button' : undefined}
+      type={(button && !as) ? 'button' : undefined}
+      as={as || (button ? 'button' : undefined)}
       aria-pressed={toggle}
+      button={button}
       toggle={toggle}
       disabled={disabled}
       style={{

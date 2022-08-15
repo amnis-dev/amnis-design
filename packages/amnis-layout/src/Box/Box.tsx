@@ -71,7 +71,7 @@ React.ComponentProps<typeof BoxStyled>
         style={{
           position,
           display,
-          zIndex: boxDepths[depth],
+          zIndex: boxDepths[depth] === 0 ? undefined : boxDepths[depth],
           top,
           right,
           bottom,

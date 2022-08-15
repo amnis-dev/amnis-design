@@ -14,6 +14,7 @@ const packagePaths = [
   'packages/amnis-layout',
   'packages/amnis-display',
   'packages/amnis-entry',
+  'packages/amnis-lands',
   'packages/amnis-design',
 ];
 

@@ -20,21 +20,7 @@ React.ComponentProps<typeof Fluid>
     as="ul"
     {...props}
   >
-    {React.Children.map(children, (child) => {
-      if (!React.isValidElement(child)) {
-        return null;
-      }
-      const childComponent = child as React.ReactElement;
-      const basis = childComponent.props?.basis ?? 12;
-      return (
-        <Box
-          as="li"
-          basis={basis}
-        >
-          {childComponent}
-        </Box>
-      );
-    })}
+    {children}
   </Fluid>
 ));
 

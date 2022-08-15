@@ -1,4 +1,5 @@
 import React from 'react';
+import useChildrenText from '@amnis/hooks/useChildrenText';
 import { FontProps, FontVariant } from './Font.types';
 import { FontStyled } from './Font.styled';
 
