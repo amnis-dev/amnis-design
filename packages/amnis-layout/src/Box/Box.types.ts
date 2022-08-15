@@ -247,6 +247,17 @@ export interface BoxProps {
   justifyContent?: React.CSSProperties['justifyContent'];
 
   /**
+   * Lightens the background.
+   * @default false
+   */
+  light?: boolean;
+
+  /**
+   * Darkens the background.
+   */
+  dark?: boolean;
+
+  /**
    * A basis level on when to wrap.
    */
   basis?: ThemeColumnWidthOptions;

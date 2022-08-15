@@ -7,8 +7,8 @@ module.exports = {
     '../packages/amnis-display/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/amnis-entry/src/**/*.stories.mdx',
     '../packages/amnis-entry/src/**/*.stories.@(js|jsx|ts|tsx)',
-    // '../packages/amnis-landmarks/src/**/*.stories.mdx',
-    // '../packages/amnis-landmarks/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/amnis-lands/src/**/*.stories.mdx',
+    '../packages/amnis-lands/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../packages/amnis-layout/src/**/*.stories.mdx',
     '../packages/amnis-layout/src/**/*.stories.@(js|jsx|ts|tsx)'
   ],

@@ -11,6 +11,7 @@ export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<Interact
   shape,
   outlined,
   color,
+  button,
 }) => {
   const {
     paints,
@@ -27,22 +28,27 @@ export const InteractiveStyled = styled<HTMLElement>(BoxStyled)<Partial<Interact
     outline: `0 solid ${paints.main.color}00`,
     backgroundColor: paints.main.backgroundColor,
     color: color ?? paints.main.color,
+    border: button ? 'none' : undefined,
     ...states.base,
 
     [pseudoQueries.hover]: {
       ...states.hover,
+      zIndex: 1,
     },
 
     [pseudoQueries.active]: {
       ...states.active,
+      zIndex: 1,
     },
 
     [pseudoQueries.focus]: {
       ...states.focus,
+      zIndex: 2,
     },
 
     '&:focus-within': {
       ...states.focus,
+      zIndex: 2,
     },
 
     [pseudoQueries.disabled]: {

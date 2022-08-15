@@ -42,6 +42,10 @@ This library is inspired by qualities from both the [U.S. Web Design System](htt
 
 This library also aims help with legal compliance of many [governmental policies](https://www.w3.org/WAI/policies/) for the public and private sectors. You should always provide your own testing to ensure you meet your specific requirements.
 
+# Alpha Stage
+
+This library currently in the alpha stages of development. There are still features to create and refine; however, you can still download and use the package to provide feedback by [writing GitHub issues](https://github.com/amnis-dev/amnis-design/issues/new).
+
 ## Installation
 
 Amnis Design is available as an [npm package](https://www.npmjs.com/package/@amnis/design).

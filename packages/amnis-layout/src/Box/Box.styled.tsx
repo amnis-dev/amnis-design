@@ -20,6 +20,8 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   justifyContent = 'flex-start',
   surface,
   shape = 'square',
+  light = false,
+  dark = false,
 }) => {
   const {
     paints, spacing, shadow: themeShadow, surfaces, shapes,
@@ -32,6 +34,7 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
   const marginVertical = (margin > 1 ? margin - 1 : margin) as ThemeSpacingLevelOptions;
 
   let style: CSSObject = {
+    position: 'relative',
     flexGrow: 0,
     flexShrink: 1,
     lineHeight: 1,
@@ -46,6 +49,18 @@ export const BoxStyled = styled<HTMLDivElement>('div')<Partial<BoxProps>>(({
     flexWrap: flexWrap ? 'wrap' : 'nowrap',
     alignItems,
     justifyContent,
+    backdropFilter: (light || dark) ? 'opacity(0.5)' : undefined,
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: (light && '#fff') || (dark && '#000') || undefined,
+      opacity: (light || dark) ? 0.2 : 0,
+      zIndex: -1,
+    },
   };
 
   if (surface) {

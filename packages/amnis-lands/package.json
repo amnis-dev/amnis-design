@@ -12,5 +12,12 @@
   "homepage": "https://github.com/amnis-dev/amnis-design",
   "peerDependencies": {
     "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@amnis/hooks": "0.1.0-alpha.4",
+    "@amnis/style": "0.1.0-alpha.4",
+    "@amnis/layout": "0.1.0-alpha.4",
+    "@amnis/display": "0.1.0-alpha.4",
+    "@amnis/entry": "0.1.0-alpha.4"
   }
 }

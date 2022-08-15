@@ -20,15 +20,18 @@ export const themeDefault: Theme = {
       fontSize: '1.06rem',
       heading: {
         fontSize: '2.4em',
+        fontWeight: 700,
       },
       subtitle: {
         fontSize: '1.1em',
+        fontWeight: 700,
       },
       body: {
         fontSize: '1em',
       },
       logo: {
         fontSize: '2em',
+        fontWeight: 700,
       },
       label: {
         fontSize: '1em',
@@ -55,15 +58,18 @@ export const themeDefault: Theme = {
       fontSize: '1.06rem',
       heading: {
         fontSize: '2em',
+        fontWeight: 700,
       },
       subtitle: {
         fontSize: '1.2em',
+        fontWeight: 700,
       },
       body: {
         fontSize: '1em',
       },
       logo: {
         fontSize: '2em',
+        fontWeight: 700,
       },
       label: {
         fontSize: '1em',
@@ -132,9 +138,9 @@ export const themeDefault: Theme = {
   surfaces: {
     button: {
       base: {
-        boxShadow: 'inset 1px 1px 1px 1px #00000000, 1px 1px 2px #00000055',
+        border: 'none',
+        boxShadow: 'inset 1px 1px 1px 0 #ffffff00, 1px 1px 1px 0 #00000055',
         borderRadius: '.5em',
-        overflow: 'hidden',
         position: 'relative',
         filter: 'brightness(1)',
         userSelect: 'none',
@@ -149,7 +155,7 @@ export const themeDefault: Theme = {
       },
       active: {
         filter: 'brightness(1.35)',
-        boxShadow: 'inset 1px 1px 1px 0 #00000033, 1px 1px 2px #00000055',
+        boxShadow: 'inset 1px 1px 1px 0 #00000033, 1px 1px 1px 0 #00000033',
         outlineOffset: '.3rem !important',
       },
       focus: {
@@ -204,6 +210,17 @@ export const themeDefault: Theme = {
     paper: {
       base: {
         borderRadius: '.5em',
+        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
+        backgroundColor: '#f8f8f8',
+      },
+      hover: {},
+      active: {},
+      focus: {},
+      disabled: {},
+    },
+    dialog: {
+      base: {
+        borderRadius: '.25em',
         boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.4)',
         backgroundColor: '#f8f8f8',
       },

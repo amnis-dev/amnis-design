@@ -56,6 +56,7 @@ React.ComponentProps<typeof ButtonGroupStyled>
       role="group"
       disabled={disabled}
       outlined={outlined}
+      paint={paint}
       {...props}
     >
       {buttons.map(({ label, icon, ...interactiveProps }) => (

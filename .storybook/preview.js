@@ -29,7 +29,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  options: {
+    storySort: {
+      order: ['Layout', 'Display', 'Entry', 'Lands']
+    },
+  },
+};
 
 export const globalTypes = {
   theme: {

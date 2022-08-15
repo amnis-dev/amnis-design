@@ -20,7 +20,8 @@
           "@amnis/style": "./packages/amnis-style/src",
           "@amnis/layout": "./packages/amnis-layout/src",
           "@amnis/display": "./packages/amnis-display/src",
-          "@amnis/entry": "./packages/amnis-entry/src"
+          "@amnis/entry": "./packages/amnis-entry/src",
+          "@amnis/lands": "./packages/amnis-lands/src"
         }
       }
     ]

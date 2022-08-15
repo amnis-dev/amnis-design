@@ -23,19 +23,13 @@ export const FontStyled = styled<HTMLSpanElement>('span')<Partial<FontProps>>(({
     color: paint ? paints[paint].backgroundColor : 'inherit',
     margin: 0,
     padding: 0,
+    border: 'none',
   };
 
   if (paint) {
     style = {
       ...style,
       backgroundColor: paints[paint].color,
-    //   textShadow: `
-    //   -1px -1px 0 ${paints[paint].color},
-    //   1px -1px 0 ${paints[paint].color},
-    //   -1px 1px 0 ${paints[paint].color},
-    //   1px 1px 0 ${paints[paint].color},
-    //   -1px 0 0 ${paints[paint].color},
-    //   1px 0 0 ${paints[paint].color}`,
     };
   }
 

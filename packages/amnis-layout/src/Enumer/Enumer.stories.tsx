@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Enumer } from './Enumer';
-import { Box } from '../Box';
+import { Item } from '../Item';
 
 export default {
   title: 'Layout/Enumer',
@@ -11,42 +11,40 @@ export default {
 
 const Template: ComponentStory<typeof Enumer> = (args) => (
   <Enumer {...args}>
-    <Box
+    <Item
       paint="primary"
       basis={8}
       minHeight={100}
     />
-    <Box
+    <Item
       paint="primary"
       basis={4}
       minHeight={100}
     />
 
-    <Box
+    <Item
       paint="secondary"
-      width={100}
       minHeight={100}
       basis={4}
     />
-    <Box
+    <Item
       paint="secondary"
       basis={4}
       minHeight={100}
     />
-    <Box
+    <Item
       paint="secondary"
       basis={4}
       minHeight={100}
     />
 
-    <Box
+    <Item
       paint="warm"
       basis={4}
       minHeight={100}
     />
-    <Box
+    <Item
       paint="warm"
-      width={100}
       minHeight={100}
       basis={8}
     />

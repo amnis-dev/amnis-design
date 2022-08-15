@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { Button } from '@amnis/entry/Button';
 import { Dialog } from './Dialog';
 
 export default {
@@ -26,7 +27,14 @@ const TemplateButton: ComponentStory<typeof Dialog> = (args) => {
         justifyContent: 'center',
       }}
     >
-      <button ref={buttonRef} type="button" onClick={() => dialogOpenSet(!dialogOpen)}>Open Dialog</button>
+      <Button
+        ref={buttonRef}
+        onClick={() => dialogOpenSet(!dialogOpen)}
+        paint="primary"
+        iconEnd="IoChevronDown"
+      >
+        Open Dialog
+      </Button>
       <Dialog
         {...args}
         open={dialogOpen}

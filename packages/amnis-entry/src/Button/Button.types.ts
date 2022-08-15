@@ -54,4 +54,9 @@ export interface ButtonProps {
    * @default false
    */
   loading?: boolean;
+
+  /**
+   * Render as a different component.
+   */
+  as?: string;
 }

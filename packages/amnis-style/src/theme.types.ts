@@ -37,6 +37,7 @@ export interface ThemeSurfaces {
   readonly button: ThemeStates;
   readonly input: ThemeStates;
   readonly paper: ThemeStates;
+  readonly dialog: ThemeStates;
   readonly overlay: ThemeStates;
 }
 

@@ -19,7 +19,7 @@ React.ComponentProps<typeof Transition>
 > = ({
   children,
   paint = 'main',
-  surface = 'paper',
+  surface = 'dialog',
   padding,
   p,
   label,

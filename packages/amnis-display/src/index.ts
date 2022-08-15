@@ -9,3 +9,4 @@ export * from './LoaderSpin';
 export * from './LoaderEllipses';
 export * from './Transition';
 export * from './Avatar';
+export * from './Prose';
